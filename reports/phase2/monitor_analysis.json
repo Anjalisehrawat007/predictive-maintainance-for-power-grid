@@ -1,0 +1,330 @@
+{
+  "window_hours": 6,
+  "fired_before_detected": 0.625,
+  "fired_before_missed": 0.75,
+  "fired_before_missed_with_precursor": 1.0,
+  "base_rate_event_free_windows": 0.24129353233830847,
+  "n_windows": 402,
+  "per_failure": [
+    {
+      "asset": "ETTm1",
+      "type": "intermittent_arcing",
+      "class": "A",
+      "detected": false,
+      "monitor_fired": true,
+      "monitor_kinds": "reactive_spikes,thermal_deviation"
+    },
+    {
+      "asset": "ETTm1",
+      "type": "thermal_runaway",
+      "class": "A",
+      "detected": true,
+      "monitor_fired": true,
+      "monitor_kinds": "reactive_spikes,thermal_deviation"
+    },
+    {
+      "asset": "ETTm1",
+      "type": "thermal_runaway",
+      "class": "A",
+      "detected": true,
+      "monitor_fired": true,
+      "monitor_kinds": "thermal_residual"
+    },
+    {
+      "asset": "ETTm1",
+      "type": "load_oscillation",
+      "class": "B",
+      "detected": true,
+      "monitor_fired": false,
+      "monitor_kinds": ""
+    },
+    {
+      "asset": "ETTm1",
+      "type": "load_oscillation",
+      "class": "C",
+      "detected": true,
+      "monitor_fired": false,
+      "monitor_kinds": ""
+    },
+    {
+      "asset": "ETTm1",
+      "type": "intermittent_arcing",
+      "class": "A",
+      "detected": true,
+      "monitor_fired": true,
+      "monitor_kinds": "reactive_spikes"
+    },
+    {
+      "asset": "ETTm1",
+      "type": "thermal_runaway",
+      "class": "A",
+      "detected": false,
+      "monitor_fired": true,
+      "monitor_kinds": "thermal_deviation"
+    },
+    {
+      "asset": "ETTm1",
+      "type": "thermal_runaway",
+      "class": "A",
+      "detected": false,
+      "monitor_fired": true,
+      "monitor_kinds": "thermal_deviation,thermal_residual"
+    },
+    {
+      "asset": "ETTm1",
+      "type": "intermittent_arcing",
+      "class": "A",
+      "detected": true,
+      "monitor_fired": true,
+      "monitor_kinds": "thermal_deviation"
+    },
+    {
+      "asset": "ETTm1",
+      "type": "intermittent_arcing",
+      "class": "C",
+      "detected": false,
+      "monitor_fired": true,
+      "monitor_kinds": "thermal_deviation"
+    },
+    {
+      "asset": "ETTm1",
+      "type": "load_oscillation",
+      "class": "B",
+      "detected": true,
+      "monitor_fired": false,
+      "monitor_kinds": ""
+    },
+    {
+      "asset": "ETTm1",
+      "type": "thermal_runaway",
+      "class": "A",
+      "detected": true,
+      "monitor_fired": true,
+      "monitor_kinds": "reactive_spikes,thermal_residual"
+    },
+    {
+      "asset": "ETTm1",
+      "type": "load_oscillation",
+      "class": "B",
+      "detected": true,
+      "monitor_fired": true,
+      "monitor_kinds": "thermal_deviation"
+    },
+    {
+      "asset": "ETTm1",
+      "type": "thermal_runaway",
+      "class": "A",
+      "detected": false,
+      "monitor_fired": true,
+      "monitor_kinds": "thermal_deviation,thermal_residual"
+    },
+    {
+      "asset": "ETTm1",
+      "type": "intermittent_arcing",
+      "class": "B",
+      "detected": false,
+      "monitor_fired": true,
+      "monitor_kinds": "reactive_spikes,thermal_deviation"
+    },
+    {
+      "asset": "ETTm1",
+      "type": "intermittent_arcing",
+      "class": "A",
+      "detected": true,
+      "monitor_fired": true,
+      "monitor_kinds": "reactive_spikes"
+    },
+    {
+      "asset": "ETTm1",
+      "type": "intermittent_arcing",
+      "class": "A",
+      "detected": true,
+      "monitor_fired": false,
+      "monitor_kinds": ""
+    },
+    {
+      "asset": "ETTm1",
+      "type": "thermal_runaway",
+      "class": "A",
+      "detected": false,
+      "monitor_fired": true,
+      "monitor_kinds": "thermal_deviation"
+    },
+    {
+      "asset": "ETTm1",
+      "type": "intermittent_arcing",
+      "class": "B",
+      "detected": true,
+      "monitor_fired": true,
+      "monitor_kinds": "reactive_spikes"
+    },
+    {
+      "asset": "ETTm1",
+      "type": "load_oscillation",
+      "class": "B",
+      "detected": true,
+      "monitor_fired": false,
+      "monitor_kinds": ""
+    },
+    {
+      "asset": "ETTm2",
+      "type": "sudden",
+      "class": "D",
+      "detected": false,
+      "monitor_fired": true,
+      "monitor_kinds": "reactive_spikes"
+    },
+    {
+      "asset": "ETTm2",
+      "type": "thermal_runaway",
+      "class": "B",
+      "detected": true,
+      "monitor_fired": true,
+      "monitor_kinds": "thermal_deviation"
+    },
+    {
+      "asset": "ETTm2",
+      "type": "load_oscillation",
+      "class": "A",
+      "detected": true,
+      "monitor_fired": true,
+      "monitor_kinds": "reactive_spikes"
+    },
+    {
+      "asset": "ETTm2",
+      "type": "thermal_runaway",
+      "class": "A",
+      "detected": true,
+      "monitor_fired": true,
+      "monitor_kinds": "reactive_spikes"
+    },
+    {
+      "asset": "ETTm2",
+      "type": "intermittent_arcing",
+      "class": "A",
+      "detected": true,
+      "monitor_fired": false,
+      "monitor_kinds": ""
+    },
+    {
+      "asset": "ETTm2",
+      "type": "thermal_runaway",
+      "class": "B",
+      "detected": true,
+      "monitor_fired": false,
+      "monitor_kinds": ""
+    },
+    {
+      "asset": "ETTm2",
+      "type": "sudden",
+      "class": "D",
+      "detected": false,
+      "monitor_fired": true,
+      "monitor_kinds": "reactive_spikes"
+    },
+    {
+      "asset": "ETTm2",
+      "type": "sudden",
+      "class": "D",
+      "detected": false,
+      "monitor_fired": false,
+      "monitor_kinds": ""
+    },
+    {
+      "asset": "ETTm2",
+      "type": "thermal_runaway",
+      "class": "A",
+      "detected": true,
+      "monitor_fired": true,
+      "monitor_kinds": "thermal_residual"
+    },
+    {
+      "asset": "ETTm2",
+      "type": "intermittent_arcing",
+      "class": "B",
+      "detected": false,
+      "monitor_fired": true,
+      "monitor_kinds": "reactive_spikes"
+    },
+    {
+      "asset": "ETTm2",
+      "type": "sudden",
+      "class": "D",
+      "detected": false,
+      "monitor_fired": false,
+      "monitor_kinds": ""
+    },
+    {
+      "asset": "ETTm2",
+      "type": "sudden",
+      "class": "D",
+      "detected": false,
+      "monitor_fired": true,
+      "monitor_kinds": "reactive_spikes"
+    },
+    {
+      "asset": "ETTm2",
+      "type": "thermal_runaway",
+      "class": "A",
+      "detected": true,
+      "monitor_fired": true,
+      "monitor_kinds": "thermal_deviation,thermal_residual"
+    },
+    {
+      "asset": "ETTm2",
+      "type": "sudden",
+      "class": "D",
+      "detected": false,
+      "monitor_fired": false,
+      "monitor_kinds": ""
+    },
+    {
+      "asset": "ETTm2",
+      "type": "load_oscillation",
+      "class": "A",
+      "detected": true,
+      "monitor_fired": true,
+      "monitor_kinds": "thermal_deviation"
+    },
+    {
+      "asset": "ETTm2",
+      "type": "load_oscillation",
+      "class": "A",
+      "detected": true,
+      "monitor_fired": false,
+      "monitor_kinds": ""
+    },
+    {
+      "asset": "ETTm2",
+      "type": "intermittent_arcing",
+      "class": "A",
+      "detected": false,
+      "monitor_fired": true,
+      "monitor_kinds": "reactive_spikes"
+    },
+    {
+      "asset": "ETTm2",
+      "type": "intermittent_arcing",
+      "class": "A",
+      "detected": true,
+      "monitor_fired": false,
+      "monitor_kinds": ""
+    },
+    {
+      "asset": "ETTm2",
+      "type": "sudden",
+      "class": "D",
+      "detected": false,
+      "monitor_fired": false,
+      "monitor_kinds": ""
+    },
+    {
+      "asset": "ETTm2",
+      "type": "load_oscillation",
+      "class": "A",
+      "detected": true,
+      "monitor_fired": true,
+      "monitor_kinds": "thermal_deviation,thermal_residual"
+    }
+  ]
+}

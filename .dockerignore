@@ -1,0 +1,14 @@
+.venv
+**/__pycache__
+.pytest_cache
+.ruff_cache
+frontend/node_modules
+frontend/dist
+data/raw/*.csv
+data/processed/*.parquet
+experiments/preds
+experiments/phase2/preds
+reports/phase2/alert_acks.json
+.claude
+reports/phase2/engine_log
+reports/stream/*.csv

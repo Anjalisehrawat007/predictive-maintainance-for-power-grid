@@ -1,0 +1,8 @@
+,pr_auc,pr_auc,pr_auc_detectable,pr_auc_detectable,event_recall,event_recall,lead_median_min,lead_median_min,fa_day,fa_day
+,mean,std,mean,std,mean,std,mean,std,mean,std
+variant,,,,,,,,,,
+standard (new seeds),0.39,0.034,0.468,0.043,0.762,0.028,165.0,58.481,0.104,0.02
+weaker signatures (amp ×0.5–1.0),0.3,0.028,0.339,0.031,0.537,0.085,136.25,20.902,0.107,0.009
+delayed onset (≤ 50 % of precursor),0.41,0.023,0.467,0.034,0.781,0.097,158.75,44.854,0.107,0.01
+intermittent signatures (30 % dropout),0.292,0.058,0.334,0.076,0.593,0.087,103.75,12.016,0.104,0.026
+all of the above + irregular growth,0.164,0.041,0.186,0.048,0.357,0.077,107.5,27.928,0.1,0.019

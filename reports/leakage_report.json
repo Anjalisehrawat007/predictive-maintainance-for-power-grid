@@ -1,0 +1,26 @@
+{
+  "forbidden_columns": {
+    "passed": true,
+    "detail": "no simulation/label columns among features"
+  },
+  "chronological_splits": {
+    "passed": true,
+    "detail": "ETTm1: train<2017-11-22T02:00:00.000000<=val<2018-03-10T23:00:00.000000<=test; ETTm2: train<2017-11-22T02:00:00.000000<=val<2018-03-10T23:00:00.000000<=test"
+  },
+  "embargo": {
+    "passed": true,
+    "detail": "embargo ok for L=96, H=8"
+  },
+  "scaler_train_only": {
+    "passed": true,
+    "detail": "scaler statistics equal training-period statistics"
+  },
+  "feature_causality": {
+    "passed": true,
+    "detail": "features invariant to future perturbations"
+  },
+  "labels": {
+    "passed": true,
+    "detail": "labels = 1[failure in (t, t+H]], offline rows unscored"
+  }
+}

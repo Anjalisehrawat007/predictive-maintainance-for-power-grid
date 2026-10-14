@@ -1,0 +1,22 @@
+# Runtime dependencies (exact versions used to produce every result in this repo). Python 3.11.
+# LightGBM is optional (needs libomp); the project falls back to scikit-learn's HistGradientBoosting.
+torch==2.14.1
+numpy==2.4.6
+pandas==3.0.6
+scikit-learn==1.9.1
+scipy==1.17.1
+pyarrow==25.0.1
+pyyaml==6.0.3
+optuna==5.0.0
+shap==0.51.0
+matplotlib==3.11.2
+seaborn==0.13.2
+plotly==7.1.0
+streamlit==1.64.0
+onnx==1.23.1
+onnxruntime==1.30.0
+fastapi==0.142.2
+uvicorn[standard]==0.54.0
+pydantic==2.13.5
+tabulate==0.10.0
+httpx==0.28.1

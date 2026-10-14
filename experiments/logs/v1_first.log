@@ -1,0 +1,13 @@
+19:29:36 | INFO    | sgpm.data.pipeline | Prepared raw_engineered | H=8 | F=82 | train/val/test targets = 93481/19956/19992 | pos rate train=0.0155 val=0.0164 test=0.0160
+19:29:36 | INFO    | sgpm.experiment | === gru_attention-c803c7 | v1-initial | feats=raw_engineered L=48 H=8 loss=weighted_bce hid=64 layers=1 seed=42 ===
+  scaler = torch.cuda.amp.GradScaler(enabled=use_amp)
+19:29:46 | INFO    | sgpm.training | epoch 00 loss=0.2511 val_PR-AUC=0.4977 lr=2.0e-03 (7.3s)
+19:29:53 | INFO    | sgpm.training | epoch 01 loss=0.1404 val_PR-AUC=0.5008 lr=2.0e-03 (7.6s)
+19:30:01 | INFO    | sgpm.training | epoch 02 loss=0.0771 val_PR-AUC=0.4703 lr=2.0e-03 (7.5s)
+19:30:08 | INFO    | sgpm.training | epoch 03 loss=0.0471 val_PR-AUC=0.4251 lr=2.0e-03 (7.3s)
+19:30:15 | INFO    | sgpm.training | epoch 04 loss=0.0307 val_PR-AUC=0.4322 lr=1.0e-03 (7.2s)
+19:30:22 | INFO    | sgpm.training | epoch 05 loss=0.0241 val_PR-AUC=0.4285 lr=1.0e-03 (7.1s)
+19:30:30 | INFO    | sgpm.training | epoch 06 loss=0.0165 val_PR-AUC=0.4540 lr=1.0e-03 (7.6s)
+19:30:37 | INFO    | sgpm.training | epoch 07 loss=0.0140 val_PR-AUC=0.4658 lr=5.0e-04 (7.2s)
+19:30:37 | INFO    | sgpm.training | early stopping at epoch 7 (best 1)
+19:30:39 | INFO    | sgpm.experiment | gru_attention-c803c7 | val PR-AUC 0.501 | test PR-AUC 0.242 F1 0.303 evRecall 0.61 lead(med) 158 min FA/day 0.15 | 34689 params 0.41 ms

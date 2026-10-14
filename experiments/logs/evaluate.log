@@ -1,0 +1,20 @@
+22:16:28 | INFO    | sgpm.evaluate | Refreshing operational metrics for all logged runs …
+22:16:29 | INFO    | sgpm.data.pipeline | Prepared raw | H=8 | F=7 | train/val/test targets = 93481/19956/19992 | pos rate train=0.0155 val=0.0164 test=0.0160
+22:16:31 | INFO    | sgpm.data.pipeline | Prepared raw | H=4 | F=7 | train/val/test targets = 93481/19956/19992 | pos rate train=0.0077 val=0.0082 test=0.0080
+22:16:31 | INFO    | sgpm.data.pipeline | Prepared raw | H=16 | F=7 | train/val/test targets = 93481/19956/19992 | pos rate train=0.0310 val=0.0329 test=0.0320
+22:16:33 | INFO    | sgpm.data.pipeline | Prepared stationary | H=8 | F=65 | train/val/test targets = 93481/19956/19992 | pos rate train=0.0155 val=0.0164 test=0.0160
+22:16:38 | INFO    | sgpm.evaluate | Efficiency benchmarks …
+[W1001 22:16:43.771372000 qlinear_dynamic.cpp:251] Warning: Currently, qnnpack incorrectly ignores reduce_range when it is set to true; this may change in a future release. (function operator())
+22:17:31 | INFO    | sgpm.evaluate | Explainability …
+22:17:55 | INFO    | sgpm.data.pipeline | Prepared stationary | H=8 | F=65 | train/val/test targets = 93481/19956/19992 | pos rate train=0.0155 val=0.0164 test=0.0160
+22:18:12 | INFO    | sgpm.evaluate | Cross-asset generalisation run …
+22:18:12 | INFO    | sgpm.data.pipeline | Prepared stationary | H=8 | F=65 | train/val/test targets = 93481/19956/19992 | pos rate train=0.0155 val=0.0164 test=0.0160
+22:18:19 | INFO    | sgpm.training | epoch 00 loss=0.2977 val_PR-AUC=0.5166 lr=2.0e-03 (5.0s)
+22:18:24 | INFO    | sgpm.training | epoch 01 loss=0.1631 val_PR-AUC=0.4655 lr=2.0e-03 (5.0s)
+22:18:29 | INFO    | sgpm.training | epoch 02 loss=0.1090 val_PR-AUC=0.4236 lr=2.0e-03 (5.0s)
+22:18:34 | INFO    | sgpm.training | epoch 03 loss=0.0709 val_PR-AUC=0.3966 lr=1.0e-03 (5.0s)
+22:18:39 | INFO    | sgpm.training | epoch 04 loss=0.0459 val_PR-AUC=0.3708 lr=1.0e-03 (5.0s)
+22:18:44 | INFO    | sgpm.training | epoch 05 loss=0.0309 val_PR-AUC=0.3473 lr=1.0e-03 (5.0s)
+22:18:49 | INFO    | sgpm.training | epoch 06 loss=0.0303 val_PR-AUC=0.3388 lr=5.0e-04 (5.0s)
+22:18:49 | INFO    | sgpm.training | early stopping at epoch 6 (best 0)
+22:18:49 | INFO    | sgpm.evaluate | TEST | PR-AUC 0.326 ROC-AUC 0.845 P 0.318 R 0.487 F1 0.385 | event recall (detectable) 0.73 | lead median 120 min | FA/day 0.12

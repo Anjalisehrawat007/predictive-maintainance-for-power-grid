@@ -1,0 +1,33 @@
+{
+  "dataset": "ETT-small (ETTm1 + ETTm2)",
+  "assets": {
+    "ETTm1": {
+      "rows": 69680,
+      "start": "2016-07-01 00:00:00",
+      "end": "2018-06-26 19:45:00",
+      "n_failures": 128,
+      "failures_by_type": {
+        "thermal_runaway": 47,
+        "intermittent_arcing": 34,
+        "load_oscillation": 29,
+        "sudden": 18
+      },
+      "n_nuisance": 181,
+      "offline_rows": 2487
+    },
+    "ETTm2": {
+      "rows": 69680,
+      "start": "2016-07-01 00:00:00",
+      "end": "2018-06-26 19:45:00",
+      "n_failures": 135,
+      "failures_by_type": {
+        "intermittent_arcing": 47,
+        "thermal_runaway": 35,
+        "load_oscillation": 33,
+        "sudden": 20
+      },
+      "n_nuisance": 181,
+      "offline_rows": 2561
+    }
+  }
+}

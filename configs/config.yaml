@@ -1,0 +1,126 @@
+# =====================================================================
+# Smart-Grid Predictive Maintenance — master configuration
+# All paths are relative to the project root.
+# =====================================================================
+seed: 42
+
+paths:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  splits_dir: data/splits
+  models_dir: models
+  experiments_dir: experiments
+  figures_dir: reports/figures
+  reports_dir: reports
+  stream_dir: reports/stream
+
+# ---------------------------------------------------------------------
+# Dataset: ETDataset (Electricity Transformer Temperature), 15-min data
+# from two real transformers in two Chinese substations (2016-07 -> 2018-06)
+# ---------------------------------------------------------------------
+dataset:
+  name: ETT-small (ETTm1 + ETTm2)
+  base_url: https://raw.githubusercontent.com/zhouhaoyi/ETDataset/main/ETT-small
+  assets: [ETTm1, ETTm2]
+  timestamp_col: date
+  sensor_cols: [HUFL, HULL, MUFL, MULL, LUFL, LULL, OT]
+  freq_minutes: 15
+
+# Failure-simulation layer: see configs/failure_simulation.yaml (merged at load time)
+simulation_config: configs/failure_simulation.yaml
+
+# ---------------------------------------------------------------------
+# Labelling / prediction horizon
+# ---------------------------------------------------------------------
+labels:
+  horizon_steps: 8                 # failure within next 8 x 15 min = 2 h (primary)
+  candidate_horizons: [4, 8, 16]   # 1 h, 2 h, 4 h
+  event_window_hours: 24           # alarms inside [t_f - 24h, t_f) count toward that failure
+
+# ---------------------------------------------------------------------
+# Chronological split (per asset) with embargo to avoid label overlap
+# ---------------------------------------------------------------------
+split:
+  train_frac: 0.70
+  val_frac: 0.15
+  test_frac: 0.15
+
+# ---------------------------------------------------------------------
+# Feature engineering (all strictly causal / backward-looking)
+# ---------------------------------------------------------------------
+features:
+  set: raw_engineered              # raw | engineered | raw_engineered | selected
+  short_window: 4                  # 1 h
+  long_window: 16                  # 4 h
+  baseline_window: 96              # 24 h
+  diff_lags: [1, 4]
+  spike_sigma: 3.0
+  time_features: true
+  n_selected: 24                   # used when set == selected
+  adaptive_window: 672             # 7 days: robust trailing scale for the "adaptive" feature set
+
+# ---------------------------------------------------------------------
+# Sequence models
+# ---------------------------------------------------------------------
+model:
+  type: gru_attention              # lstm | bilstm | gru | gru_attention | lstm_attention | gru_lite
+  seq_len: 48                      # 12 h of history
+  hidden_size: 64
+  num_layers: 1
+  dropout: 0.2
+
+training:
+  device: auto                     # auto | cpu | mps | cuda
+  batch_size: 512
+  max_epochs: 30
+  patience: 6
+  lr: 0.002
+  weight_decay: 0.0001
+  grad_clip: 1.0
+  loss: weighted_bce               # bce | weighted_bce | focal
+  pos_weight: auto                 # auto = sqrt(neg/pos) ; or a number
+  focal_gamma: 2.0
+  focal_alpha: 0.75
+  negative_ratio: null             # per-epoch negative subsampling ratio (null = all)
+  num_threads: 6
+  input_noise: 0.0                 # Gaussian input-noise augmentation (std, in scaled units)
+  amp: true                        # mixed precision when on CUDA
+
+threshold:
+  objective: f1_min_recall         # f1 | f1_min_recall | recall_max_fpr
+  min_recall: 0.70
+  max_fpr: 0.01
+  persistence_k: 2                 # consecutive steps above threshold to raise an alarm
+  merge_gap_steps: 4               # alarm gaps <= 1 h are merged into one episode
+
+hpo:
+  n_trials: 20
+  max_epochs: 15
+  timeout_minutes: 60
+
+# ---------------------------------------------------------------------
+# Alerting & streaming
+# ---------------------------------------------------------------------
+alerts:
+  warning_threshold: null          # null -> models/phase2/deployment.json thresholds (fresh-validation operating point)
+  critical_threshold: null         # null -> models/phase2/deployment.json thresholds
+  critical_precision: 0.90
+
+streaming:
+  asset: ETTm1
+  split: test
+  latency_log_every: 500
+
+# ---------------------------------------------------------------------
+# Final multi-objective model selection (weights over min-max normalised
+# VALIDATION metrics across candidate models)
+# ---------------------------------------------------------------------
+selection:
+  weights:
+    pr_auc: 0.30
+    recall: 0.20          # detectable-event recall
+    f1: 0.10
+    false_alarms: 0.15    # lower is better
+    lead_time: 0.10       # median lead time
+    latency: 0.10         # lower is better
+    size: 0.05            # lower is better

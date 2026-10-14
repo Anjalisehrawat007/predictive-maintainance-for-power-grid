@@ -1,0 +1,42 @@
+{
+  "median_ms": {
+    "ingest": 0.0073,
+    "features": 8.5444,
+    "sequence": 0.0006,
+    "inference": 0.1324,
+    "confidence": 1.3735,
+    "calibration": 0.0808,
+    "explain": 3.9673,
+    "risk_engine": 0.0437,
+    "alert_engine": 0.0122,
+    "total": 14.2583
+  },
+  "p95_ms": {
+    "ingest": 0.0081,
+    "features": 8.9075,
+    "sequence": 0.0009,
+    "inference": 0.1588,
+    "confidence": 1.6308,
+    "calibration": 0.099,
+    "explain": 4.3901,
+    "risk_engine": 0.0575,
+    "alert_engine": 0.0162,
+    "total": 14.6094
+  },
+  "n_steps": 20904,
+  "onnx_inference": true,
+  "model": "best_attention_model",
+  "wall_s": 304.3,
+  "consistency_with_phase1_stream": {
+    "ETTm1": {
+      "rows_compared": 10452,
+      "status_identical": 0.9846919249904325,
+      "max_abs_score_diff": 3.8942225777383044e-07
+    },
+    "ETTm2": {
+      "rows_compared": 10452,
+      "status_identical": 0.9846919249904325,
+      "max_abs_score_diff": 3.7529147944859176e-07
+    }
+  }
+}

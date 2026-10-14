@@ -1,0 +1,37 @@
+21:55:52 | INFO    | sgpm.data.dataset | Processed data already present (use --force to rebuild)
+21:55:52 | INFO    | sgpm.data.pipeline | Prepared stationary | H=8 | F=65 | train/val/test targets = 93481/19956/19992 | pos rate train=0.0155 val=0.0164 test=0.0160
+21:55:52 | INFO    | sgpm.experiment | === gru_attention-ca4feb | ensemble:member | feats=stationary L=48 H=8 loss=weighted_bce hid=64 layers=1 seed=42 ===
+21:56:04 | INFO    | sgpm.training | epoch 00 loss=0.2509 val_PR-AUC=0.5531 lr=2.0e-03 (9.9s)
+21:56:14 | INFO    | sgpm.training | epoch 01 loss=0.1469 val_PR-AUC=0.4931 lr=2.0e-03 (9.9s)
+21:56:24 | INFO    | sgpm.training | epoch 02 loss=0.0960 val_PR-AUC=0.4878 lr=2.0e-03 (9.9s)
+21:56:34 | INFO    | sgpm.training | epoch 03 loss=0.0647 val_PR-AUC=0.4328 lr=1.0e-03 (9.9s)
+21:56:44 | INFO    | sgpm.training | epoch 04 loss=0.0379 val_PR-AUC=0.4628 lr=1.0e-03 (9.9s)
+21:56:54 | INFO    | sgpm.training | epoch 05 loss=0.0276 val_PR-AUC=0.4109 lr=1.0e-03 (9.9s)
+21:57:04 | INFO    | sgpm.training | epoch 06 loss=0.0266 val_PR-AUC=0.4059 lr=5.0e-04 (9.9s)
+21:57:04 | INFO    | sgpm.training | early stopping at epoch 6 (best 0)
+21:57:05 | INFO    | sgpm.experiment | gru_attention-ca4feb | val PR-AUC 0.553 | test PR-AUC 0.326 F1 0.385 evRecall 0.73 lead(med) 120 min FA/day 0.12 | 31425 params 0.41 ms
+21:57:05 | INFO    | sgpm.experiment | === gru_attention-da5197 | ensemble:member | feats=stationary L=48 H=8 loss=weighted_bce hid=64 layers=1 seed=7 ===
+21:57:15 | INFO    | sgpm.training | epoch 00 loss=0.2580 val_PR-AUC=0.4192 lr=2.0e-03 (9.9s)
+21:57:25 | INFO    | sgpm.training | epoch 01 loss=0.1531 val_PR-AUC=0.4736 lr=2.0e-03 (9.9s)
+21:57:35 | INFO    | sgpm.training | epoch 02 loss=0.0965 val_PR-AUC=0.5293 lr=2.0e-03 (9.9s)
+21:57:45 | INFO    | sgpm.training | epoch 03 loss=0.0662 val_PR-AUC=0.4593 lr=2.0e-03 (9.9s)
+21:57:55 | INFO    | sgpm.training | epoch 04 loss=0.0450 val_PR-AUC=0.4972 lr=2.0e-03 (9.9s)
+21:58:05 | INFO    | sgpm.training | epoch 05 loss=0.0342 val_PR-AUC=0.5020 lr=1.0e-03 (9.9s)
+21:58:15 | INFO    | sgpm.training | epoch 06 loss=0.0227 val_PR-AUC=0.4814 lr=1.0e-03 (9.9s)
+21:58:25 | INFO    | sgpm.training | epoch 07 loss=0.0184 val_PR-AUC=0.5133 lr=1.0e-03 (9.9s)
+21:58:34 | INFO    | sgpm.training | epoch 08 loss=0.0181 val_PR-AUC=0.4870 lr=5.0e-04 (9.9s)
+21:58:34 | INFO    | sgpm.training | early stopping at epoch 8 (best 2)
+21:58:36 | INFO    | sgpm.experiment | gru_attention-da5197 | val PR-AUC 0.529 | test PR-AUC 0.344 F1 0.303 evRecall 0.76 lead(med) 180 min FA/day 0.26 | 31425 params 0.41 ms
+21:58:36 | INFO    | sgpm.experiment | === gru_attention-8a7473 | ensemble:member | feats=stationary L=48 H=8 loss=weighted_bce hid=64 layers=1 seed=123 ===
+21:58:46 | INFO    | sgpm.training | epoch 00 loss=0.2616 val_PR-AUC=0.4823 lr=2.0e-03 (9.9s)
+21:58:56 | INFO    | sgpm.training | epoch 01 loss=0.1489 val_PR-AUC=0.4979 lr=2.0e-03 (9.9s)
+21:59:06 | INFO    | sgpm.training | epoch 02 loss=0.1050 val_PR-AUC=0.4802 lr=2.0e-03 (9.9s)
+21:59:16 | INFO    | sgpm.training | epoch 03 loss=0.0726 val_PR-AUC=0.4822 lr=2.0e-03 (9.9s)
+21:59:26 | INFO    | sgpm.training | epoch 04 loss=0.0508 val_PR-AUC=0.4561 lr=1.0e-03 (9.9s)
+21:59:35 | INFO    | sgpm.training | epoch 05 loss=0.0285 val_PR-AUC=0.4854 lr=1.0e-03 (9.9s)
+21:59:45 | INFO    | sgpm.training | epoch 06 loss=0.0236 val_PR-AUC=0.4731 lr=1.0e-03 (9.9s)
+21:59:55 | INFO    | sgpm.training | epoch 07 loss=0.0194 val_PR-AUC=0.4321 lr=5.0e-04 (9.9s)
+21:59:55 | INFO    | sgpm.training | early stopping at epoch 7 (best 1)
+21:59:57 | INFO    | sgpm.experiment | gru_attention-8a7473 | val PR-AUC 0.498 | test PR-AUC 0.302 F1 0.367 evRecall 0.58 lead(med) 150 min FA/day 0.08 | 31425 params 0.41 ms
+22:00:02 | INFO    | sgpm.ensemble | Ensemble val PR-AUC 0.5637 vs selected 0.5531 | selection winner: best_attention_model
+22:00:02 | INFO    | sgpm.ensemble | Ensemble NOT adopted (kept best_attention_model).

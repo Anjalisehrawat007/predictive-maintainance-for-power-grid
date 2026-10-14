@@ -1,0 +1,30 @@
+{
+  "val": {
+    "total_failures": 41,
+    "detectable_failures (A+B+C)": 36,
+    "undetectable (D)": 5,
+    "recall_all": 0.7804878048780488,
+    "recall_detectable (A+B+C)": 0.8888888888888888,
+    "recall_A+B": 0.8857142857142857,
+    "recall_by_class": {
+      "A": "25/28",
+      "B": "6/7",
+      "C": "1/1",
+      "D": "0/5"
+    }
+  },
+  "test": {
+    "total_failures": 40,
+    "detectable_failures (A+B+C)": 33,
+    "undetectable (D)": 7,
+    "recall_all": 0.6,
+    "recall_detectable (A+B+C)": 0.7272727272727273,
+    "recall_A+B": 0.7419354838709677,
+    "recall_by_class": {
+      "A": "16/22",
+      "B": "7/9",
+      "C": "1/2",
+      "D": "0/7"
+    }
+  }
+}

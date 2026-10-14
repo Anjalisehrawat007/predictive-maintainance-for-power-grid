@@ -1,0 +1,170 @@
+{
+  "model": "best_attention_model",
+  "threshold": 0.6592720746994019,
+  "val": {
+    "accuracy": 0.9738424533974744,
+    "precision": 0.3516819571865443,
+    "recall": 0.7012195121951219,
+    "f1": 0.46843177189409363,
+    "roc_auc": 0.8918801289347722,
+    "pr_auc": 0.5531264387524123,
+    "specificity": 0.9783982066435704,
+    "fpr": 0.021601793356429592,
+    "fnr": 0.29878048780487804,
+    "tp": 230,
+    "fp": 424,
+    "tn": 19204,
+    "fn": 98,
+    "threshold": 0.6592720746994019,
+    "n_failures": 41,
+    "n_detectable": 36,
+    "n_detected": 32,
+    "event_recall": 0.7804878048780488,
+    "event_recall_detectable": 0.8888888888888888,
+    "lead_time_mean_min": 212.34375,
+    "lead_time_median_min": 217.5,
+    "lead_time_min_min": 30.0,
+    "lead_time_max_min": 525.0,
+    "lead_time_p25_min": 146.25,
+    "alarm_episodes": 58,
+    "false_alarm_episodes": 17,
+    "false_alarms_per_day": 0.08177991581479255,
+    "false_alarms_per_week": 0.5724594107035478,
+    "episode_precision": 0.7068965517241379,
+    "scored_days": 207.875,
+    "alarm_time_fraction": 0.029114050912006414,
+    "event_recall_intermittent_arcing": 0.9285714285714286,
+    "event_recall_load_oscillation": 0.9,
+    "event_recall_sudden": 0.0,
+    "event_recall_thermal_runaway": 0.8333333333333334
+  },
+  "test": {
+    "accuracy": 0.9750900360144058,
+    "precision": 0.3183673469387755,
+    "recall": 0.4875,
+    "f1": 0.3851851851851852,
+    "roc_auc": 0.8453248112799919,
+    "pr_auc": 0.3256616597719593,
+    "specificity": 0.9830215534770231,
+    "fpr": 0.01697844652297682,
+    "fnr": 0.5125,
+    "tp": 156,
+    "fp": 334,
+    "tn": 19338,
+    "fn": 164,
+    "threshold": 0.6592720746994019,
+    "n_failures": 40,
+    "n_detectable": 33,
+    "n_detected": 24,
+    "event_recall": 0.6,
+    "event_recall_detectable": 0.7272727272727273,
+    "lead_time_mean_min": 141.25,
+    "lead_time_median_min": 120.0,
+    "lead_time_min_min": 15.0,
+    "lead_time_max_min": 540.0,
+    "lead_time_p25_min": 60.0,
+    "alarm_episodes": 55,
+    "false_alarm_episodes": 24,
+    "false_alarms_per_day": 0.11524609843937575,
+    "false_alarms_per_week": 0.8067226890756303,
+    "episode_precision": 0.5636363636363637,
+    "scored_days": 208.25,
+    "alarm_time_fraction": 0.02105842336934774,
+    "event_recall_intermittent_arcing": 0.5833333333333334,
+    "event_recall_load_oscillation": 1.0,
+    "event_recall_sudden": 0.0,
+    "event_recall_thermal_runaway": 0.6666666666666666
+  },
+  "params": 31425,
+  "size_kb_state_dict": 126.564453125,
+  "size_kb_file": 127.3427734375,
+  "torch_latency_ms": 0.40266700671054423,
+  "onnx_latency_ms": 0.06929200026206672,
+  "stream_ms_median": 8.368291993974708,
+  "comparison": [
+    {
+      "metric": "precision",
+      "claimed": 0.318,
+      "stored_report": 0.3183673469387755,
+      "reproduced": 0.3183673469387755,
+      "status": "MATCH"
+    },
+    {
+      "metric": "recall",
+      "claimed": 0.488,
+      "stored_report": 0.4875,
+      "reproduced": 0.4875,
+      "status": "MATCH"
+    },
+    {
+      "metric": "f1",
+      "claimed": 0.385,
+      "stored_report": 0.3851851851851852,
+      "reproduced": 0.3851851851851852,
+      "status": "MATCH"
+    },
+    {
+      "metric": "roc_auc",
+      "claimed": 0.845,
+      "stored_report": 0.8453248112799919,
+      "reproduced": 0.8453248112799919,
+      "status": "MATCH"
+    },
+    {
+      "metric": "pr_auc",
+      "claimed": 0.326,
+      "stored_report": 0.3256616597719593,
+      "reproduced": 0.3256616597719593,
+      "status": "MATCH"
+    },
+    {
+      "metric": "false_alarms_per_day",
+      "claimed": 0.12,
+      "stored_report": 0.11524609843937575,
+      "reproduced": 0.11524609843937575,
+      "status": "MATCH"
+    },
+    {
+      "metric": "lead_time_median_min",
+      "claimed": 120.0,
+      "stored_report": 120.0,
+      "reproduced": 120.0,
+      "status": "MATCH"
+    },
+    {
+      "metric": "params",
+      "claimed": 31425,
+      "stored_report": null,
+      "reproduced": 31425,
+      "status": "MATCH"
+    },
+    {
+      "metric": "size_kb",
+      "claimed": 127,
+      "stored_report": null,
+      "reproduced": 126.564453125,
+      "status": "MATCH"
+    },
+    {
+      "metric": "torch_latency_ms",
+      "claimed": 0.42,
+      "stored_report": null,
+      "reproduced": 0.40266700671054423,
+      "status": "timing (re-measured)"
+    },
+    {
+      "metric": "onnx_latency_ms",
+      "claimed": 0.07,
+      "stored_report": null,
+      "reproduced": 0.06929200026206672,
+      "status": "timing (re-measured)"
+    },
+    {
+      "metric": "stream_ms",
+      "claimed": 8.4,
+      "stored_report": null,
+      "reproduced": 8.368291993974708,
+      "status": "timing (re-measured)"
+    }
+  ]
+}

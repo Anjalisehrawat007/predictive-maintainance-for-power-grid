@@ -1,0 +1,51 @@
+20:27:21 | INFO    | sgpm.data.pipeline | Prepared stationary | H=8 | F=65 | train/val/test targets = 93481/19956/19992 | pos rate train=0.0155 val=0.0164 test=0.0160
+20:27:22 | INFO    | sgpm.data.pipeline | Prepared stationary | H=8 | F=65 | train/val/test targets = 93552/19915/19924 | pos rate train=0.0157 val=0.0157 test=0.0169
+20:27:35 | INFO    | sgpm.training | epoch 00 loss=0.3004 val_PR-AUC=0.2552 lr=2.0e-03 (11.3s)
+20:27:46 | INFO    | sgpm.training | epoch 01 loss=0.1940 val_PR-AUC=0.2553 lr=2.0e-03 (11.1s)
+20:27:57 | INFO    | sgpm.training | epoch 02 loss=0.1173 val_PR-AUC=0.2195 lr=2.0e-03 (11.3s)
+20:28:09 | INFO    | sgpm.training | epoch 03 loss=0.0750 val_PR-AUC=0.1876 lr=2.0e-03 (11.1s)
+20:28:20 | INFO    | sgpm.training | epoch 04 loss=0.0528 val_PR-AUC=0.1534 lr=1.0e-03 (11.0s)
+20:28:31 | INFO    | sgpm.training | epoch 05 loss=0.0337 val_PR-AUC=0.1449 lr=1.0e-03 (11.7s)
+20:28:43 | INFO    | sgpm.training | epoch 06 loss=0.0259 val_PR-AUC=0.2116 lr=1.0e-03 (11.3s)
+20:28:43 | INFO    | sgpm.training | early stopping at epoch 6 (best 0)
+20:28:55 | INFO    | sgpm.training | epoch 00 loss=0.3090 val_PR-AUC=0.2787 lr=2.0e-03 (11.9s)
+20:29:06 | INFO    | sgpm.training | epoch 01 loss=0.2046 val_PR-AUC=0.2941 lr=2.0e-03 (11.3s)
+20:29:17 | INFO    | sgpm.training | epoch 02 loss=0.1366 val_PR-AUC=0.3038 lr=2.0e-03 (10.6s)
+20:29:28 | INFO    | sgpm.training | epoch 03 loss=0.0866 val_PR-AUC=0.2911 lr=2.0e-03 (11.4s)
+20:29:40 | INFO    | sgpm.training | epoch 04 loss=0.0514 val_PR-AUC=0.1751 lr=2.0e-03 (11.6s)
+20:29:50 | INFO    | sgpm.training | epoch 05 loss=0.0427 val_PR-AUC=0.2036 lr=1.0e-03 (10.5s)
+20:30:01 | INFO    | sgpm.training | epoch 06 loss=0.0273 val_PR-AUC=0.2881 lr=1.0e-03 (11.2s)
+20:30:12 | INFO    | sgpm.training | epoch 07 loss=0.0237 val_PR-AUC=0.1905 lr=1.0e-03 (11.0s)
+20:30:23 | INFO    | sgpm.training | epoch 08 loss=0.0210 val_PR-AUC=0.1729 lr=5.0e-04 (11.0s)
+20:30:23 | INFO    | sgpm.training | early stopping at epoch 8 (best 2)
+20:30:34 | INFO    | sgpm.training | epoch 00 loss=0.3134 val_PR-AUC=0.2778 lr=2.0e-03 (10.7s)
+20:30:45 | INFO    | sgpm.training | epoch 01 loss=0.2096 val_PR-AUC=0.2574 lr=2.0e-03 (10.5s)
+20:30:55 | INFO    | sgpm.training | epoch 02 loss=0.1348 val_PR-AUC=0.2430 lr=2.0e-03 (10.4s)
+20:31:05 | INFO    | sgpm.training | epoch 03 loss=0.0796 val_PR-AUC=0.1537 lr=1.0e-03 (10.2s)
+20:31:16 | INFO    | sgpm.training | epoch 04 loss=0.0395 val_PR-AUC=0.1368 lr=1.0e-03 (10.6s)
+20:31:27 | INFO    | sgpm.training | epoch 05 loss=0.0291 val_PR-AUC=0.1006 lr=1.0e-03 (11.2s)
+20:31:37 | INFO    | sgpm.training | epoch 06 loss=0.0283 val_PR-AUC=0.1184 lr=5.0e-04 (10.5s)
+20:31:37 | INFO    | sgpm.training | early stopping at epoch 6 (best 0)
+                                         MILD  MODERATE  NORMAL  SEVERE
+reference training (deployed config)    0.328     0.246   0.358   0.195
+trained on MODERATE-profile signatures  0.267     0.263   0.269   0.238
+gain -0.0001 normal change -0.0891 adopt False
+                                                      pr_auc        pr_auc_detectable        recall        precision            f1        event_recall_detectable        lead_time_median_min         false_alarms_per_day       
+                                                        mean    std              mean    std   mean    std      mean    std   mean    std                    mean    std                 mean     std                 mean    std
+variant                                split profile                                                                                                                                                                             
+reference training (deployed config)   val   NORMAL    0.358  0.051             0.409  0.058  0.697  0.043     0.119  0.045  0.200  0.064                   0.877  0.034                233.5  53.551                0.617  0.227
+                                       test  NORMAL    0.382  0.073             0.420  0.079  0.693  0.062     0.137  0.045  0.225  0.061                   0.857  0.036                197.0  37.443                0.516  0.180
+trained on MODERATE-profile signatures val   NORMAL    0.269  0.037             0.303  0.041  0.715  0.048     0.087  0.009  0.155  0.015                   0.882  0.047                235.5  51.324                0.689  0.052
+                                       test  NORMAL    0.294  0.052             0.324  0.059  0.710  0.087     0.090  0.020  0.160  0.032                   0.872  0.059                210.0  46.146                0.769  0.146
+reference training (deployed config)   val   MILD      0.328  0.088             0.389  0.104  0.603  0.058     0.108  0.045  0.179  0.065                   0.810  0.065                176.5  39.163                0.636  0.232
+                                       test  MILD      0.316  0.048             0.363  0.053  0.613  0.065     0.128  0.045  0.208  0.059                   0.829  0.029                161.0  36.177                0.517  0.179
+trained on MODERATE-profile signatures val   MILD      0.267  0.046             0.316  0.061  0.656  0.036     0.080  0.009  0.142  0.015                   0.869  0.037                212.0  48.062                0.737  0.081
+                                       test  MILD      0.308  0.060             0.354  0.072  0.685  0.081     0.091  0.020  0.160  0.033                   0.886  0.061                194.0  42.224                0.760  0.128
+reference training (deployed config)   val   MODERATE  0.246  0.062             0.289  0.074  0.536  0.052     0.098  0.041  0.162  0.058                   0.761  0.066                149.0  29.304                0.629  0.230
+                                       test  MODERATE  0.249  0.064             0.285  0.073  0.531  0.065     0.115  0.041  0.186  0.053                   0.748  0.050                130.0  41.144                0.515  0.182
+trained on MODERATE-profile signatures val   MODERATE  0.263  0.048             0.311  0.064  0.633  0.042     0.078  0.010  0.138  0.016                   0.857  0.059                206.5  53.999                0.734  0.074
+                                       test  MODERATE  0.281  0.052             0.325  0.068  0.655  0.072     0.087  0.018  0.153  0.030                   0.868  0.077                186.0  35.767                0.766  0.137
+reference training (deployed config)   val   SEVERE    0.195  0.071             0.228  0.085  0.470  0.056     0.087  0.038  0.144  0.053                   0.695  0.060                137.5  37.571                0.631  0.230
+                                       test  SEVERE    0.196  0.047             0.222  0.054  0.456  0.067     0.102  0.034  0.163  0.043                   0.663  0.069                116.5  31.036                0.516  0.183
+trained on MODERATE-profile signatures val   SEVERE    0.238  0.058             0.280  0.074  0.593  0.032     0.073  0.008  0.130  0.013                   0.841  0.053                178.5  39.504                0.730  0.075
+                                       test  SEVERE    0.233  0.051             0.268  0.062  0.610  0.069     0.082  0.017  0.144  0.027                   0.826  0.088                173.0  46.187                0.751  0.147

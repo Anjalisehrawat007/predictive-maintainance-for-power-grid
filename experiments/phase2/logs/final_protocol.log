@@ -1,0 +1,8 @@
+20:24:14 | INFO    | sgpm.data.pipeline | Prepared stationary | H=8 | F=65 | train/val/test targets = 93481/19956/19992 | pos rate train=0.0155 val=0.0164 test=0.0160
+                     candidate  pr_auc_mean  pr_auc_std  pr_auc_min  pr_auc_max  diff_vs_incumbent  replaces  p50_ms  p99_ms
+0  GRU + attention (incumbent)       0.3599      0.0560      0.2568      0.4748             0.0000     False  0.4188  0.4556
+1                          GRU       0.3466      0.0437      0.2689      0.4283            -0.0133     False  0.3666  0.4022
+2           Compact GRU (h=32)       0.3425      0.0381      0.2823      0.4057            -0.0174     False  0.3341  0.3713
+3             LSTM + attention       0.3099      0.0593      0.2013      0.4105            -0.0500     False  0.4097  0.4524
+4                          TCN       0.3272      0.0595      0.2440      0.4423            -0.0327     False  0.2628  0.2898
+5      Lightweight transformer       0.2828      0.0483      0.1941      0.3630            -0.0771     False  0.2605  0.2847

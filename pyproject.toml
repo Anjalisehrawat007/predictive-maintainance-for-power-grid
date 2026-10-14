@@ -1,0 +1,22 @@
+[project]
+name = "smartgrid-ai"
+version = "2.0.0"
+description = "Leakage-safe, calibrated early-warning system for transformer failures with a streaming engine, FastAPI backend and React operations center"
+requires-python = ">=3.11,<3.12"
+readme = "README.md"
+
+[tool.ruff]
+line-length = 130
+target-version = "py311"
+extend-exclude = ["frontend", "notebooks", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "UP", "SIM", "I"]
+ignore = ["E501", "E701", "E702", "UP006", "UP007", "UP035", "SIM108", "B905", "B008", "SIM102", "SIM105", "SIM117"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["src", "backend", "dashboard"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning", "ignore::UserWarning"]

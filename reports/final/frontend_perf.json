@@ -1,0 +1,8 @@
+{
+  "initial load · DOMContentLoaded (built app served by FastAPI)": "93 ms",
+  "initial load · slowest API call (GET /api/timeline, 130 KB gzip)": "274 ms",
+  "API calls on initial load": "7",
+  "live stream tick · API round-trip (4 obs × 2 assets = 8 engine steps) p50 / p95 / p99": "84.4 / 90.3 / 427.9 ms (n = 50 ticks; p99 ≈ single slowest tick)",
+  "live stream tick · state update → React commit p50 / p95 / p99": "20.3 / 30.2 / 31.7 ms (browser pane hidden during measurement, so paint could not be observed; commit time reported)",
+  "measurement": "client trace in src/store/grid.ts (data-sg-perf attribute), Chromium-based in-app browser, 4× playback for 25 s"
+}

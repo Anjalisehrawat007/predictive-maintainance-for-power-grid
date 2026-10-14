@@ -1,0 +1,121 @@
+{
+  "incumbent": "GRU+attention, stationary features (Phase-1 model)",
+  "incumbent_val_rs_mean": 0.3599095799612269,
+  "incumbent_val_rs_std": 0.034202373966223755,
+  "table": [
+    {
+      "group": "architecture",
+      "candidate": "gru",
+      "seeds": 3,
+      "mean_val_rs": 0.3466011253346231,
+      "diff_vs_incumbent": -0.013308454626603794,
+      "se_diff": 0.020911327639186978,
+      "required_gain": 0.020911327639186978,
+      "replaces_incumbent": false
+    },
+    {
+      "group": "features",
+      "candidate": "robust",
+      "seeds": 3,
+      "mean_val_rs": 0.3447364264396507,
+      "diff_vs_incumbent": -0.015173153521576221,
+      "se_diff": 0.02296297934431876,
+      "required_gain": 0.02296297934431876,
+      "replaces_incumbent": false
+    },
+    {
+      "group": "architecture",
+      "candidate": "gru_compact",
+      "seeds": 3,
+      "mean_val_rs": 0.3424627315806173,
+      "diff_vs_incumbent": -0.017446848380609614,
+      "se_diff": 0.023778872964257996,
+      "required_gain": 0.023778872964257996,
+      "replaces_incumbent": false
+    },
+    {
+      "group": "features",
+      "candidate": "stationary_nocal",
+      "seeds": 3,
+      "mean_val_rs": 0.3423641048509792,
+      "diff_vs_incumbent": -0.017545475110247732,
+      "se_diff": 0.02083292133125707,
+      "required_gain": 0.02083292133125707,
+      "replaces_incumbent": false
+    },
+    {
+      "group": "features",
+      "candidate": "engineered",
+      "seeds": 3,
+      "mean_val_rs": 0.3330696232505887,
+      "diff_vs_incumbent": -0.026839956710638213,
+      "se_diff": 0.024564089325892657,
+      "required_gain": 0.024564089325892657,
+      "replaces_incumbent": false
+    },
+    {
+      "group": "architecture",
+      "candidate": "tcn",
+      "seeds": 3,
+      "mean_val_rs": 0.3272315141531277,
+      "diff_vs_incumbent": -0.03267806580809923,
+      "se_diff": 0.03695259970083602,
+      "required_gain": 0.03695259970083602,
+      "replaces_incumbent": false
+    },
+    {
+      "group": "architecture",
+      "candidate": "lstm_attention",
+      "seeds": 3,
+      "mean_val_rs": 0.30987520316919026,
+      "diff_vs_incumbent": -0.05003437679203665,
+      "se_diff": 0.02949866085613413,
+      "required_gain": 0.02949866085613413,
+      "replaces_incumbent": false
+    },
+    {
+      "group": "architecture",
+      "candidate": "transformer",
+      "seeds": 3,
+      "mean_val_rs": 0.2827985731012064,
+      "diff_vs_incumbent": -0.07711100686002054,
+      "se_diff": 0.030830816993207607,
+      "required_gain": 0.030830816993207607,
+      "replaces_incumbent": false
+    },
+    {
+      "group": "features",
+      "candidate": "raw",
+      "seeds": 3,
+      "mean_val_rs": 0.1899568223282333,
+      "diff_vs_incumbent": -0.1699527576329936,
+      "se_diff": 0.020716558257389446,
+      "required_gain": 0.020716558257389446,
+      "replaces_incumbent": false
+    }
+  ],
+  "winner": null,
+  "multi_horizon": {
+    "per_horizon": {
+      "2": {
+        "multi_head": 0.14222751592943664,
+        "dedicated": 0.16346433481840905
+      },
+      "4": {
+        "multi_head": 0.23999317115609373,
+        "dedicated": 0.25498384512508376
+      },
+      "8": {
+        "multi_head": 0.3590674840730346,
+        "dedicated": 0.35990957996122686
+      },
+      "16": {
+        "multi_head": 0.4337159409663547,
+        "dedicated": 0.40887212136105816
+      }
+    },
+    "adopt": false,
+    "rule": "adopt only if the 2 h head is within 0.01 and every head within 0.02 of a dedicated model (fresh validation)"
+  },
+  "rule": "(declared before the full results were seen, see reports/phase2_audit.md \u00a77):\na challenger replaces the incumbent only if its mean *fresh-realisation* validation PR-AUC\n(val_rs, 3 seeds) exceeds the incumbent's by more than max(0.01, 1 standard error of the\ndifference).  Test metrics are never used for the decision."
+}

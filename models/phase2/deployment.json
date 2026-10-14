@@ -1,0 +1,23 @@
+{
+  "primary_model_file": null,
+  "selected_in": "Phase 1 architecture & weights; operating point and calibration re-derived under the final protocol",
+  "why": "No Phase-2 challenger exceeded the incumbent's fresh-validation PR-AUC by the pre-declared margin; multi-horizon head failed its value test (30-min head).",
+  "incumbent_val_rs_pr_auc": 0.3599095799612269,
+  "winner": null,
+  "multi_horizon_adopted": false,
+  "calibrator": "calibrator_final.json",
+  "confidence": "3 seed-ensemble members (models/ensemble_member{0,1,2}.pt): 1 - 2*std of member probabilities",
+  "inference_runtime": "ONNX Runtime (verified numerically identical to PyTorch at load)",
+  "decision_file": "reports/phase2/decision.json",
+  "created": "2026-10-02 03:20:59",
+  "thresholds": {
+    "warning_raw": 0.24112579226493835,
+    "critical_raw": 0.986335039138794,
+    "source": "pooled fresh validation realisations (reports/model_selection_protocol.md); test never used",
+    "phase1_values": {
+      "warning": 0.6592720746994019,
+      "critical": 0.9617807865142822
+    }
+  },
+  "updated": "2026-10-03 20:26:59"
+}

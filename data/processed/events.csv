@@ -1,0 +1,626 @@
+asset,event_id,kind,type,onset_idx,failure_idx,end_idx,params,onset_time,failure_time,end_time
+ETTm1,0,failure,intermittent_arcing,588,612,631,"{'rate_end': 0.5985307346029134, 'amp_sigma': 2.568927261120207, 'n_spikes': 8, 'precursor_steps': 24, 'outage_steps': 15}",2016-07-07 03:00:00,2016-07-07 09:00:00,2016-07-07 13:45:00
+ETTm1,1,failure,intermittent_arcing,1249,1291,1326,"{'rate_end': 0.46937235182882947, 'amp_sigma': 5.55657555465622, 'n_spikes': 5, 'precursor_steps': 42, 'outage_steps': 31}",2016-07-14 00:15:00,2016-07-14 10:45:00,2016-07-14 19:30:00
+ETTm1,2,failure,load_oscillation,1552,1580,1613,"{'amp_sigma': 2.110430367743515, 'period_steps': 6.992237228540457, 'power': 1.5301025276761848, 'precursor_steps': 28, 'outage_steps': 29}",2016-07-17 04:00:00,2016-07-17 11:00:00,2016-07-17 19:15:00
+ETTm1,3,failure,thermal_runaway,2100,2155,2188,"{'amp_sigma': 3.8756371132111758, 'power': 1.6817322268886117, 'precursor_steps': 55, 'outage_steps': 29}",2016-07-22 21:00:00,2016-07-23 10:45:00,2016-07-23 19:00:00
+ETTm1,4,failure,intermittent_arcing,2724,2779,2807,"{'rate_end': 0.4544528366335007, 'amp_sigma': 3.4126393258866767, 'n_spikes': 6, 'precursor_steps': 55, 'outage_steps': 24}",2016-07-29 09:00:00,2016-07-29 22:45:00,2016-07-30 05:45:00
+ETTm1,5,failure,intermittent_arcing,3440,3452,3486,"{'rate_end': 0.31956609087637644, 'amp_sigma': 2.2124314996391874, 'n_spikes': 1, 'precursor_steps': 12, 'outage_steps': 30}",2016-08-05 20:00:00,2016-08-05 23:00:00,2016-08-06 07:30:00
+ETTm1,6,failure,load_oscillation,4069,4125,4153,"{'amp_sigma': 3.568944776320825, 'period_steps': 10.980339421012587, 'power': 1.4555457234148355, 'precursor_steps': 56, 'outage_steps': 24}",2016-08-12 09:15:00,2016-08-12 23:15:00,2016-08-13 06:15:00
+ETTm1,7,failure,load_oscillation,4816,4844,4867,"{'amp_sigma': 3.31368988735636, 'period_steps': 8.360019178754692, 'power': 1.2946514617243314, 'precursor_steps': 28, 'outage_steps': 19}",2016-08-20 04:00:00,2016-08-20 11:00:00,2016-08-20 16:45:00
+ETTm1,8,failure,load_oscillation,5349,5381,5414,"{'amp_sigma': 3.134932770321317, 'period_steps': 10.022225666046367, 'power': 1.3704541962901162, 'precursor_steps': 32, 'outage_steps': 29}",2016-08-25 17:15:00,2016-08-26 01:15:00,2016-08-26 09:30:00
+ETTm1,9,failure,sudden,5793,5793,5824,"{'precursor_steps': 0, 'outage_steps': 27}",2016-08-30 08:15:00,2016-08-30 08:15:00,2016-08-30 16:00:00
+ETTm1,10,failure,thermal_runaway,6329,6370,6392,"{'amp_sigma': 3.3337095008363113, 'power': 2.131350628843629, 'precursor_steps': 41, 'outage_steps': 18}",2016-09-04 22:15:00,2016-09-05 08:30:00,2016-09-05 14:00:00
+ETTm1,11,failure,sudden,6725,6725,6740,"{'precursor_steps': 0, 'outage_steps': 11}",2016-09-09 01:15:00,2016-09-09 01:15:00,2016-09-09 05:00:00
+ETTm1,12,failure,sudden,7406,7406,7418,"{'precursor_steps': 0, 'outage_steps': 8}",2016-09-16 03:30:00,2016-09-16 03:30:00,2016-09-16 06:30:00
+ETTm1,13,failure,sudden,7904,7904,7926,"{'precursor_steps': 0, 'outage_steps': 18}",2016-09-21 08:00:00,2016-09-21 08:00:00,2016-09-21 13:30:00
+ETTm1,14,failure,thermal_runaway,8248,8268,8286,"{'amp_sigma': 4.9479936593160145, 'power': 2.2103407332000233, 'precursor_steps': 20, 'outage_steps': 14}",2016-09-24 22:00:00,2016-09-25 03:00:00,2016-09-25 07:30:00
+ETTm1,15,failure,thermal_runaway,8540,8578,8592,"{'amp_sigma': 4.365336096452058, 'power': 2.2416734632177646, 'precursor_steps': 38, 'outage_steps': 10}",2016-09-27 23:00:00,2016-09-28 08:30:00,2016-09-28 12:00:00
+ETTm1,16,failure,sudden,9000,9000,9012,"{'precursor_steps': 0, 'outage_steps': 8}",2016-10-02 18:00:00,2016-10-02 18:00:00,2016-10-02 21:00:00
+ETTm1,17,failure,sudden,9570,9570,9587,"{'precursor_steps': 0, 'outage_steps': 13}",2016-10-08 16:30:00,2016-10-08 16:30:00,2016-10-08 20:45:00
+ETTm1,18,failure,thermal_runaway,9862,9906,9925,"{'amp_sigma': 2.010695756388598, 'power': 2.335457565819616, 'precursor_steps': 44, 'outage_steps': 15}",2016-10-11 17:30:00,2016-10-12 04:30:00,2016-10-12 09:15:00
+ETTm1,19,failure,load_oscillation,10600,10612,10645,"{'amp_sigma': 2.8544049173592994, 'period_steps': 7.995191272889293, 'power': 1.7450550707447372, 'precursor_steps': 12, 'outage_steps': 29}",2016-10-19 10:00:00,2016-10-19 13:00:00,2016-10-19 21:15:00
+ETTm1,20,failure,thermal_runaway,11223,11263,11284,"{'amp_sigma': 2.2084716456655906, 'power': 1.670377062200962, 'precursor_steps': 40, 'outage_steps': 17}",2016-10-25 21:45:00,2016-10-26 07:45:00,2016-10-26 13:00:00
+ETTm1,21,failure,thermal_runaway,11570,11622,11638,"{'amp_sigma': 3.4978648689737364, 'power': 2.107697303485483, 'precursor_steps': 52, 'outage_steps': 12}",2016-10-29 12:30:00,2016-10-30 01:30:00,2016-10-30 05:30:00
+ETTm1,22,failure,thermal_runaway,12205,12270,12286,"{'amp_sigma': 3.3754271421974837, 'power': 1.5136024589702637, 'precursor_steps': 65, 'outage_steps': 12}",2016-11-05 03:15:00,2016-11-05 19:30:00,2016-11-05 23:30:00
+ETTm1,23,failure,thermal_runaway,12710,12772,12800,"{'amp_sigma': 4.254647314196218, 'power': 1.501378217344008, 'precursor_steps': 62, 'outage_steps': 24}",2016-11-10 09:30:00,2016-11-11 01:00:00,2016-11-11 08:00:00
+ETTm1,24,failure,intermittent_arcing,13185,13197,13220,"{'rate_end': 0.4062446143595642, 'amp_sigma': 5.885546799872037, 'n_spikes': 2, 'precursor_steps': 12, 'outage_steps': 19}",2016-11-15 08:15:00,2016-11-15 11:15:00,2016-11-15 17:00:00
+ETTm1,25,failure,intermittent_arcing,13729,13785,13820,"{'rate_end': 0.5808709475040604, 'amp_sigma': 4.783710790182136, 'n_spikes': 12, 'precursor_steps': 56, 'outage_steps': 31}",2016-11-21 00:15:00,2016-11-21 14:15:00,2016-11-21 23:00:00
+ETTm1,26,failure,sudden,14109,14109,14122,"{'precursor_steps': 0, 'outage_steps': 9}",2016-11-24 23:15:00,2016-11-24 23:15:00,2016-11-25 02:30:00
+ETTm1,27,failure,sudden,14663,14663,14689,"{'precursor_steps': 0, 'outage_steps': 22}",2016-11-30 17:45:00,2016-11-30 17:45:00,2016-12-01 00:15:00
+ETTm1,28,failure,intermittent_arcing,15095,15143,15170,"{'rate_end': 0.5782338091578055, 'amp_sigma': 3.2862363668926484, 'n_spikes': 10, 'precursor_steps': 48, 'outage_steps': 23}",2016-12-05 05:45:00,2016-12-05 17:45:00,2016-12-06 00:30:00
+ETTm1,29,failure,thermal_runaway,15429,15461,15486,"{'amp_sigma': 4.43912498973897, 'power': 1.5226993523042713, 'precursor_steps': 32, 'outage_steps': 21}",2016-12-08 17:15:00,2016-12-09 01:15:00,2016-12-09 07:30:00
+ETTm1,30,failure,intermittent_arcing,15753,15817,15829,"{'rate_end': 0.4941383476893733, 'amp_sigma': 3.109282023843408, 'n_spikes': 13, 'precursor_steps': 64, 'outage_steps': 8}",2016-12-12 02:15:00,2016-12-12 18:15:00,2016-12-12 21:15:00
+ETTm1,31,failure,intermittent_arcing,16481,16516,16543,"{'rate_end': 0.3896635724391415, 'amp_sigma': 5.638122194943762, 'n_spikes': 8, 'precursor_steps': 35, 'outage_steps': 23}",2016-12-19 16:15:00,2016-12-20 01:00:00,2016-12-20 07:45:00
+ETTm1,32,failure,thermal_runaway,16907,16935,16961,"{'amp_sigma': 3.764880541708165, 'power': 1.706614479060274, 'precursor_steps': 28, 'outage_steps': 22}",2016-12-24 02:45:00,2016-12-24 09:45:00,2016-12-24 16:15:00
+ETTm1,33,failure,sudden,17416,17416,17442,"{'precursor_steps': 0, 'outage_steps': 22}",2016-12-29 10:00:00,2016-12-29 10:00:00,2016-12-29 16:30:00
+ETTm1,34,failure,intermittent_arcing,17783,17820,17833,"{'rate_end': 0.25301600155510073, 'amp_sigma': 3.4019630820653246, 'n_spikes': 7, 'precursor_steps': 37, 'outage_steps': 9}",2017-01-02 05:45:00,2017-01-02 15:00:00,2017-01-02 18:15:00
+ETTm1,35,failure,sudden,18473,18473,18504,"{'precursor_steps': 0, 'outage_steps': 27}",2017-01-09 10:15:00,2017-01-09 10:15:00,2017-01-09 18:00:00
+ETTm1,36,failure,load_oscillation,19097,19152,19167,"{'amp_sigma': 2.6655822648489043, 'period_steps': 7.140604260467382, 'power': 1.2154592267623259, 'precursor_steps': 55, 'outage_steps': 11}",2017-01-15 22:15:00,2017-01-16 12:00:00,2017-01-16 15:45:00
+ETTm1,37,failure,load_oscillation,19516,19562,19585,"{'amp_sigma': 3.4012116413948563, 'period_steps': 4.481816251914161, 'power': 1.2580002464663522, 'precursor_steps': 46, 'outage_steps': 19}",2017-01-20 07:00:00,2017-01-20 18:30:00,2017-01-21 00:15:00
+ETTm1,38,failure,thermal_runaway,19948,19966,19992,"{'amp_sigma': 3.9463376994592814, 'power': 2.864452819835614, 'precursor_steps': 18, 'outage_steps': 22}",2017-01-24 19:00:00,2017-01-24 23:30:00,2017-01-25 06:00:00
+ETTm1,39,failure,load_oscillation,20628,20690,20721,"{'amp_sigma': 1.78493737306353, 'period_steps': 8.334822283748917, 'power': 1.560531398153315, 'precursor_steps': 62, 'outage_steps': 27}",2017-01-31 21:00:00,2017-02-01 12:30:00,2017-02-01 20:15:00
+ETTm1,40,failure,thermal_runaway,21230,21246,21259,"{'amp_sigma': 4.959308931608551, 'power': 2.4190384735056805, 'precursor_steps': 16, 'outage_steps': 9}",2017-02-07 03:30:00,2017-02-07 07:30:00,2017-02-07 10:45:00
+ETTm1,41,failure,thermal_runaway,21676,21726,21760,"{'amp_sigma': 4.83696117586811, 'power': 2.8356202272341555, 'precursor_steps': 50, 'outage_steps': 30}",2017-02-11 19:00:00,2017-02-12 07:30:00,2017-02-12 16:00:00
+ETTm1,42,failure,load_oscillation,22364,22380,22400,"{'amp_sigma': 2.9491298192126942, 'period_steps': 11.489854985610396, 'power': 1.394839853773428, 'precursor_steps': 16, 'outage_steps': 16}",2017-02-18 23:00:00,2017-02-19 03:00:00,2017-02-19 08:00:00
+ETTm1,43,failure,load_oscillation,23035,23090,23108,"{'amp_sigma': 2.4402498424837193, 'period_steps': 9.028511349839931, 'power': 1.6902450212422995, 'precursor_steps': 55, 'outage_steps': 14}",2017-02-25 22:45:00,2017-02-26 12:30:00,2017-02-26 17:00:00
+ETTm1,44,failure,thermal_runaway,23418,23443,23455,"{'amp_sigma': 2.018124871939294, 'power': 2.9184452384832937, 'precursor_steps': 25, 'outage_steps': 8}",2017-03-01 22:30:00,2017-03-02 04:45:00,2017-03-02 07:45:00
+ETTm1,45,failure,thermal_runaway,23901,23952,23978,"{'amp_sigma': 2.588769784885759, 'power': 1.9650565152578758, 'precursor_steps': 51, 'outage_steps': 22}",2017-03-06 23:15:00,2017-03-07 12:00:00,2017-03-07 18:30:00
+ETTm1,46,failure,intermittent_arcing,24216,24241,24265,"{'rate_end': 0.4534234784287112, 'amp_sigma': 5.7391472512152, 'n_spikes': 4, 'precursor_steps': 25, 'outage_steps': 20}",2017-03-10 06:00:00,2017-03-10 12:15:00,2017-03-10 18:15:00
+ETTm1,47,failure,thermal_runaway,24731,24790,24810,"{'amp_sigma': 2.0638059686805255, 'power': 2.3224006307222123, 'precursor_steps': 59, 'outage_steps': 16}",2017-03-15 14:45:00,2017-03-16 05:30:00,2017-03-16 10:30:00
+ETTm1,48,failure,load_oscillation,25249,25302,25317,"{'amp_sigma': 2.2288701045948125, 'period_steps': 4.226174857249798, 'power': 1.7099398568806738, 'precursor_steps': 53, 'outage_steps': 11}",2017-03-21 00:15:00,2017-03-21 13:30:00,2017-03-21 17:15:00
+ETTm1,49,failure,thermal_runaway,25976,26015,26039,"{'amp_sigma': 4.165214656077094, 'power': 2.045867649041692, 'precursor_steps': 39, 'outage_steps': 20}",2017-03-28 14:00:00,2017-03-28 23:45:00,2017-03-29 05:45:00
+ETTm1,50,failure,load_oscillation,26650,26688,26719,"{'amp_sigma': 1.922581105733214, 'period_steps': 6.144970701864161, 'power': 1.72307260401941, 'precursor_steps': 38, 'outage_steps': 27}",2017-04-04 14:30:00,2017-04-05 00:00:00,2017-04-05 07:45:00
+ETTm1,51,failure,intermittent_arcing,27091,27111,27124,"{'rate_end': 0.4963573748406528, 'amp_sigma': 3.9974760042574826, 'n_spikes': 5, 'precursor_steps': 20, 'outage_steps': 9}",2017-04-09 04:45:00,2017-04-09 09:45:00,2017-04-09 13:00:00
+ETTm1,52,failure,load_oscillation,27626,27651,27686,"{'amp_sigma': 2.941827794476295, 'period_steps': 6.1337901441957845, 'power': 1.8040651932296599, 'precursor_steps': 25, 'outage_steps': 31}",2017-04-14 18:30:00,2017-04-15 00:45:00,2017-04-15 09:30:00
+ETTm1,53,failure,thermal_runaway,28082,28121,28152,"{'amp_sigma': 2.0266328506832223, 'power': 2.881097138635199, 'precursor_steps': 39, 'outage_steps': 27}",2017-04-19 12:30:00,2017-04-19 22:15:00,2017-04-20 06:00:00
+ETTm1,54,failure,load_oscillation,28802,28870,28897,"{'amp_sigma': 3.743129867661508, 'period_steps': 9.142025799675094, 'power': 1.0723606626568403, 'precursor_steps': 68, 'outage_steps': 23}",2017-04-27 00:30:00,2017-04-27 17:30:00,2017-04-28 00:15:00
+ETTm1,55,failure,thermal_runaway,29426,29464,29497,"{'amp_sigma': 2.302890382136927, 'power': 2.5504004061061596, 'precursor_steps': 38, 'outage_steps': 29}",2017-05-03 12:30:00,2017-05-03 22:00:00,2017-05-04 06:15:00
+ETTm1,56,failure,thermal_runaway,29922,29972,29985,"{'amp_sigma': 3.478339602900416, 'power': 2.834484480836449, 'precursor_steps': 50, 'outage_steps': 9}",2017-05-08 16:30:00,2017-05-09 05:00:00,2017-05-09 08:15:00
+ETTm1,57,failure,intermittent_arcing,30673,30710,30735,"{'rate_end': 0.4190103478707101, 'amp_sigma': 5.3189071342045136, 'n_spikes': 6, 'precursor_steps': 37, 'outage_steps': 21}",2017-05-16 12:15:00,2017-05-16 21:30:00,2017-05-17 03:45:00
+ETTm1,58,failure,sudden,31425,31425,31447,"{'precursor_steps': 0, 'outage_steps': 18}",2017-05-24 08:15:00,2017-05-24 08:15:00,2017-05-24 13:45:00
+ETTm1,59,failure,intermittent_arcing,31753,31804,31829,"{'rate_end': 0.5320804352093289, 'amp_sigma': 3.659778609675548, 'n_spikes': 11, 'precursor_steps': 51, 'outage_steps': 21}",2017-05-27 18:15:00,2017-05-28 07:00:00,2017-05-28 13:15:00
+ETTm1,60,failure,thermal_runaway,32143,32204,32235,"{'amp_sigma': 4.9675989237104705, 'power': 1.5393219079796503, 'precursor_steps': 61, 'outage_steps': 27}",2017-05-31 19:45:00,2017-06-01 11:00:00,2017-06-01 18:45:00
+ETTm1,61,failure,thermal_runaway,32694,32712,32727,"{'amp_sigma': 2.8358840653951187, 'power': 2.0360270606880237, 'precursor_steps': 18, 'outage_steps': 11}",2017-06-06 13:30:00,2017-06-06 18:00:00,2017-06-06 21:45:00
+ETTm1,62,failure,load_oscillation,33321,33383,33416,"{'amp_sigma': 2.962054002254502, 'period_steps': 6.154118674796197, 'power': 1.4400074845787845, 'precursor_steps': 62, 'outage_steps': 29}",2017-06-13 02:15:00,2017-06-13 17:45:00,2017-06-14 02:00:00
+ETTm1,63,failure,intermittent_arcing,33607,33676,33704,"{'rate_end': 0.3936370091887527, 'amp_sigma': 3.4975175809302876, 'n_spikes': 10, 'precursor_steps': 69, 'outage_steps': 24}",2017-06-16 01:45:00,2017-06-16 19:00:00,2017-06-17 02:00:00
+ETTm1,64,failure,thermal_runaway,34180,34219,34246,"{'amp_sigma': 4.212970083260621, 'power': 1.6838453772256323, 'precursor_steps': 39, 'outage_steps': 23}",2017-06-22 01:00:00,2017-06-22 10:45:00,2017-06-22 17:30:00
+ETTm1,65,failure,load_oscillation,34600,34629,34659,"{'amp_sigma': 3.960033126694708, 'period_steps': 11.838426904356702, 'power': 1.2504429030706397, 'precursor_steps': 29, 'outage_steps': 26}",2017-06-26 10:00:00,2017-06-26 17:15:00,2017-06-27 00:45:00
+ETTm1,66,failure,thermal_runaway,35035,35089,35104,"{'amp_sigma': 2.3345793838247246, 'power': 2.195289084129565, 'precursor_steps': 54, 'outage_steps': 11}",2017-06-30 22:45:00,2017-07-01 12:15:00,2017-07-01 16:00:00
+ETTm1,67,failure,sudden,35672,35672,35705,"{'precursor_steps': 0, 'outage_steps': 29}",2017-07-07 14:00:00,2017-07-07 14:00:00,2017-07-07 22:15:00
+ETTm1,68,failure,sudden,36070,36070,36103,"{'precursor_steps': 0, 'outage_steps': 29}",2017-07-11 17:30:00,2017-07-11 17:30:00,2017-07-12 01:45:00
+ETTm1,69,failure,thermal_runaway,36635,36666,36694,"{'amp_sigma': 3.355524585430777, 'power': 2.361266949012869, 'precursor_steps': 31, 'outage_steps': 24}",2017-07-17 14:45:00,2017-07-17 22:30:00,2017-07-18 05:30:00
+ETTm1,70,failure,thermal_runaway,37336,37349,37379,"{'amp_sigma': 2.992977990415601, 'power': 2.8780816939405125, 'precursor_steps': 13, 'outage_steps': 26}",2017-07-24 22:00:00,2017-07-25 01:15:00,2017-07-25 08:45:00
+ETTm1,71,failure,sudden,38115,38115,38140,"{'precursor_steps': 0, 'outage_steps': 21}",2017-08-02 00:45:00,2017-08-02 00:45:00,2017-08-02 07:00:00
+ETTm1,72,failure,thermal_runaway,38757,38803,38834,"{'amp_sigma': 3.907042211894314, 'power': 2.558446782114003, 'precursor_steps': 46, 'outage_steps': 27}",2017-08-08 17:15:00,2017-08-09 04:45:00,2017-08-09 12:30:00
+ETTm1,73,failure,thermal_runaway,39238,39305,39332,"{'amp_sigma': 2.9841203432232306, 'power': 2.994885758329864, 'precursor_steps': 67, 'outage_steps': 23}",2017-08-13 17:30:00,2017-08-14 10:15:00,2017-08-14 17:00:00
+ETTm1,74,failure,thermal_runaway,39942,39990,40015,"{'amp_sigma': 4.266694414907325, 'power': 1.574327279959348, 'precursor_steps': 48, 'outage_steps': 21}",2017-08-21 01:30:00,2017-08-21 13:30:00,2017-08-21 19:45:00
+ETTm1,75,failure,thermal_runaway,40323,40357,40387,"{'amp_sigma': 2.3835591227176685, 'power': 2.685047070044671, 'precursor_steps': 34, 'outage_steps': 26}",2017-08-25 00:45:00,2017-08-25 09:15:00,2017-08-25 16:45:00
+ETTm1,76,failure,intermittent_arcing,41035,41070,41098,"{'rate_end': 0.4621598958140029, 'amp_sigma': 2.9674618419678196, 'n_spikes': 6, 'precursor_steps': 35, 'outage_steps': 24}",2017-09-01 10:45:00,2017-09-01 19:30:00,2017-09-02 02:30:00
+ETTm1,77,failure,intermittent_arcing,41598,41620,41643,"{'rate_end': 0.4989198201327818, 'amp_sigma': 5.0210241932447754, 'n_spikes': 5, 'precursor_steps': 22, 'outage_steps': 19}",2017-09-07 07:30:00,2017-09-07 13:00:00,2017-09-07 18:45:00
+ETTm1,78,failure,load_oscillation,41945,41959,41971,"{'amp_sigma': 2.7933411402964645, 'period_steps': 7.059939715333486, 'power': 1.1936807783862582, 'precursor_steps': 14, 'outage_steps': 8}",2017-09-10 22:15:00,2017-09-11 01:45:00,2017-09-11 04:45:00
+ETTm1,79,failure,intermittent_arcing,42576,42591,42611,"{'rate_end': 0.2569991922230486, 'amp_sigma': 2.2443867973866727, 'n_spikes': 0, 'precursor_steps': 15, 'outage_steps': 16}",2017-09-17 12:00:00,2017-09-17 15:45:00,2017-09-17 20:45:00
+ETTm1,80,failure,intermittent_arcing,43189,43208,43242,"{'rate_end': 0.2869328289517527, 'amp_sigma': 3.2782769981175255, 'n_spikes': 1, 'precursor_steps': 19, 'outage_steps': 30}",2017-09-23 21:15:00,2017-09-24 02:00:00,2017-09-24 10:30:00
+ETTm1,81,failure,load_oscillation,43722,43757,43780,"{'amp_sigma': 3.3982081856127313, 'period_steps': 8.193416369052251, 'power': 1.321776727245861, 'precursor_steps': 35, 'outage_steps': 19}",2017-09-29 10:30:00,2017-09-29 19:15:00,2017-09-30 01:00:00
+ETTm1,82,failure,intermittent_arcing,44462,44503,44533,"{'rate_end': 0.4931261010419687, 'amp_sigma': 4.33311326748592, 'n_spikes': 8, 'precursor_steps': 41, 'outage_steps': 26}",2017-10-07 03:30:00,2017-10-07 13:45:00,2017-10-07 21:15:00
+ETTm1,83,failure,sudden,45265,45265,45284,"{'precursor_steps': 0, 'outage_steps': 15}",2017-10-15 12:15:00,2017-10-15 12:15:00,2017-10-15 17:00:00
+ETTm1,84,failure,load_oscillation,45740,45806,45836,"{'amp_sigma': 1.7006427195430476, 'period_steps': 9.521649991221903, 'power': 1.928192684513814, 'precursor_steps': 66, 'outage_steps': 26}",2017-10-20 11:00:00,2017-10-21 03:30:00,2017-10-21 11:00:00
+ETTm1,85,failure,thermal_runaway,46297,46337,46360,"{'amp_sigma': 4.101190922940247, 'power': 1.772731625968377, 'precursor_steps': 40, 'outage_steps': 19}",2017-10-26 06:15:00,2017-10-26 16:15:00,2017-10-26 22:00:00
+ETTm1,86,failure,intermittent_arcing,46918,46950,46979,"{'rate_end': 0.2561923545114842, 'amp_sigma': 5.776854044592518, 'n_spikes': 3, 'precursor_steps': 32, 'outage_steps': 25}",2017-11-01 17:30:00,2017-11-02 01:30:00,2017-11-02 08:45:00
+ETTm1,87,failure,intermittent_arcing,47622,47689,47712,"{'rate_end': 0.4753561997363192, 'amp_sigma': 5.539711969221458, 'n_spikes': 17, 'precursor_steps': 67, 'outage_steps': 19}",2017-11-09 01:30:00,2017-11-09 18:15:00,2017-11-10 00:00:00
+ETTm1,88,failure,thermal_runaway,48114,48147,48172,"{'amp_sigma': 4.266370473542015, 'power': 2.4613255757579453, 'precursor_steps': 33, 'outage_steps': 21}",2017-11-14 04:30:00,2017-11-14 12:45:00,2017-11-14 19:00:00
+ETTm1,89,failure,thermal_runaway,48469,48537,48554,"{'amp_sigma': 4.446012016441841, 'power': 2.2445121090259743, 'precursor_steps': 68, 'outage_steps': 13}",2017-11-17 21:15:00,2017-11-18 14:15:00,2017-11-18 18:30:00
+ETTm1,90,failure,load_oscillation,49143,49197,49221,"{'amp_sigma': 2.2118601572778136, 'period_steps': 7.731396251112627, 'power': 1.625668264856574, 'precursor_steps': 54, 'outage_steps': 20}",2017-11-24 21:45:00,2017-11-25 11:15:00,2017-11-25 17:15:00
+ETTm1,91,failure,thermal_runaway,49708,49761,49785,"{'amp_sigma': 4.944284135510246, 'power': 1.5870634655799267, 'precursor_steps': 53, 'outage_steps': 20}",2017-11-30 19:00:00,2017-12-01 08:15:00,2017-12-01 14:15:00
+ETTm1,92,failure,thermal_runaway,50457,50517,50529,"{'amp_sigma': 2.0899657321403478, 'power': 2.154079806169983, 'precursor_steps': 60, 'outage_steps': 8}",2017-12-08 14:15:00,2017-12-09 05:15:00,2017-12-09 08:15:00
+ETTm1,93,failure,sudden,51237,51237,51249,"{'precursor_steps': 0, 'outage_steps': 8}",2017-12-16 17:15:00,2017-12-16 17:15:00,2017-12-16 20:15:00
+ETTm1,94,failure,intermittent_arcing,51716,51774,51805,"{'rate_end': 0.5234841747922175, 'amp_sigma': 3.773881867955556, 'n_spikes': 7, 'precursor_steps': 58, 'outage_steps': 27}",2017-12-21 17:00:00,2017-12-22 07:30:00,2017-12-22 15:15:00
+ETTm1,95,failure,sudden,52438,52438,52473,"{'precursor_steps': 0, 'outage_steps': 31}",2017-12-29 05:30:00,2017-12-29 05:30:00,2017-12-29 14:15:00
+ETTm1,96,failure,load_oscillation,53135,53186,53218,"{'amp_sigma': 2.500233112194494, 'period_steps': 6.771560017840085, 'power': 1.9011516716592487, 'precursor_steps': 51, 'outage_steps': 28}",2018-01-05 11:45:00,2018-01-06 00:30:00,2018-01-06 08:30:00
+ETTm1,97,failure,thermal_runaway,53755,53812,53844,"{'amp_sigma': 2.041298060996391, 'power': 2.9378127223434882, 'precursor_steps': 57, 'outage_steps': 28}",2018-01-11 22:45:00,2018-01-12 13:00:00,2018-01-12 21:00:00
+ETTm1,98,failure,load_oscillation,54217,54243,54270,"{'amp_sigma': 1.89838133151198, 'period_steps': 6.992269554661802, 'power': 1.1001481481287714, 'precursor_steps': 26, 'outage_steps': 23}",2018-01-16 18:15:00,2018-01-17 00:45:00,2018-01-17 07:30:00
+ETTm1,99,failure,intermittent_arcing,54714,54734,54763,"{'rate_end': 0.34244841796369113, 'amp_sigma': 3.3082307597300438, 'n_spikes': 4, 'precursor_steps': 20, 'outage_steps': 25}",2018-01-21 22:30:00,2018-01-22 03:30:00,2018-01-22 10:45:00
+ETTm1,100,failure,thermal_runaway,55178,55217,55239,"{'amp_sigma': 3.1188389074176195, 'power': 2.3633266100550183, 'precursor_steps': 39, 'outage_steps': 18}",2018-01-26 18:30:00,2018-01-27 04:15:00,2018-01-27 09:45:00
+ETTm1,101,failure,intermittent_arcing,55598,55661,55680,"{'rate_end': 0.25621000479761913, 'amp_sigma': 5.158399990707313, 'n_spikes': 8, 'precursor_steps': 63, 'outage_steps': 15}",2018-01-31 03:30:00,2018-01-31 19:15:00,2018-02-01 00:00:00
+ETTm1,102,failure,sudden,56408,56408,56433,"{'precursor_steps': 0, 'outage_steps': 21}",2018-02-08 14:00:00,2018-02-08 14:00:00,2018-02-08 20:15:00
+ETTm1,103,failure,thermal_runaway,56925,56948,56967,"{'amp_sigma': 3.5153014087081473, 'power': 2.733145191582923, 'precursor_steps': 23, 'outage_steps': 15}",2018-02-13 23:15:00,2018-02-14 05:00:00,2018-02-14 09:45:00
+ETTm1,104,failure,intermittent_arcing,57468,57538,57562,"{'rate_end': 0.47016947512870694, 'amp_sigma': 3.1440546959575646, 'n_spikes': 11, 'precursor_steps': 70, 'outage_steps': 20}",2018-02-19 15:00:00,2018-02-20 08:30:00,2018-02-20 14:30:00
+ETTm1,105,failure,load_oscillation,58115,58185,58204,"{'amp_sigma': 2.4129073146929136, 'period_steps': 9.859750322329168, 'power': 1.8347789289871097, 'precursor_steps': 70, 'outage_steps': 15}",2018-02-26 08:45:00,2018-02-27 02:15:00,2018-02-27 07:00:00
+ETTm1,106,failure,load_oscillation,58636,58686,58714,"{'amp_sigma': 3.4997749463395658, 'period_steps': 7.97386026680797, 'power': 1.639229977254699, 'precursor_steps': 50, 'outage_steps': 24}",2018-03-03 19:00:00,2018-03-04 07:30:00,2018-03-04 14:30:00
+ETTm1,107,failure,thermal_runaway,59054,59124,59138,"{'amp_sigma': 4.602944598106909, 'power': 1.932192345777359, 'precursor_steps': 70, 'outage_steps': 10}",2018-03-08 03:30:00,2018-03-08 21:00:00,2018-03-09 00:30:00
+ETTm1,108,failure,intermittent_arcing,59478,59496,59530,"{'rate_end': 0.5121789500427593, 'amp_sigma': 3.1498107441720387, 'n_spikes': 5, 'precursor_steps': 18, 'outage_steps': 30}",2018-03-12 13:30:00,2018-03-12 18:00:00,2018-03-13 02:30:00
+ETTm1,109,failure,thermal_runaway,60177,60219,60237,"{'amp_sigma': 3.691838509104506, 'power': 2.127200889592867, 'precursor_steps': 42, 'outage_steps': 14}",2018-03-19 20:15:00,2018-03-20 06:45:00,2018-03-20 11:15:00
+ETTm1,110,failure,thermal_runaway,60787,60827,60839,"{'amp_sigma': 4.191384809332444, 'power': 2.1384992426680958, 'precursor_steps': 40, 'outage_steps': 8}",2018-03-26 04:45:00,2018-03-26 14:45:00,2018-03-26 17:45:00
+ETTm1,111,failure,load_oscillation,61403,61426,61451,"{'amp_sigma': 3.1847137256803464, 'period_steps': 5.313652008330426, 'power': 1.62337378870546, 'precursor_steps': 23, 'outage_steps': 21}",2018-04-01 14:45:00,2018-04-01 20:30:00,2018-04-02 02:45:00
+ETTm1,112,failure,load_oscillation,61739,61752,61774,"{'amp_sigma': 2.5035907577049206, 'period_steps': 11.503397559317435, 'power': 1.7762690308294518, 'precursor_steps': 13, 'outage_steps': 18}",2018-04-05 02:45:00,2018-04-05 06:00:00,2018-04-05 11:30:00
+ETTm1,113,failure,intermittent_arcing,62186,62235,62251,"{'rate_end': 0.401559751987323, 'amp_sigma': 4.465464329138371, 'n_spikes': 5, 'precursor_steps': 49, 'outage_steps': 12}",2018-04-09 18:30:00,2018-04-10 06:45:00,2018-04-10 10:45:00
+ETTm1,114,failure,thermal_runaway,62724,62770,62784,"{'amp_sigma': 2.09900297848726, 'power': 2.1809309882902794, 'precursor_steps': 46, 'outage_steps': 10}",2018-04-15 09:00:00,2018-04-15 20:30:00,2018-04-16 00:00:00
+ETTm1,115,failure,thermal_runaway,63100,63154,63168,"{'amp_sigma': 3.32455398001189, 'power': 2.5337901784672248, 'precursor_steps': 54, 'outage_steps': 10}",2018-04-19 07:00:00,2018-04-19 20:30:00,2018-04-20 00:00:00
+ETTm1,116,failure,intermittent_arcing,63659,63719,63737,"{'rate_end': 0.2579361209356346, 'amp_sigma': 5.963904641072855, 'n_spikes': 5, 'precursor_steps': 60, 'outage_steps': 14}",2018-04-25 02:45:00,2018-04-25 17:45:00,2018-04-25 22:15:00
+ETTm1,117,failure,intermittent_arcing,64283,64301,64318,"{'rate_end': 0.34753406006250515, 'amp_sigma': 4.644590439588207, 'n_spikes': 0, 'precursor_steps': 18, 'outage_steps': 13}",2018-05-01 14:45:00,2018-05-01 19:15:00,2018-05-01 23:30:00
+ETTm1,118,failure,load_oscillation,64767,64837,64859,"{'amp_sigma': 3.9230084682309148, 'period_steps': 9.741031560048722, 'power': 1.0679548840421162, 'precursor_steps': 70, 'outage_steps': 18}",2018-05-06 15:45:00,2018-05-07 09:15:00,2018-05-07 14:45:00
+ETTm1,119,failure,thermal_runaway,65110,65176,65204,"{'amp_sigma': 4.0187298243704825, 'power': 2.261164130544514, 'precursor_steps': 66, 'outage_steps': 24}",2018-05-10 05:30:00,2018-05-10 22:00:00,2018-05-11 05:00:00
+ETTm1,120,failure,load_oscillation,65604,65657,65687,"{'amp_sigma': 2.85079545898356, 'period_steps': 7.115811466873247, 'power': 1.0271368205456743, 'precursor_steps': 53, 'outage_steps': 26}",2018-05-15 09:00:00,2018-05-15 22:15:00,2018-05-16 05:45:00
+ETTm1,121,failure,thermal_runaway,65963,66026,66043,"{'amp_sigma': 3.7520043351188948, 'power': 2.0207189975633115, 'precursor_steps': 63, 'outage_steps': 13}",2018-05-19 02:45:00,2018-05-19 18:30:00,2018-05-19 22:45:00
+ETTm1,122,failure,intermittent_arcing,66382,66400,66415,"{'rate_end': 0.4228630005744344, 'amp_sigma': 4.926548428147152, 'n_spikes': 2, 'precursor_steps': 18, 'outage_steps': 11}",2018-05-23 11:30:00,2018-05-23 16:00:00,2018-05-23 19:45:00
+ETTm1,123,failure,intermittent_arcing,67007,67050,67073,"{'rate_end': 0.43101077360679413, 'amp_sigma': 4.000528592331482, 'n_spikes': 5, 'precursor_steps': 43, 'outage_steps': 19}",2018-05-29 23:45:00,2018-05-30 10:30:00,2018-05-30 16:15:00
+ETTm1,124,failure,intermittent_arcing,67519,67576,67595,"{'rate_end': 0.5007506770918364, 'amp_sigma': 4.86802318029706, 'n_spikes': 8, 'precursor_steps': 57, 'outage_steps': 15}",2018-06-04 07:45:00,2018-06-04 22:00:00,2018-06-05 02:45:00
+ETTm1,125,failure,thermal_runaway,67929,67986,68005,"{'amp_sigma': 2.8990187148670508, 'power': 2.4249088811424357, 'precursor_steps': 57, 'outage_steps': 15}",2018-06-08 14:15:00,2018-06-09 04:30:00,2018-06-09 09:15:00
+ETTm1,126,failure,intermittent_arcing,68738,68750,68767,"{'rate_end': 0.4049898779457885, 'amp_sigma': 4.640143002837917, 'n_spikes': 2, 'precursor_steps': 12, 'outage_steps': 13}",2018-06-17 00:30:00,2018-06-17 03:30:00,2018-06-17 07:45:00
+ETTm1,127,failure,load_oscillation,69131,69190,69202,"{'amp_sigma': 2.514367538188425, 'period_steps': 6.799431656895124, 'power': 1.0589271852866926, 'precursor_steps': 59, 'outage_steps': 8}",2018-06-21 02:45:00,2018-06-21 17:30:00,2018-06-21 20:30:00
+ETTm1,128,nuisance,benign_thermal_bump,29664,-1,29683,{'amp_sigma': 1.3287193829256092},2017-05-06 00:00:00,,2017-05-06 04:45:00
+ETTm1,129,nuisance,benign_load_surge,4302,-1,4315,{'amp_sigma': 1.8923389807421556},2016-08-14 19:30:00,,2016-08-14 22:45:00
+ETTm1,130,nuisance,benign_thermal_bump,54448,-1,54479,{'amp_sigma': 1.0282677724342084},2018-01-19 04:00:00,,2018-01-19 11:45:00
+ETTm1,131,nuisance,benign_load_surge,31911,-1,31916,{'amp_sigma': 1.8852817459443472},2017-05-29 09:45:00,,2017-05-29 11:00:00
+ETTm1,132,nuisance,benign_oscillation,13665,-1,13670,"{'amp_sigma': 2.35492185426197, 'period_steps': 10.303214359852102}",2016-11-20 08:15:00,,2016-11-20 09:30:00
+ETTm1,133,nuisance,benign_thermal_bump,17579,-1,17600,{'amp_sigma': 2.4998956407969968},2016-12-31 02:45:00,,2016-12-31 08:00:00
+ETTm1,134,nuisance,benign_thermal_bump,2247,-1,2278,{'amp_sigma': 1.5777876268822915},2016-07-24 09:45:00,,2016-07-24 17:30:00
+ETTm1,135,nuisance,benign_thermal_bump,18245,-1,18266,{'amp_sigma': 2.1345592329586878},2017-01-07 01:15:00,,2017-01-07 06:30:00
+ETTm1,136,nuisance,benign_oscillation,65864,-1,65874,"{'amp_sigma': 1.7696020311534901, 'period_steps': 10.002745072705789}",2018-05-18 02:00:00,,2018-05-18 04:30:00
+ETTm1,137,nuisance,benign_thermal_bump,9730,-1,9742,{'amp_sigma': 2.8573058279557726},2016-10-10 08:30:00,,2016-10-10 11:30:00
+ETTm1,138,nuisance,benign_thermal_bump,43998,-1,44007,{'amp_sigma': 1.039943413829689},2017-10-02 07:30:00,,2017-10-02 09:45:00
+ETTm1,139,nuisance,benign_oscillation,16092,-1,16101,"{'amp_sigma': 1.2113400442977813, 'period_steps': 9.770572909783748}",2016-12-15 15:00:00,,2016-12-15 17:15:00
+ETTm1,140,nuisance,benign_load_surge,30227,-1,30240,{'amp_sigma': 2.6625475448668032},2017-05-11 20:45:00,,2017-05-12 00:00:00
+ETTm1,141,nuisance,benign_oscillation,48363,-1,48367,"{'amp_sigma': 2.0182195598851482, 'period_steps': 5.982821527489373}",2017-11-16 18:45:00,,2017-11-16 19:45:00
+ETTm1,142,nuisance,benign_oscillation,490,-1,496,"{'amp_sigma': 2.327651838646844, 'period_steps': 4.962574252127485}",2016-07-06 02:30:00,,2016-07-06 04:00:00
+ETTm1,143,nuisance,sensor_glitch,53598,-1,53600,"{'channel': 'LULL', 'amp_sigma': 3.77342684445357}",2018-01-10 07:30:00,,2018-01-10 08:00:00
+ETTm1,144,nuisance,benign_load_surge,29801,-1,29811,{'amp_sigma': 1.5358805521008065},2017-05-07 10:15:00,,2017-05-07 12:45:00
+ETTm1,145,nuisance,benign_oscillation,50641,-1,50652,"{'amp_sigma': 2.296962442885912, 'period_steps': 7.581945605397073}",2017-12-10 12:15:00,,2017-12-10 15:00:00
+ETTm1,146,nuisance,benign_load_surge,41510,-1,41521,{'amp_sigma': 1.9196898632480097},2017-09-06 09:30:00,,2017-09-06 12:15:00
+ETTm1,147,nuisance,benign_thermal_bump,54099,-1,54127,{'amp_sigma': 1.4377426718002706},2018-01-15 12:45:00,,2018-01-15 19:45:00
+ETTm1,148,nuisance,sensor_glitch,52075,-1,52076,"{'channel': 'MUFL', 'amp_sigma': 4.902088726026976}",2017-12-25 10:45:00,,2017-12-25 11:00:00
+ETTm1,149,nuisance,sensor_glitch,52621,-1,52623,"{'channel': 'MULL', 'amp_sigma': 6.377567043633342}",2017-12-31 03:15:00,,2017-12-31 03:45:00
+ETTm1,150,nuisance,benign_load_surge,67330,-1,67345,{'amp_sigma': 3.4028472055462773},2018-06-02 08:30:00,,2018-06-02 12:15:00
+ETTm1,151,nuisance,benign_oscillation,59283,-1,59298,"{'amp_sigma': 1.8082065849460787, 'period_steps': 8.714541982779338}",2018-03-10 12:45:00,,2018-03-10 16:30:00
+ETTm1,152,nuisance,sensor_glitch,44292,-1,44293,"{'channel': 'MUFL', 'amp_sigma': 6.4482919156283645}",2017-10-05 09:00:00,,2017-10-05 09:15:00
+ETTm1,153,nuisance,sensor_glitch,42950,-1,42951,"{'channel': 'MUFL', 'amp_sigma': 7.533384035720798}",2017-09-21 09:30:00,,2017-09-21 09:45:00
+ETTm1,154,nuisance,benign_oscillation,27477,-1,27484,"{'amp_sigma': 1.2621228101007345, 'period_steps': 9.86849817639906}",2017-04-13 05:15:00,,2017-04-13 07:00:00
+ETTm1,155,nuisance,benign_oscillation,44911,-1,44922,"{'amp_sigma': 1.3312868112762892, 'period_steps': 7.534684548102321}",2017-10-11 19:45:00,,2017-10-11 22:30:00
+ETTm1,156,nuisance,benign_load_surge,65320,-1,65327,{'amp_sigma': 2.2330828098799698},2018-05-12 10:00:00,,2018-05-12 11:45:00
+ETTm1,157,nuisance,benign_load_surge,27430,-1,27442,{'amp_sigma': 2.970413235354864},2017-04-12 17:30:00,,2017-04-12 20:30:00
+ETTm1,158,nuisance,benign_thermal_bump,10029,-1,10047,{'amp_sigma': 1.920613149836964},2016-10-13 11:15:00,,2016-10-13 15:45:00
+ETTm1,159,nuisance,sensor_glitch,55908,-1,55909,"{'channel': 'HULL', 'amp_sigma': 4.114147654165636}",2018-02-03 09:00:00,,2018-02-03 09:15:00
+ETTm1,160,nuisance,benign_thermal_bump,68932,-1,68953,{'amp_sigma': 1.1530083483795834},2018-06-19 01:00:00,,2018-06-19 06:15:00
+ETTm1,161,nuisance,benign_thermal_bump,60949,-1,60979,{'amp_sigma': 1.3983300228466438},2018-03-27 21:15:00,,2018-03-28 04:45:00
+ETTm1,162,nuisance,benign_oscillation,15983,-1,15988,"{'amp_sigma': 2.0701583302545545, 'period_steps': 5.595885731233019}",2016-12-14 11:45:00,,2016-12-14 13:00:00
+ETTm1,163,nuisance,benign_thermal_bump,42015,-1,42029,{'amp_sigma': 2.942951160478484},2017-09-11 15:45:00,,2017-09-11 19:15:00
+ETTm1,164,nuisance,benign_oscillation,52756,-1,52765,"{'amp_sigma': 1.4719244717289823, 'period_steps': 8.6029357784298}",2018-01-01 13:00:00,,2018-01-01 15:15:00
+ETTm1,165,nuisance,benign_thermal_bump,35802,-1,35820,{'amp_sigma': 1.8784210535196335},2017-07-08 22:30:00,,2017-07-09 03:00:00
+ETTm1,166,nuisance,benign_thermal_bump,46795,-1,46819,{'amp_sigma': 1.3899240240005177},2017-10-31 10:45:00,,2017-10-31 16:45:00
+ETTm1,167,nuisance,sensor_glitch,43631,-1,43632,"{'channel': 'MUFL', 'amp_sigma': 7.970911450081184}",2017-09-28 11:45:00,,2017-09-28 12:00:00
+ETTm1,168,nuisance,benign_oscillation,38583,-1,38591,"{'amp_sigma': 1.8812039100817755, 'period_steps': 6.379793077751188}",2017-08-06 21:45:00,,2017-08-06 23:45:00
+ETTm1,169,nuisance,sensor_glitch,45507,-1,45508,"{'channel': 'LULL', 'amp_sigma': 4.260868950708036}",2017-10-18 00:45:00,,2017-10-18 01:00:00
+ETTm1,170,nuisance,sensor_glitch,18188,-1,18189,"{'channel': 'LULL', 'amp_sigma': 6.405773380075446}",2017-01-06 11:00:00,,2017-01-06 11:15:00
+ETTm1,171,nuisance,benign_load_surge,1134,-1,1145,{'amp_sigma': 2.9297012138601866},2016-07-12 19:30:00,,2016-07-12 22:15:00
+ETTm1,172,nuisance,benign_thermal_bump,40061,-1,40092,{'amp_sigma': 1.3516426227979879},2017-08-22 07:15:00,,2017-08-22 15:00:00
+ETTm1,173,nuisance,benign_load_surge,55013,-1,55017,{'amp_sigma': 3.8448052964422685},2018-01-25 01:15:00,,2018-01-25 02:15:00
+ETTm1,174,nuisance,benign_load_surge,1092,-1,1103,{'amp_sigma': 3.7142083833678465},2016-07-12 09:00:00,,2016-07-12 11:45:00
+ETTm1,175,nuisance,benign_thermal_bump,5265,-1,5281,{'amp_sigma': 1.333779799209091},2016-08-24 20:15:00,,2016-08-25 00:15:00
+ETTm1,176,nuisance,sensor_glitch,16062,-1,16064,"{'channel': 'HULL', 'amp_sigma': 5.33666279080039}",2016-12-15 07:30:00,,2016-12-15 08:00:00
+ETTm1,177,nuisance,sensor_glitch,45073,-1,45074,"{'channel': 'LUFL', 'amp_sigma': 7.8036404013978675}",2017-10-13 12:15:00,,2017-10-13 12:30:00
+ETTm1,178,nuisance,benign_thermal_bump,20332,-1,20363,{'amp_sigma': 1.393227043098376},2017-01-28 19:00:00,,2017-01-29 02:45:00
+ETTm1,179,nuisance,sensor_glitch,37469,-1,37470,"{'channel': 'MULL', 'amp_sigma': 6.072493087973247}",2017-07-26 07:15:00,,2017-07-26 07:30:00
+ETTm1,180,nuisance,benign_thermal_bump,25022,-1,25039,{'amp_sigma': 2.239681460261221},2017-03-18 15:30:00,,2017-03-18 19:45:00
+ETTm1,181,nuisance,benign_load_surge,53964,-1,53969,{'amp_sigma': 3.651730279997258},2018-01-14 03:00:00,,2018-01-14 04:15:00
+ETTm1,182,nuisance,benign_oscillation,26146,-1,26156,"{'amp_sigma': 2.2467092049038833, 'period_steps': 10.61860426648012}",2017-03-30 08:30:00,,2017-03-30 11:00:00
+ETTm1,183,nuisance,benign_oscillation,67258,-1,67263,"{'amp_sigma': 1.717592859423739, 'period_steps': 4.599620120218199}",2018-06-01 14:30:00,,2018-06-01 15:45:00
+ETTm1,184,nuisance,benign_thermal_bump,52804,-1,52818,{'amp_sigma': 1.634423250233952},2018-01-02 01:00:00,,2018-01-02 04:30:00
+ETTm1,185,nuisance,benign_oscillation,10095,-1,10103,"{'amp_sigma': 1.441495692754671, 'period_steps': 4.786018558483529}",2016-10-14 03:45:00,,2016-10-14 05:45:00
+ETTm1,186,nuisance,benign_oscillation,9318,-1,9323,"{'amp_sigma': 2.240973604329515, 'period_steps': 7.507555992524662}",2016-10-06 01:30:00,,2016-10-06 02:45:00
+ETTm1,187,nuisance,benign_load_surge,37661,-1,37671,{'amp_sigma': 3.4704956762380026},2017-07-28 07:15:00,,2017-07-28 09:45:00
+ETTm1,188,nuisance,benign_oscillation,35894,-1,35906,"{'amp_sigma': 1.037509050080382, 'period_steps': 6.443917847454507}",2017-07-09 21:30:00,,2017-07-10 00:30:00
+ETTm1,189,nuisance,benign_thermal_bump,30585,-1,30612,{'amp_sigma': 1.8257337619591105},2017-05-15 14:15:00,,2017-05-15 21:00:00
+ETTm1,190,nuisance,benign_thermal_bump,52144,-1,52161,{'amp_sigma': 1.9360057871491188},2017-12-26 04:00:00,,2017-12-26 08:15:00
+ETTm1,191,nuisance,benign_thermal_bump,40103,-1,40132,{'amp_sigma': 1.621866860341759},2017-08-22 17:45:00,,2017-08-23 01:00:00
+ETTm1,192,nuisance,benign_load_surge,10801,-1,10805,{'amp_sigma': 3.7782120884128427},2016-10-21 12:15:00,,2016-10-21 13:15:00
+ETTm1,193,nuisance,sensor_glitch,57789,-1,57790,"{'channel': 'MUFL', 'amp_sigma': 3.2618839104166786}",2018-02-22 23:15:00,,2018-02-22 23:30:00
+ETTm1,194,nuisance,sensor_glitch,53071,-1,53073,"{'channel': 'OT', 'amp_sigma': 4.851621125045328}",2018-01-04 19:45:00,,2018-01-04 20:15:00
+ETTm1,195,nuisance,benign_thermal_bump,28334,-1,28362,{'amp_sigma': 2.5524468532099407},2017-04-22 03:30:00,,2017-04-22 10:30:00
+ETTm1,196,nuisance,sensor_glitch,8347,-1,8348,"{'channel': 'OT', 'amp_sigma': 5.719572954189472}",2016-09-25 22:45:00,,2016-09-25 23:00:00
+ETTm1,197,nuisance,benign_thermal_bump,68319,-1,68334,{'amp_sigma': 2.122068841816451},2018-06-12 15:45:00,,2018-06-12 19:30:00
+ETTm1,198,nuisance,sensor_glitch,25447,-1,25448,"{'channel': 'MULL', 'amp_sigma': 5.7537172294569645}",2017-03-23 01:45:00,,2017-03-23 02:00:00
+ETTm1,199,nuisance,benign_oscillation,8797,-1,8802,"{'amp_sigma': 2.3500034522769933, 'period_steps': 9.126026357151162}",2016-09-30 15:15:00,,2016-09-30 16:30:00
+ETTm1,200,nuisance,benign_load_surge,60106,-1,60112,{'amp_sigma': 1.6165740654858052},2018-03-19 02:30:00,,2018-03-19 04:00:00
+ETTm1,201,nuisance,sensor_glitch,23273,-1,23274,"{'channel': 'MULL', 'amp_sigma': 5.491187255111096}",2017-02-28 10:15:00,,2017-02-28 10:30:00
+ETTm1,202,nuisance,benign_oscillation,37247,-1,37259,"{'amp_sigma': 1.0240701209482164, 'period_steps': 10.749692666742908}",2017-07-23 23:45:00,,2017-07-24 02:45:00
+ETTm1,203,nuisance,benign_oscillation,31986,-1,31990,"{'amp_sigma': 2.3044415423846027, 'period_steps': 10.663807876433665}",2017-05-30 04:30:00,,2017-05-30 05:30:00
+ETTm1,204,nuisance,sensor_glitch,42784,-1,42785,"{'channel': 'LULL', 'amp_sigma': 5.823497602652455}",2017-09-19 16:00:00,,2017-09-19 16:15:00
+ETTm1,205,nuisance,benign_oscillation,67770,-1,67785,"{'amp_sigma': 1.3173658793352407, 'period_steps': 5.632907976167855}",2018-06-06 22:30:00,,2018-06-07 02:15:00
+ETTm1,206,nuisance,benign_thermal_bump,10400,-1,10415,{'amp_sigma': 1.0802565213396753},2016-10-17 08:00:00,,2016-10-17 11:45:00
+ETTm1,207,nuisance,benign_load_surge,7061,-1,7072,{'amp_sigma': 2.1552315806516957},2016-09-12 13:15:00,,2016-09-12 16:00:00
+ETTm1,208,nuisance,benign_thermal_bump,18588,-1,18615,{'amp_sigma': 1.8159309806876183},2017-01-10 15:00:00,,2017-01-10 21:45:00
+ETTm1,209,nuisance,benign_thermal_bump,3988,-1,4012,{'amp_sigma': 2.1392196513501722},2016-08-11 13:00:00,,2016-08-11 19:00:00
+ETTm1,210,nuisance,benign_oscillation,21343,-1,21348,"{'amp_sigma': 1.8179159654904284, 'period_steps': 8.610755989501218}",2017-02-08 07:45:00,,2017-02-08 09:00:00
+ETTm1,211,nuisance,sensor_glitch,16175,-1,16176,"{'channel': 'HUFL', 'amp_sigma': 7.986863728506135}",2016-12-16 11:45:00,,2016-12-16 12:00:00
+ETTm1,212,nuisance,benign_thermal_bump,56479,-1,56497,{'amp_sigma': 2.664610403988883},2018-02-09 07:45:00,,2018-02-09 12:15:00
+ETTm1,213,nuisance,benign_thermal_bump,45973,-1,45989,{'amp_sigma': 2.5786046151398434},2017-10-22 21:15:00,,2017-10-23 01:15:00
+ETTm1,214,nuisance,benign_oscillation,36984,-1,36999,"{'amp_sigma': 1.8001594173259794, 'period_steps': 4.547951347705603}",2017-07-21 06:00:00,,2017-07-21 09:45:00
+ETTm1,215,nuisance,benign_thermal_bump,18012,-1,18020,{'amp_sigma': 1.362182136311204},2017-01-04 15:00:00,,2017-01-04 17:00:00
+ETTm1,216,nuisance,benign_load_surge,38616,-1,38627,{'amp_sigma': 2.180346415282195},2017-08-07 06:00:00,,2017-08-07 08:45:00
+ETTm1,217,nuisance,benign_load_surge,62350,-1,62358,{'amp_sigma': 3.7068455136142813},2018-04-11 11:30:00,,2018-04-11 13:30:00
+ETTm1,218,nuisance,benign_thermal_bump,64426,-1,64452,{'amp_sigma': 1.3961006614017333},2018-05-03 02:30:00,,2018-05-03 09:00:00
+ETTm1,219,nuisance,benign_load_surge,63558,-1,63572,{'amp_sigma': 2.9603119481955265},2018-04-24 01:30:00,,2018-04-24 05:00:00
+ETTm1,220,nuisance,benign_thermal_bump,5645,-1,5670,{'amp_sigma': 2.4268459903895723},2016-08-28 19:15:00,,2016-08-29 01:30:00
+ETTm1,221,nuisance,benign_thermal_bump,7645,-1,7657,{'amp_sigma': 2.721683273595736},2016-09-18 15:15:00,,2016-09-18 18:15:00
+ETTm1,222,nuisance,benign_load_surge,13370,-1,13377,{'amp_sigma': 3.995026786392233},2016-11-17 06:30:00,,2016-11-17 08:15:00
+ETTm1,223,nuisance,sensor_glitch,43420,-1,43422,"{'channel': 'MULL', 'amp_sigma': 6.871609963170183}",2017-09-26 07:00:00,,2017-09-26 07:30:00
+ETTm1,224,nuisance,benign_load_surge,39437,-1,39446,{'amp_sigma': 1.5707014768469434},2017-08-15 19:15:00,,2017-08-15 21:30:00
+ETTm1,225,nuisance,benign_thermal_bump,8368,-1,8380,{'amp_sigma': 2.0952380892934164},2016-09-26 04:00:00,,2016-09-26 07:00:00
+ETTm1,226,nuisance,benign_oscillation,4503,-1,4517,"{'amp_sigma': 2.0817984859170786, 'period_steps': 4.252285976106644}",2016-08-16 21:45:00,,2016-08-17 01:15:00
+ETTm1,227,nuisance,benign_thermal_bump,3637,-1,3645,{'amp_sigma': 1.2241391727586817},2016-08-07 21:15:00,,2016-08-07 23:15:00
+ETTm1,228,nuisance,benign_load_surge,34831,-1,34840,{'amp_sigma': 3.139218236440657},2017-06-28 19:45:00,,2017-06-28 22:00:00
+ETTm1,229,nuisance,benign_load_surge,14419,-1,14428,{'amp_sigma': 3.1214969008000097},2016-11-28 04:45:00,,2016-11-28 07:00:00
+ETTm1,230,nuisance,benign_load_surge,23702,-1,23706,{'amp_sigma': 3.448340307834141},2017-03-04 21:30:00,,2017-03-04 22:30:00
+ETTm1,231,nuisance,benign_load_surge,36246,-1,36250,{'amp_sigma': 1.8985702141417518},2017-07-13 13:30:00,,2017-07-13 14:30:00
+ETTm1,232,nuisance,benign_thermal_bump,64632,-1,64642,{'amp_sigma': 1.6213421359993299},2018-05-05 06:00:00,,2018-05-05 08:30:00
+ETTm1,233,nuisance,benign_thermal_bump,57693,-1,57723,{'amp_sigma': 1.1771632229347115},2018-02-21 23:15:00,,2018-02-22 06:45:00
+ETTm1,234,nuisance,benign_thermal_bump,42426,-1,42437,{'amp_sigma': 1.0640202622898853},2017-09-15 22:30:00,,2017-09-16 01:15:00
+ETTm1,235,nuisance,benign_thermal_bump,68591,-1,68615,{'amp_sigma': 1.438699540438393},2018-06-15 11:45:00,,2018-06-15 17:45:00
+ETTm1,236,nuisance,benign_load_surge,7083,-1,7097,{'amp_sigma': 2.8757481761388894},2016-09-12 18:45:00,,2016-09-12 22:15:00
+ETTm1,237,nuisance,benign_oscillation,359,-1,363,"{'amp_sigma': 2.0753360417046958, 'period_steps': 9.916757342778226}",2016-07-04 17:45:00,,2016-07-04 18:45:00
+ETTm1,238,nuisance,benign_thermal_bump,55740,-1,55766,{'amp_sigma': 2.826801661650589},2018-02-01 15:00:00,,2018-02-01 21:30:00
+ETTm1,239,nuisance,benign_thermal_bump,33974,-1,34002,{'amp_sigma': 1.5848364600789158},2017-06-19 21:30:00,,2017-06-20 04:30:00
+ETTm1,240,nuisance,benign_oscillation,818,-1,828,"{'amp_sigma': 2.18906851760484, 'period_steps': 11.377684228853665}",2016-07-09 12:30:00,,2016-07-09 15:00:00
+ETTm1,241,nuisance,benign_thermal_bump,47924,-1,47940,{'amp_sigma': 1.2937262890231016},2017-11-12 05:00:00,,2017-11-12 09:00:00
+ETTm1,242,nuisance,benign_oscillation,18112,-1,18122,"{'amp_sigma': 2.068918268290304, 'period_steps': 10.046756461474985}",2017-01-05 16:00:00,,2017-01-05 18:30:00
+ETTm1,243,nuisance,benign_oscillation,39462,-1,39473,"{'amp_sigma': 1.8020040927184335, 'period_steps': 7.2060379364221685}",2017-08-16 01:30:00,,2017-08-16 04:15:00
+ETTm1,244,nuisance,benign_load_surge,21029,-1,21038,{'amp_sigma': 2.4496870504843553},2017-02-05 01:15:00,,2017-02-05 03:30:00
+ETTm1,245,nuisance,benign_load_surge,42215,-1,42223,{'amp_sigma': 3.6966985904223875},2017-09-13 17:45:00,,2017-09-13 19:45:00
+ETTm1,246,nuisance,benign_oscillation,46451,-1,46465,"{'amp_sigma': 1.5994263021607837, 'period_steps': 6.543128529740408}",2017-10-27 20:45:00,,2017-10-28 00:15:00
+ETTm1,247,nuisance,benign_thermal_bump,20779,-1,20809,{'amp_sigma': 2.505574015976265},2017-02-02 10:45:00,,2017-02-02 18:15:00
+ETTm1,248,nuisance,benign_thermal_bump,26839,-1,26863,{'amp_sigma': 2.9699803899042925},2017-04-06 13:45:00,,2017-04-06 19:45:00
+ETTm1,249,nuisance,benign_thermal_bump,47982,-1,47991,{'amp_sigma': 2.3262822055017622},2017-11-12 19:30:00,,2017-11-12 21:45:00
+ETTm1,250,nuisance,benign_thermal_bump,26327,-1,26338,{'amp_sigma': 1.2164683946925177},2017-04-01 05:45:00,,2017-04-01 08:30:00
+ETTm1,251,nuisance,benign_load_surge,64104,-1,64110,{'amp_sigma': 3.4002538282820174},2018-04-29 18:00:00,,2018-04-29 19:30:00
+ETTm1,252,nuisance,benign_load_surge,43099,-1,43112,{'amp_sigma': 3.3260741803587677},2017-09-22 22:45:00,,2017-09-23 02:00:00
+ETTm1,253,nuisance,benign_thermal_bump,64914,-1,64935,{'amp_sigma': 1.7144567296160667},2018-05-08 04:30:00,,2018-05-08 09:45:00
+ETTm1,254,nuisance,benign_load_surge,34757,-1,34763,{'amp_sigma': 3.0334214216286814},2017-06-28 01:15:00,,2017-06-28 02:45:00
+ETTm1,255,nuisance,sensor_glitch,22193,-1,22195,"{'channel': 'OT', 'amp_sigma': 7.9803950727134465}",2017-02-17 04:15:00,,2017-02-17 04:45:00
+ETTm1,256,nuisance,benign_oscillation,44024,-1,44033,"{'amp_sigma': 2.2521731675267866, 'period_steps': 7.142353353356323}",2017-10-02 14:00:00,,2017-10-02 16:15:00
+ETTm1,257,nuisance,benign_oscillation,22765,-1,22772,"{'amp_sigma': 2.250968901416543, 'period_steps': 4.779977682561312}",2017-02-23 03:15:00,,2017-02-23 05:00:00
+ETTm1,258,nuisance,benign_load_surge,8064,-1,8072,{'amp_sigma': 3.908948161951209},2016-09-23 00:00:00,,2016-09-23 02:00:00
+ETTm1,259,nuisance,benign_thermal_bump,63369,-1,63383,{'amp_sigma': 1.0605675553365606},2018-04-22 02:15:00,,2018-04-22 05:45:00
+ETTm1,260,nuisance,benign_thermal_bump,30923,-1,30936,{'amp_sigma': 1.5305453289910536},2017-05-19 02:45:00,,2017-05-19 06:00:00
+ETTm1,261,nuisance,benign_load_surge,8879,-1,8893,{'amp_sigma': 3.3362577602916788},2016-10-01 11:45:00,,2016-10-01 15:15:00
+ETTm1,262,nuisance,sensor_glitch,6050,-1,6052,"{'channel': 'LUFL', 'amp_sigma': 4.4983226817587845}",2016-09-02 00:30:00,,2016-09-02 01:00:00
+ETTm1,263,nuisance,benign_thermal_bump,22927,-1,22946,{'amp_sigma': 2.4672166880433166},2017-02-24 19:45:00,,2017-02-25 00:30:00
+ETTm1,264,nuisance,benign_oscillation,10000,-1,10004,"{'amp_sigma': 2.1087535927977594, 'period_steps': 10.977841450675186}",2016-10-13 04:00:00,,2016-10-13 05:00:00
+ETTm1,265,nuisance,benign_oscillation,63959,-1,63971,"{'amp_sigma': 1.84086585815493, 'period_steps': 6.945909240950852}",2018-04-28 05:45:00,,2018-04-28 08:45:00
+ETTm1,266,nuisance,benign_thermal_bump,36440,-1,36462,{'amp_sigma': 2.3197399990315666},2017-07-15 14:00:00,,2017-07-15 19:30:00
+ETTm1,267,nuisance,benign_thermal_bump,16600,-1,16614,{'amp_sigma': 2.7444524347158996},2016-12-20 22:00:00,,2016-12-21 01:30:00
+ETTm1,268,nuisance,benign_thermal_bump,51490,-1,51502,{'amp_sigma': 1.361763106895714},2017-12-19 08:30:00,,2017-12-19 11:30:00
+ETTm1,269,nuisance,benign_oscillation,20911,-1,20920,"{'amp_sigma': 2.005981370808581, 'period_steps': 10.52665460945557}",2017-02-03 19:45:00,,2017-02-03 22:00:00
+ETTm1,270,nuisance,benign_load_surge,45464,-1,45470,{'amp_sigma': 3.4145533479374244},2017-10-17 14:00:00,,2017-10-17 15:30:00
+ETTm1,271,nuisance,benign_thermal_bump,31643,-1,31659,{'amp_sigma': 1.064428651669589},2017-05-26 14:45:00,,2017-05-26 18:45:00
+ETTm1,272,nuisance,benign_load_surge,53558,-1,53563,{'amp_sigma': 2.7015485284146794},2018-01-09 21:30:00,,2018-01-09 22:45:00
+ETTm1,273,nuisance,benign_oscillation,13516,-1,13531,"{'amp_sigma': 2.465012337837348, 'period_steps': 5.640934481795605}",2016-11-18 19:00:00,,2016-11-18 22:45:00
+ETTm1,274,nuisance,benign_load_surge,69497,-1,69503,{'amp_sigma': 2.366686570662197},2018-06-24 22:15:00,,2018-06-24 23:45:00
+ETTm1,275,nuisance,sensor_glitch,30355,-1,30357,"{'channel': 'HULL', 'amp_sigma': 6.404241152006782}",2017-05-13 04:45:00,,2017-05-13 05:15:00
+ETTm1,276,nuisance,benign_thermal_bump,28280,-1,28300,{'amp_sigma': 1.4089047752451205},2017-04-21 14:00:00,,2017-04-21 19:00:00
+ETTm1,277,nuisance,benign_thermal_bump,1482,-1,1491,{'amp_sigma': 1.9976552923993767},2016-07-16 10:30:00,,2016-07-16 12:45:00
+ETTm1,278,nuisance,benign_oscillation,1988,-1,2001,"{'amp_sigma': 1.877605121635757, 'period_steps': 4.517031718307054}",2016-07-21 17:00:00,,2016-07-21 20:15:00
+ETTm1,279,nuisance,benign_load_surge,51317,-1,51329,{'amp_sigma': 3.455924324475505},2017-12-17 13:15:00,,2017-12-17 16:15:00
+ETTm1,280,nuisance,sensor_glitch,41831,-1,41832,"{'channel': 'OT', 'amp_sigma': 4.737494572697713}",2017-09-09 17:45:00,,2017-09-09 18:00:00
+ETTm1,281,nuisance,benign_load_surge,19347,-1,19356,{'amp_sigma': 3.735340077394014},2017-01-18 12:45:00,,2017-01-18 15:00:00
+ETTm1,282,nuisance,benign_load_surge,26207,-1,26211,{'amp_sigma': 3.094068493534638},2017-03-30 23:45:00,,2017-03-31 00:45:00
+ETTm1,283,nuisance,benign_thermal_bump,44873,-1,44881,{'amp_sigma': 2.2699207537560753},2017-10-11 10:15:00,,2017-10-11 12:15:00
+ETTm1,284,nuisance,sensor_glitch,62375,-1,62376,"{'channel': 'LULL', 'amp_sigma': 6.316200465346551}",2018-04-11 17:45:00,,2018-04-11 18:00:00
+ETTm1,285,nuisance,sensor_glitch,67732,-1,67733,"{'channel': 'MULL', 'amp_sigma': 5.965870727423854}",2018-06-06 13:00:00,,2018-06-06 13:15:00
+ETTm1,286,nuisance,benign_thermal_bump,64992,-1,65004,{'amp_sigma': 2.770280967346634},2018-05-09 00:00:00,,2018-05-09 03:00:00
+ETTm1,287,nuisance,sensor_glitch,49365,-1,49367,"{'channel': 'MULL', 'amp_sigma': 4.319030496071375}",2017-11-27 05:15:00,,2017-11-27 05:45:00
+ETTm1,288,nuisance,benign_load_surge,39618,-1,39633,{'amp_sigma': 1.5129070158531066},2017-08-17 16:30:00,,2017-08-17 20:15:00
+ETTm1,289,nuisance,benign_thermal_bump,37835,-1,37854,{'amp_sigma': 2.5599675855679838},2017-07-30 02:45:00,,2017-07-30 07:30:00
+ETTm1,290,nuisance,benign_load_surge,2856,-1,2866,{'amp_sigma': 2.369058368329126},2016-07-30 18:00:00,,2016-07-30 20:30:00
+ETTm1,291,nuisance,sensor_glitch,21433,-1,21435,"{'channel': 'HULL', 'amp_sigma': 3.120668406082266}",2017-02-09 06:15:00,,2017-02-09 06:45:00
+ETTm1,292,nuisance,benign_thermal_bump,2963,-1,2985,{'amp_sigma': 1.3992838862768489},2016-07-31 20:45:00,,2016-08-01 02:15:00
+ETTm1,293,nuisance,benign_oscillation,36844,-1,36852,"{'amp_sigma': 2.2563544584725665, 'period_steps': 5.653391689690449}",2017-07-19 19:00:00,,2017-07-19 21:00:00
+ETTm1,294,nuisance,benign_load_surge,64697,-1,64709,{'amp_sigma': 2.2264879853741837},2018-05-05 22:15:00,,2018-05-06 01:15:00
+ETTm1,295,nuisance,benign_load_surge,34110,-1,34122,{'amp_sigma': 2.915948981957882},2017-06-21 07:30:00,,2017-06-21 10:30:00
+ETTm1,296,nuisance,benign_oscillation,3601,-1,3609,"{'amp_sigma': 1.6285366549088287, 'period_steps': 10.890583098448417}",2016-08-07 12:15:00,,2016-08-07 14:15:00
+ETTm1,297,nuisance,benign_oscillation,62306,-1,62312,"{'amp_sigma': 1.6959713131878615, 'period_steps': 5.257374888210565}",2018-04-11 00:30:00,,2018-04-11 02:00:00
+ETTm1,298,nuisance,sensor_glitch,61150,-1,61151,"{'channel': 'MUFL', 'amp_sigma': 3.925036125101515}",2018-03-29 23:30:00,,2018-03-29 23:45:00
+ETTm1,299,nuisance,sensor_glitch,11351,-1,11353,"{'channel': 'HULL', 'amp_sigma': 4.8430979316039}",2016-10-27 05:45:00,,2016-10-27 06:15:00
+ETTm1,300,nuisance,benign_oscillation,32341,-1,32353,"{'amp_sigma': 2.4086160495707207, 'period_steps': 9.728153127868628}",2017-06-02 21:15:00,,2017-06-03 00:15:00
+ETTm1,301,nuisance,benign_load_surge,10506,-1,10518,{'amp_sigma': 1.960324163353987},2016-10-18 10:30:00,,2016-10-18 13:30:00
+ETTm1,302,nuisance,benign_thermal_bump,38430,-1,38455,{'amp_sigma': 2.1306687792275323},2017-08-05 07:30:00,,2017-08-05 13:45:00
+ETTm1,303,nuisance,sensor_glitch,42045,-1,42047,"{'channel': 'HULL', 'amp_sigma': 3.6088648810798847}",2017-09-11 23:15:00,,2017-09-11 23:45:00
+ETTm1,304,nuisance,benign_load_surge,61951,-1,61964,{'amp_sigma': 2.16208022245586},2018-04-07 07:45:00,,2018-04-07 11:00:00
+ETTm1,305,nuisance,benign_oscillation,21541,-1,21556,"{'amp_sigma': 2.0058911598143636, 'period_steps': 9.185638542145403}",2017-02-10 09:15:00,,2017-02-10 13:00:00
+ETTm1,306,nuisance,benign_thermal_bump,57079,-1,57108,{'amp_sigma': 2.414367936567258},2018-02-15 13:45:00,,2018-02-15 21:00:00
+ETTm1,307,nuisance,benign_oscillation,34917,-1,34925,"{'amp_sigma': 1.6245189582691624, 'period_steps': 8.908377716862269}",2017-06-29 17:15:00,,2017-06-29 19:15:00
+ETTm1,308,nuisance,sensor_glitch,10117,-1,10118,"{'channel': 'MUFL', 'amp_sigma': 5.844241295410438}",2016-10-14 09:15:00,,2016-10-14 09:30:00
+ETTm2,0,failure,intermittent_arcing,731,765,796,"{'rate_end': 0.591533153554935, 'amp_sigma': 2.308900115439873, 'n_spikes': 3, 'precursor_steps': 34, 'outage_steps': 27}",2016-07-08 14:45:00,2016-07-08 23:15:00,2016-07-09 07:00:00
+ETTm2,1,failure,load_oscillation,1108,1157,1180,"{'amp_sigma': 3.750752386497315, 'period_steps': 9.214739862669717, 'power': 1.512547061976898, 'precursor_steps': 49, 'outage_steps': 19}",2016-07-12 13:00:00,2016-07-13 01:15:00,2016-07-13 07:00:00
+ETTm2,2,failure,thermal_runaway,1852,1918,1952,"{'amp_sigma': 2.592927965485773, 'power': 2.4274101247276807, 'precursor_steps': 66, 'outage_steps': 30}",2016-07-20 07:00:00,2016-07-20 23:30:00,2016-07-21 08:00:00
+ETTm2,3,failure,intermittent_arcing,2369,2430,2444,"{'rate_end': 0.3104094746364099, 'amp_sigma': 3.4922761733374257, 'n_spikes': 8, 'precursor_steps': 61, 'outage_steps': 10}",2016-07-25 16:15:00,2016-07-26 07:30:00,2016-07-26 11:00:00
+ETTm2,4,failure,thermal_runaway,2759,2811,2833,"{'amp_sigma': 3.985517201491567, 'power': 1.7332122826087277, 'precursor_steps': 52, 'outage_steps': 18}",2016-07-29 17:45:00,2016-07-30 06:45:00,2016-07-30 12:15:00
+ETTm2,5,failure,load_oscillation,3320,3349,3381,"{'amp_sigma': 3.5662224839301286, 'period_steps': 6.2511506546394555, 'power': 1.4796545356118909, 'precursor_steps': 29, 'outage_steps': 28}",2016-08-04 14:00:00,2016-08-04 21:15:00,2016-08-05 05:15:00
+ETTm2,6,failure,thermal_runaway,3786,3818,3845,"{'amp_sigma': 2.125092245760044, 'power': 2.388653408578183, 'precursor_steps': 32, 'outage_steps': 23}",2016-08-09 10:30:00,2016-08-09 18:30:00,2016-08-10 01:15:00
+ETTm2,7,failure,intermittent_arcing,4232,4289,4318,"{'rate_end': 0.42288781595845526, 'amp_sigma': 2.6159439455059816, 'n_spikes': 8, 'precursor_steps': 57, 'outage_steps': 25}",2016-08-14 02:00:00,2016-08-14 16:15:00,2016-08-14 23:30:00
+ETTm2,8,failure,load_oscillation,4621,4692,4720,"{'amp_sigma': 2.3287693951154615, 'period_steps': 5.88929103685909, 'power': 1.977941737338788, 'precursor_steps': 71, 'outage_steps': 24}",2016-08-18 03:15:00,2016-08-18 21:00:00,2016-08-19 04:00:00
+ETTm2,9,failure,intermittent_arcing,5337,5397,5414,"{'rate_end': 0.5488305069466122, 'amp_sigma': 2.7949279049964675, 'n_spikes': 9, 'precursor_steps': 60, 'outage_steps': 13}",2016-08-25 14:15:00,2016-08-26 05:15:00,2016-08-26 09:30:00
+ETTm2,10,failure,load_oscillation,5986,6013,6039,"{'amp_sigma': 1.9083780428905992, 'period_steps': 6.683765837198736, 'power': 1.4663831271015024, 'precursor_steps': 27, 'outage_steps': 22}",2016-09-01 08:30:00,2016-09-01 15:15:00,2016-09-01 21:45:00
+ETTm2,11,failure,thermal_runaway,6620,6661,6693,"{'amp_sigma': 3.8146505402027957, 'power': 1.6910421981648376, 'precursor_steps': 41, 'outage_steps': 28}",2016-09-07 23:00:00,2016-09-08 09:15:00,2016-09-08 17:15:00
+ETTm2,12,failure,load_oscillation,7282,7306,7341,"{'amp_sigma': 3.5401092190638463, 'period_steps': 9.665500091742228, 'power': 1.3752262484914295, 'precursor_steps': 24, 'outage_steps': 31}",2016-09-14 20:30:00,2016-09-15 02:30:00,2016-09-15 11:15:00
+ETTm2,13,failure,load_oscillation,7799,7855,7872,"{'amp_sigma': 3.5671893895075235, 'period_steps': 4.4817093462365, 'power': 1.8682579371508554, 'precursor_steps': 56, 'outage_steps': 13}",2016-09-20 05:45:00,2016-09-20 19:45:00,2016-09-21 00:00:00
+ETTm2,14,failure,thermal_runaway,8398,8421,8443,"{'amp_sigma': 3.2169511078317337, 'power': 1.6263111466017646, 'precursor_steps': 23, 'outage_steps': 18}",2016-09-26 11:30:00,2016-09-26 17:15:00,2016-09-26 22:45:00
+ETTm2,15,failure,load_oscillation,8777,8846,8864,"{'amp_sigma': 1.6668584051605482, 'period_steps': 8.428121274806056, 'power': 1.2671447262868085, 'precursor_steps': 69, 'outage_steps': 14}",2016-09-30 10:15:00,2016-10-01 03:30:00,2016-10-01 08:00:00
+ETTm2,16,failure,intermittent_arcing,9517,9548,9569,"{'rate_end': 0.397211628570651, 'amp_sigma': 5.672339917099141, 'n_spikes': 4, 'precursor_steps': 31, 'outage_steps': 17}",2016-10-08 03:15:00,2016-10-08 11:00:00,2016-10-08 16:15:00
+ETTm2,17,failure,sudden,10047,10047,10062,"{'precursor_steps': 0, 'outage_steps': 11}",2016-10-13 15:45:00,2016-10-13 15:45:00,2016-10-13 19:30:00
+ETTm2,18,failure,intermittent_arcing,10712,10776,10797,"{'rate_end': 0.3721946239660187, 'amp_sigma': 3.8268895244214396, 'n_spikes': 8, 'precursor_steps': 64, 'outage_steps': 17}",2016-10-20 14:00:00,2016-10-21 06:00:00,2016-10-21 11:15:00
+ETTm2,19,failure,load_oscillation,11194,11263,11285,"{'amp_sigma': 2.4679940983568653, 'period_steps': 4.9219692537028035, 'power': 1.8367478839329507, 'precursor_steps': 69, 'outage_steps': 18}",2016-10-25 14:30:00,2016-10-26 07:45:00,2016-10-26 13:15:00
+ETTm2,20,failure,thermal_runaway,11518,11567,11588,"{'amp_sigma': 2.404364857706854, 'power': 2.134650394889258, 'precursor_steps': 49, 'outage_steps': 17}",2016-10-28 23:30:00,2016-10-29 11:45:00,2016-10-29 17:00:00
+ETTm2,21,failure,load_oscillation,12169,12190,12210,"{'amp_sigma': 2.797757175015757, 'period_steps': 7.098192238719028, 'power': 1.3393901741350256, 'precursor_steps': 21, 'outage_steps': 16}",2016-11-04 18:15:00,2016-11-04 23:30:00,2016-11-05 04:30:00
+ETTm2,22,failure,sudden,12481,12481,12507,"{'precursor_steps': 0, 'outage_steps': 22}",2016-11-08 00:15:00,2016-11-08 00:15:00,2016-11-08 06:45:00
+ETTm2,23,failure,thermal_runaway,12985,13022,13042,"{'amp_sigma': 2.76678032772624, 'power': 2.2030884889314875, 'precursor_steps': 37, 'outage_steps': 16}",2016-11-13 06:15:00,2016-11-13 15:30:00,2016-11-13 20:30:00
+ETTm2,24,failure,load_oscillation,13704,13739,13762,"{'amp_sigma': 3.5230669727876216, 'period_steps': 9.42042838742556, 'power': 1.7826675232936788, 'precursor_steps': 35, 'outage_steps': 19}",2016-11-20 18:00:00,2016-11-21 02:45:00,2016-11-21 08:30:00
+ETTm2,25,failure,intermittent_arcing,14257,14288,14303,"{'rate_end': 0.46901931179018097, 'amp_sigma': 4.974254081404052, 'n_spikes': 4, 'precursor_steps': 31, 'outage_steps': 11}",2016-11-26 12:15:00,2016-11-26 20:00:00,2016-11-26 23:45:00
+ETTm2,26,failure,thermal_runaway,14790,14840,14853,"{'amp_sigma': 4.9864985287816275, 'power': 2.6454691770965257, 'precursor_steps': 50, 'outage_steps': 9}",2016-12-02 01:30:00,2016-12-02 14:00:00,2016-12-02 17:15:00
+ETTm2,27,failure,intermittent_arcing,15356,15387,15412,"{'rate_end': 0.2779171725884126, 'amp_sigma': 4.874549247064387, 'n_spikes': 1, 'precursor_steps': 31, 'outage_steps': 21}",2016-12-07 23:00:00,2016-12-08 06:45:00,2016-12-08 13:00:00
+ETTm2,28,failure,intermittent_arcing,16055,16102,16122,"{'rate_end': 0.3077856621476281, 'amp_sigma': 2.4982159579656167, 'n_spikes': 8, 'precursor_steps': 47, 'outage_steps': 16}",2016-12-15 05:45:00,2016-12-15 17:30:00,2016-12-15 22:30:00
+ETTm2,29,failure,intermittent_arcing,16697,16738,16752,"{'rate_end': 0.30725642359256566, 'amp_sigma': 3.5645520521027674, 'n_spikes': 5, 'precursor_steps': 41, 'outage_steps': 10}",2016-12-21 22:15:00,2016-12-22 08:30:00,2016-12-22 12:00:00
+ETTm2,30,failure,load_oscillation,17150,17179,17201,"{'amp_sigma': 3.2524457105192552, 'period_steps': 4.89982925662406, 'power': 1.468097177013936, 'precursor_steps': 29, 'outage_steps': 18}",2016-12-26 15:30:00,2016-12-26 22:45:00,2016-12-27 04:15:00
+ETTm2,31,failure,sudden,17684,17684,17707,"{'precursor_steps': 0, 'outage_steps': 19}",2017-01-01 05:00:00,2017-01-01 05:00:00,2017-01-01 10:45:00
+ETTm2,32,failure,intermittent_arcing,18344,18390,18416,"{'rate_end': 0.39162677282772135, 'amp_sigma': 5.350368738593926, 'n_spikes': 5, 'precursor_steps': 46, 'outage_steps': 22}",2017-01-08 02:00:00,2017-01-08 13:30:00,2017-01-08 20:00:00
+ETTm2,33,failure,intermittent_arcing,19138,19152,19182,"{'rate_end': 0.3183514951982347, 'amp_sigma': 2.7827386206550506, 'n_spikes': 0, 'precursor_steps': 14, 'outage_steps': 26}",2017-01-16 08:30:00,2017-01-16 12:00:00,2017-01-16 19:30:00
+ETTm2,34,failure,intermittent_arcing,19554,19578,19606,"{'rate_end': 0.5412590835379553, 'amp_sigma': 5.940827128825481, 'n_spikes': 4, 'precursor_steps': 24, 'outage_steps': 24}",2017-01-20 16:30:00,2017-01-20 22:30:00,2017-01-21 05:30:00
+ETTm2,35,failure,sudden,20246,20246,20279,"{'precursor_steps': 0, 'outage_steps': 29}",2017-01-27 21:30:00,2017-01-27 21:30:00,2017-01-28 05:45:00
+ETTm2,36,failure,intermittent_arcing,20794,20829,20845,"{'rate_end': 0.4399227390503905, 'amp_sigma': 2.998704674320495, 'n_spikes': 7, 'precursor_steps': 35, 'outage_steps': 12}",2017-02-02 14:30:00,2017-02-02 23:15:00,2017-02-03 03:15:00
+ETTm2,37,failure,load_oscillation,21347,21367,21390,"{'amp_sigma': 3.088381605189429, 'period_steps': 8.005823818073882, 'power': 1.4638225431115033, 'precursor_steps': 20, 'outage_steps': 19}",2017-02-08 08:45:00,2017-02-08 13:45:00,2017-02-08 19:30:00
+ETTm2,38,failure,load_oscillation,22094,22133,22166,"{'amp_sigma': 2.3224758941743477, 'period_steps': 10.559500253054717, 'power': 1.5445782567340012, 'precursor_steps': 39, 'outage_steps': 29}",2017-02-16 03:30:00,2017-02-16 13:15:00,2017-02-16 21:30:00
+ETTm2,39,failure,intermittent_arcing,22516,22574,22602,"{'rate_end': 0.5324612623551628, 'amp_sigma': 3.165884150794712, 'n_spikes': 10, 'precursor_steps': 58, 'outage_steps': 24}",2017-02-20 13:00:00,2017-02-21 03:30:00,2017-02-21 10:30:00
+ETTm2,40,failure,intermittent_arcing,22994,23024,23040,"{'rate_end': 0.5766825545884308, 'amp_sigma': 3.0479917214846344, 'n_spikes': 10, 'precursor_steps': 30, 'outage_steps': 12}",2017-02-25 12:30:00,2017-02-25 20:00:00,2017-02-26 00:00:00
+ETTm2,41,failure,thermal_runaway,23613,23643,23672,"{'amp_sigma': 2.802581630811619, 'power': 2.0325602127679154, 'precursor_steps': 30, 'outage_steps': 25}",2017-03-03 23:15:00,2017-03-04 06:45:00,2017-03-04 14:00:00
+ETTm2,42,failure,intermittent_arcing,24180,24200,24222,"{'rate_end': 0.35227504470115073, 'amp_sigma': 3.7897090573325354, 'n_spikes': 2, 'precursor_steps': 20, 'outage_steps': 18}",2017-03-09 21:00:00,2017-03-10 02:00:00,2017-03-10 07:30:00
+ETTm2,43,failure,sudden,24844,24844,24874,"{'precursor_steps': 0, 'outage_steps': 26}",2017-03-16 19:00:00,2017-03-16 19:00:00,2017-03-17 02:30:00
+ETTm2,44,failure,intermittent_arcing,25504,25563,25593,"{'rate_end': 0.41152796631226285, 'amp_sigma': 4.029920189062215, 'n_spikes': 4, 'precursor_steps': 59, 'outage_steps': 26}",2017-03-23 16:00:00,2017-03-24 06:45:00,2017-03-24 14:15:00
+ETTm2,45,failure,intermittent_arcing,26181,26195,26217,"{'rate_end': 0.5954917136559282, 'amp_sigma': 4.271665941724363, 'n_spikes': 5, 'precursor_steps': 14, 'outage_steps': 18}",2017-03-30 17:15:00,2017-03-30 20:45:00,2017-03-31 02:15:00
+ETTm2,46,failure,load_oscillation,26539,26597,26630,"{'amp_sigma': 3.8696147590356, 'period_steps': 8.34467716264926, 'power': 1.5101317787222999, 'precursor_steps': 58, 'outage_steps': 29}",2017-04-03 10:45:00,2017-04-04 01:15:00,2017-04-04 09:30:00
+ETTm2,47,failure,load_oscillation,27295,27326,27341,"{'amp_sigma': 3.8485144864151493, 'period_steps': 9.42794786202509, 'power': 1.943101422986952, 'precursor_steps': 31, 'outage_steps': 11}",2017-04-11 07:45:00,2017-04-11 15:30:00,2017-04-11 19:15:00
+ETTm2,48,failure,load_oscillation,27878,27909,27941,"{'amp_sigma': 3.680054044881416, 'period_steps': 6.297023511843223, 'power': 1.5863326229400765, 'precursor_steps': 31, 'outage_steps': 28}",2017-04-17 09:30:00,2017-04-17 17:15:00,2017-04-18 01:15:00
+ETTm2,49,failure,intermittent_arcing,28521,28590,28604,"{'rate_end': 0.4920109426820094, 'amp_sigma': 2.955141914817754, 'n_spikes': 12, 'precursor_steps': 69, 'outage_steps': 10}",2017-04-24 02:15:00,2017-04-24 19:30:00,2017-04-24 23:00:00
+ETTm2,50,failure,thermal_runaway,28897,28951,28964,"{'amp_sigma': 3.070232495202383, 'power': 2.2042825051978014, 'precursor_steps': 54, 'outage_steps': 9}",2017-04-28 00:15:00,2017-04-28 13:45:00,2017-04-28 17:00:00
+ETTm2,51,failure,thermal_runaway,29638,29651,29681,"{'amp_sigma': 3.562486599401817, 'power': 1.5392373947395706, 'precursor_steps': 13, 'outage_steps': 26}",2017-05-05 17:30:00,2017-05-05 20:45:00,2017-05-06 04:15:00
+ETTm2,52,failure,thermal_runaway,30343,30377,30391,"{'amp_sigma': 4.329497233137588, 'power': 1.5956613501180859, 'precursor_steps': 34, 'outage_steps': 10}",2017-05-13 01:45:00,2017-05-13 10:15:00,2017-05-13 13:45:00
+ETTm2,53,failure,intermittent_arcing,30614,30672,30707,"{'rate_end': 0.5267448883208612, 'amp_sigma': 5.323410687456764, 'n_spikes': 13, 'precursor_steps': 58, 'outage_steps': 31}",2017-05-15 21:30:00,2017-05-16 12:00:00,2017-05-16 20:45:00
+ETTm2,54,failure,intermittent_arcing,30924,30960,30980,"{'rate_end': 0.5987018824309197, 'amp_sigma': 2.6387020591859947, 'n_spikes': 12, 'precursor_steps': 36, 'outage_steps': 16}",2017-05-19 03:00:00,2017-05-19 12:00:00,2017-05-19 17:00:00
+ETTm2,55,failure,thermal_runaway,31201,31264,31294,"{'amp_sigma': 3.7356908103600066, 'power': 2.879857399247305, 'precursor_steps': 63, 'outage_steps': 26}",2017-05-22 00:15:00,2017-05-22 16:00:00,2017-05-22 23:30:00
+ETTm2,56,failure,load_oscillation,31520,31585,31598,"{'amp_sigma': 2.1316911280343778, 'period_steps': 11.267509083260197, 'power': 1.2605932441366297, 'precursor_steps': 65, 'outage_steps': 9}",2017-05-25 08:00:00,2017-05-26 00:15:00,2017-05-26 03:30:00
+ETTm2,57,failure,load_oscillation,31865,31887,31904,"{'amp_sigma': 2.1186620933900193, 'period_steps': 5.184248986714246, 'power': 1.533559381206426, 'precursor_steps': 22, 'outage_steps': 13}",2017-05-28 22:15:00,2017-05-29 03:45:00,2017-05-29 08:00:00
+ETTm2,58,failure,thermal_runaway,32540,32597,32622,"{'amp_sigma': 4.554184261497305, 'power': 1.936382387525414, 'precursor_steps': 57, 'outage_steps': 21}",2017-06-04 23:00:00,2017-06-05 13:15:00,2017-06-05 19:30:00
+ETTm2,59,failure,sudden,33132,33132,33165,"{'precursor_steps': 0, 'outage_steps': 29}",2017-06-11 03:00:00,2017-06-11 03:00:00,2017-06-11 11:15:00
+ETTm2,60,failure,thermal_runaway,33828,33852,33872,"{'amp_sigma': 2.9707631455259706, 'power': 2.970403984219969, 'precursor_steps': 24, 'outage_steps': 16}",2017-06-18 09:00:00,2017-06-18 15:00:00,2017-06-18 20:00:00
+ETTm2,61,failure,load_oscillation,34309,34370,34384,"{'amp_sigma': 2.3578115332553713, 'period_steps': 11.667156168431429, 'power': 1.7179540855478952, 'precursor_steps': 61, 'outage_steps': 10}",2017-06-23 09:15:00,2017-06-24 00:30:00,2017-06-24 04:00:00
+ETTm2,62,failure,load_oscillation,34605,34659,34679,"{'amp_sigma': 3.53939116088414, 'period_steps': 8.732217544333274, 'power': 1.5413238074801658, 'precursor_steps': 54, 'outage_steps': 16}",2017-06-26 11:15:00,2017-06-27 00:45:00,2017-06-27 05:45:00
+ETTm2,63,failure,intermittent_arcing,34936,34971,34998,"{'rate_end': 0.5369475857334037, 'amp_sigma': 2.5782323481107183, 'n_spikes': 7, 'precursor_steps': 35, 'outage_steps': 23}",2017-06-29 22:00:00,2017-06-30 06:45:00,2017-06-30 13:30:00
+ETTm2,64,failure,intermittent_arcing,35582,35605,35619,"{'rate_end': 0.561825155211227, 'amp_sigma': 2.722652495710838, 'n_spikes': 3, 'precursor_steps': 23, 'outage_steps': 10}",2017-07-06 15:30:00,2017-07-06 21:15:00,2017-07-07 00:45:00
+ETTm2,65,failure,intermittent_arcing,35931,35989,36020,"{'rate_end': 0.42718423602793276, 'amp_sigma': 3.879562011399214, 'n_spikes': 8, 'precursor_steps': 58, 'outage_steps': 27}",2017-07-10 06:45:00,2017-07-10 21:15:00,2017-07-11 05:00:00
+ETTm2,66,failure,intermittent_arcing,36490,36503,36536,"{'rate_end': 0.5596600247990264, 'amp_sigma': 3.111754515475123, 'n_spikes': 1, 'precursor_steps': 13, 'outage_steps': 29}",2017-07-16 02:30:00,2017-07-16 05:45:00,2017-07-16 14:00:00
+ETTm2,67,failure,load_oscillation,37089,37108,37137,"{'amp_sigma': 2.1495331145465713, 'period_steps': 10.437219357227336, 'power': 1.4440868853721867, 'precursor_steps': 19, 'outage_steps': 25}",2017-07-22 08:15:00,2017-07-22 13:00:00,2017-07-22 20:15:00
+ETTm2,68,failure,thermal_runaway,37451,37495,37512,"{'amp_sigma': 4.589025000118959, 'power': 1.8488724124549747, 'precursor_steps': 44, 'outage_steps': 13}",2017-07-26 02:45:00,2017-07-26 13:45:00,2017-07-26 18:00:00
+ETTm2,69,failure,intermittent_arcing,37885,37914,37941,"{'rate_end': 0.5517430080013126, 'amp_sigma': 4.740620514363002, 'n_spikes': 7, 'precursor_steps': 29, 'outage_steps': 23}",2017-07-30 15:15:00,2017-07-30 22:30:00,2017-07-31 05:15:00
+ETTm2,70,failure,thermal_runaway,38568,38627,38661,"{'amp_sigma': 2.560885875202718, 'power': 2.071156408550778, 'precursor_steps': 59, 'outage_steps': 30}",2017-08-06 18:00:00,2017-08-07 08:45:00,2017-08-07 17:15:00
+ETTm2,71,failure,load_oscillation,39157,39183,39204,"{'amp_sigma': 3.4829450797474397, 'period_steps': 6.166564762850075, 'power': 1.3786663363958995, 'precursor_steps': 26, 'outage_steps': 17}",2017-08-12 21:15:00,2017-08-13 03:45:00,2017-08-13 09:00:00
+ETTm2,72,failure,sudden,39477,39477,39499,"{'precursor_steps': 0, 'outage_steps': 18}",2017-08-16 05:15:00,2017-08-16 05:15:00,2017-08-16 10:45:00
+ETTm2,73,failure,thermal_runaway,39798,39829,39850,"{'amp_sigma': 4.672112157470059, 'power': 1.7713668888660112, 'precursor_steps': 31, 'outage_steps': 17}",2017-08-19 13:30:00,2017-08-19 21:15:00,2017-08-20 02:30:00
+ETTm2,74,failure,thermal_runaway,40186,40202,40226,"{'amp_sigma': 4.969468024783813, 'power': 2.66149233448792, 'precursor_steps': 16, 'outage_steps': 20}",2017-08-23 14:30:00,2017-08-23 18:30:00,2017-08-24 00:30:00
+ETTm2,75,failure,intermittent_arcing,40738,40782,40807,"{'rate_end': 0.32411326038200017, 'amp_sigma': 5.746269198861102, 'n_spikes': 7, 'precursor_steps': 44, 'outage_steps': 21}",2017-08-29 08:30:00,2017-08-29 19:30:00,2017-08-30 01:45:00
+ETTm2,76,failure,thermal_runaway,41046,41080,41102,"{'amp_sigma': 2.911033542580509, 'power': 2.6016474754885466, 'precursor_steps': 34, 'outage_steps': 18}",2017-09-01 13:30:00,2017-09-01 22:00:00,2017-09-02 03:30:00
+ETTm2,77,failure,intermittent_arcing,41388,41435,41462,"{'rate_end': 0.2666058132474084, 'amp_sigma': 4.702940115783074, 'n_spikes': 7, 'precursor_steps': 47, 'outage_steps': 23}",2017-09-05 03:00:00,2017-09-05 14:45:00,2017-09-05 21:30:00
+ETTm2,78,failure,intermittent_arcing,42042,42105,42127,"{'rate_end': 0.5493995130500271, 'amp_sigma': 3.0005263508190048, 'n_spikes': 13, 'precursor_steps': 63, 'outage_steps': 18}",2017-09-11 22:30:00,2017-09-12 14:15:00,2017-09-12 19:45:00
+ETTm2,79,failure,sudden,42784,42784,42808,"{'precursor_steps': 0, 'outage_steps': 20}",2017-09-19 16:00:00,2017-09-19 16:00:00,2017-09-19 22:00:00
+ETTm2,80,failure,thermal_runaway,43441,43490,43502,"{'amp_sigma': 3.6342531873746973, 'power': 1.5473520390698894, 'precursor_steps': 49, 'outage_steps': 8}",2017-09-26 12:15:00,2017-09-27 00:30:00,2017-09-27 03:30:00
+ETTm2,81,failure,intermittent_arcing,43897,43937,43969,"{'rate_end': 0.5214652624081015, 'amp_sigma': 2.744439254222961, 'n_spikes': 8, 'precursor_steps': 40, 'outage_steps': 28}",2017-10-01 06:15:00,2017-10-01 16:15:00,2017-10-02 00:15:00
+ETTm2,82,failure,thermal_runaway,44509,44561,44586,"{'amp_sigma': 4.332490098698848, 'power': 1.994379210036318, 'precursor_steps': 52, 'outage_steps': 21}",2017-10-07 15:15:00,2017-10-08 04:15:00,2017-10-08 10:30:00
+ETTm2,83,failure,thermal_runaway,44972,45018,45035,"{'amp_sigma': 3.203737648666398, 'power': 1.8953572950359554, 'precursor_steps': 46, 'outage_steps': 13}",2017-10-12 11:00:00,2017-10-12 22:30:00,2017-10-13 02:45:00
+ETTm2,84,failure,load_oscillation,45460,45531,45554,"{'amp_sigma': 1.799716436034715, 'period_steps': 9.9260298278236, 'power': 1.4183787837057815, 'precursor_steps': 71, 'outage_steps': 19}",2017-10-17 13:00:00,2017-10-18 06:45:00,2017-10-18 12:30:00
+ETTm2,85,failure,thermal_runaway,46230,46269,46296,"{'amp_sigma': 4.761342520415827, 'power': 2.633125419612999, 'precursor_steps': 39, 'outage_steps': 23}",2017-10-25 13:30:00,2017-10-25 23:15:00,2017-10-26 06:00:00
+ETTm2,86,failure,sudden,46573,46573,46607,"{'precursor_steps': 0, 'outage_steps': 30}",2017-10-29 03:15:00,2017-10-29 03:15:00,2017-10-29 11:45:00
+ETTm2,87,failure,intermittent_arcing,46896,46935,46966,"{'rate_end': 0.3986575414338944, 'amp_sigma': 5.127213235098035, 'n_spikes': 8, 'precursor_steps': 39, 'outage_steps': 27}",2017-11-01 12:00:00,2017-11-01 21:45:00,2017-11-02 05:30:00
+ETTm2,88,failure,load_oscillation,47456,47470,47487,"{'amp_sigma': 2.8652692314874484, 'period_steps': 10.332286036228043, 'power': 1.8846837614849983, 'precursor_steps': 14, 'outage_steps': 13}",2017-11-07 08:00:00,2017-11-07 11:30:00,2017-11-07 15:45:00
+ETTm2,89,failure,intermittent_arcing,47826,47877,47908,"{'rate_end': 0.4731511175051071, 'amp_sigma': 2.2591843529812565, 'n_spikes': 14, 'precursor_steps': 51, 'outage_steps': 27}",2017-11-11 04:30:00,2017-11-11 17:15:00,2017-11-12 01:00:00
+ETTm2,90,failure,sudden,48374,48374,48397,"{'precursor_steps': 0, 'outage_steps': 19}",2017-11-16 21:30:00,2017-11-16 21:30:00,2017-11-17 03:15:00
+ETTm2,91,failure,sudden,48842,48842,48863,"{'precursor_steps': 0, 'outage_steps': 17}",2017-11-21 18:30:00,2017-11-21 18:30:00,2017-11-21 23:45:00
+ETTm2,92,failure,intermittent_arcing,49213,49259,49288,"{'rate_end': 0.25412332378202357, 'amp_sigma': 2.0416092190492128, 'n_spikes': 5, 'precursor_steps': 46, 'outage_steps': 25}",2017-11-25 15:15:00,2017-11-26 02:45:00,2017-11-26 10:00:00
+ETTm2,93,failure,intermittent_arcing,49808,49851,49875,"{'rate_end': 0.47023924300593034, 'amp_sigma': 3.8203425427253044, 'n_spikes': 5, 'precursor_steps': 43, 'outage_steps': 20}",2017-12-01 20:00:00,2017-12-02 06:45:00,2017-12-02 12:45:00
+ETTm2,94,failure,thermal_runaway,50426,50455,50469,"{'amp_sigma': 4.717894103852853, 'power': 1.549401505730162, 'precursor_steps': 29, 'outage_steps': 10}",2017-12-08 06:30:00,2017-12-08 13:45:00,2017-12-08 17:15:00
+ETTm2,95,failure,thermal_runaway,50866,50903,50930,"{'amp_sigma': 4.603184926532815, 'power': 1.6436232278782372, 'precursor_steps': 37, 'outage_steps': 23}",2017-12-12 20:30:00,2017-12-13 05:45:00,2017-12-13 12:30:00
+ETTm2,96,failure,intermittent_arcing,51257,51273,51295,"{'rate_end': 0.3660357300660028, 'amp_sigma': 3.028334530803505, 'n_spikes': 3, 'precursor_steps': 16, 'outage_steps': 18}",2017-12-16 22:15:00,2017-12-17 02:15:00,2017-12-17 07:45:00
+ETTm2,97,failure,sudden,51761,51761,51775,"{'precursor_steps': 0, 'outage_steps': 10}",2017-12-22 04:15:00,2017-12-22 04:15:00,2017-12-22 07:45:00
+ETTm2,98,failure,load_oscillation,52179,52196,52214,"{'amp_sigma': 1.525725382413337, 'period_steps': 6.563228396143136, 'power': 1.8270030888713311, 'precursor_steps': 17, 'outage_steps': 14}",2017-12-26 12:45:00,2017-12-26 17:00:00,2017-12-26 21:30:00
+ETTm2,99,failure,intermittent_arcing,52793,52862,52879,"{'rate_end': 0.4802193493960498, 'amp_sigma': 3.4117174807683943, 'n_spikes': 11, 'precursor_steps': 69, 'outage_steps': 13}",2018-01-01 22:15:00,2018-01-02 15:30:00,2018-01-02 19:45:00
+ETTm2,100,failure,thermal_runaway,53181,53226,53245,"{'amp_sigma': 3.1428653627436227, 'power': 2.485039184047978, 'precursor_steps': 45, 'outage_steps': 15}",2018-01-05 23:15:00,2018-01-06 10:30:00,2018-01-06 15:15:00
+ETTm2,101,failure,load_oscillation,53635,53706,53725,"{'amp_sigma': 3.4195800176432063, 'period_steps': 8.93008384910068, 'power': 1.5027992995065245, 'precursor_steps': 71, 'outage_steps': 15}",2018-01-10 16:45:00,2018-01-11 10:30:00,2018-01-11 15:15:00
+ETTm2,102,failure,load_oscillation,53967,54001,54025,"{'amp_sigma': 3.027644056436368, 'period_steps': 10.575321120800771, 'power': 1.6498513896260485, 'precursor_steps': 34, 'outage_steps': 20}",2018-01-14 03:45:00,2018-01-14 12:15:00,2018-01-14 18:15:00
+ETTm2,103,failure,load_oscillation,54261,54308,54329,"{'amp_sigma': 2.2032988179117337, 'period_steps': 5.711690577285895, 'power': 1.3683602301799551, 'precursor_steps': 47, 'outage_steps': 17}",2018-01-17 05:15:00,2018-01-17 17:00:00,2018-01-17 22:15:00
+ETTm2,104,failure,sudden,54615,54615,54640,"{'precursor_steps': 0, 'outage_steps': 21}",2018-01-20 21:45:00,2018-01-20 21:45:00,2018-01-21 04:00:00
+ETTm2,105,failure,intermittent_arcing,54862,54920,54932,"{'rate_end': 0.42499309725280493, 'amp_sigma': 5.416105360794027, 'n_spikes': 12, 'precursor_steps': 58, 'outage_steps': 8}",2018-01-23 11:30:00,2018-01-24 02:00:00,2018-01-24 05:00:00
+ETTm2,106,failure,intermittent_arcing,55295,55355,55389,"{'rate_end': 0.2614332896003409, 'amp_sigma': 5.505023906914943, 'n_spikes': 5, 'precursor_steps': 60, 'outage_steps': 30}",2018-01-27 23:45:00,2018-01-28 14:45:00,2018-01-28 23:15:00
+ETTm2,107,failure,load_oscillation,55655,55725,55739,"{'amp_sigma': 2.3350793711733338, 'period_steps': 6.266860228611935, 'power': 1.8438373071837106, 'precursor_steps': 70, 'outage_steps': 10}",2018-01-31 17:45:00,2018-02-01 11:15:00,2018-02-01 14:45:00
+ETTm2,108,failure,thermal_runaway,56022,56070,56091,"{'amp_sigma': 3.6964546563452743, 'power': 1.6496107108091769, 'precursor_steps': 48, 'outage_steps': 17}",2018-02-04 13:30:00,2018-02-05 01:30:00,2018-02-05 06:45:00
+ETTm2,109,failure,intermittent_arcing,56625,56688,56702,"{'rate_end': 0.5985720871801122, 'amp_sigma': 4.8495983826196, 'n_spikes': 10, 'precursor_steps': 63, 'outage_steps': 10}",2018-02-10 20:15:00,2018-02-11 12:00:00,2018-02-11 15:30:00
+ETTm2,110,failure,thermal_runaway,57245,57299,57322,"{'amp_sigma': 3.9040203492139316, 'power': 1.9313888373081871, 'precursor_steps': 54, 'outage_steps': 19}",2018-02-17 07:15:00,2018-02-17 20:45:00,2018-02-18 02:30:00
+ETTm2,111,failure,thermal_runaway,57614,57676,57688,"{'amp_sigma': 3.1034424744792783, 'power': 1.7454778477946036, 'precursor_steps': 62, 'outage_steps': 8}",2018-02-21 03:30:00,2018-02-21 19:00:00,2018-02-21 22:00:00
+ETTm2,112,failure,intermittent_arcing,58162,58207,58227,"{'rate_end': 0.5078486686206488, 'amp_sigma': 3.5068217016527474, 'n_spikes': 4, 'precursor_steps': 45, 'outage_steps': 16}",2018-02-26 20:30:00,2018-02-27 07:45:00,2018-02-27 12:45:00
+ETTm2,113,failure,intermittent_arcing,58541,58594,58609,"{'rate_end': 0.2835674477848822, 'amp_sigma': 4.48846197823374, 'n_spikes': 14, 'precursor_steps': 53, 'outage_steps': 11}",2018-03-02 19:15:00,2018-03-03 08:30:00,2018-03-03 12:15:00
+ETTm2,114,failure,intermittent_arcing,59021,59051,59073,"{'rate_end': 0.3394263939544214, 'amp_sigma': 5.204429100555971, 'n_spikes': 8, 'precursor_steps': 30, 'outage_steps': 18}",2018-03-07 19:15:00,2018-03-08 02:45:00,2018-03-08 08:15:00
+ETTm2,115,failure,sudden,59613,59613,59633,"{'precursor_steps': 0, 'outage_steps': 16}",2018-03-13 23:15:00,2018-03-13 23:15:00,2018-03-14 04:15:00
+ETTm2,116,failure,thermal_runaway,60115,60155,60188,"{'amp_sigma': 3.1554239364627703, 'power': 2.5473758919748457, 'precursor_steps': 40, 'outage_steps': 29}",2018-03-19 04:45:00,2018-03-19 14:45:00,2018-03-19 23:00:00
+ETTm2,117,failure,load_oscillation,60623,60669,60689,"{'amp_sigma': 3.0881437754909906, 'period_steps': 5.2625547651196145, 'power': 1.53393928506688, 'precursor_steps': 46, 'outage_steps': 16}",2018-03-24 11:45:00,2018-03-24 23:15:00,2018-03-25 04:15:00
+ETTm2,118,failure,thermal_runaway,61148,61195,61211,"{'amp_sigma': 4.542339623755484, 'power': 2.684994705264207, 'precursor_steps': 47, 'outage_steps': 12}",2018-03-29 23:00:00,2018-03-30 10:45:00,2018-03-30 14:45:00
+ETTm2,119,failure,intermittent_arcing,61563,61634,61659,"{'rate_end': 0.37947751367077937, 'amp_sigma': 3.8087700217171783, 'n_spikes': 10, 'precursor_steps': 71, 'outage_steps': 21}",2018-04-03 06:45:00,2018-04-04 00:30:00,2018-04-04 06:45:00
+ETTm2,120,failure,thermal_runaway,61988,62023,62053,"{'amp_sigma': 3.1756409376114876, 'power': 1.7450112175471038, 'precursor_steps': 35, 'outage_steps': 26}",2018-04-07 17:00:00,2018-04-08 01:45:00,2018-04-08 09:15:00
+ETTm2,121,failure,sudden,62637,62637,62655,"{'precursor_steps': 0, 'outage_steps': 14}",2018-04-14 11:15:00,2018-04-14 11:15:00,2018-04-14 15:45:00
+ETTm2,122,failure,sudden,63207,63207,63220,"{'precursor_steps': 0, 'outage_steps': 9}",2018-04-20 09:45:00,2018-04-20 09:45:00,2018-04-20 13:00:00
+ETTm2,123,failure,thermal_runaway,63741,63767,63793,"{'amp_sigma': 4.145783863541495, 'power': 2.410720248391049, 'precursor_steps': 26, 'outage_steps': 22}",2018-04-25 23:15:00,2018-04-26 05:45:00,2018-04-26 12:15:00
+ETTm2,124,failure,intermittent_arcing,64097,64111,64140,"{'rate_end': 0.2873839829219913, 'amp_sigma': 4.129553180613586, 'n_spikes': 1, 'precursor_steps': 14, 'outage_steps': 25}",2018-04-29 16:15:00,2018-04-29 19:45:00,2018-04-30 03:00:00
+ETTm2,125,failure,sudden,64440,64440,64469,"{'precursor_steps': 0, 'outage_steps': 25}",2018-05-03 06:00:00,2018-05-03 06:00:00,2018-05-03 13:15:00
+ETTm2,126,failure,sudden,65084,65084,65102,"{'precursor_steps': 0, 'outage_steps': 14}",2018-05-09 23:00:00,2018-05-09 23:00:00,2018-05-10 03:30:00
+ETTm2,127,failure,thermal_runaway,65513,65543,65558,"{'amp_sigma': 4.166498399960153, 'power': 2.3867597407727494, 'precursor_steps': 30, 'outage_steps': 11}",2018-05-14 10:15:00,2018-05-14 17:45:00,2018-05-14 21:30:00
+ETTm2,128,failure,sudden,66154,66154,66176,"{'precursor_steps': 0, 'outage_steps': 18}",2018-05-21 02:30:00,2018-05-21 02:30:00,2018-05-21 08:00:00
+ETTm2,129,failure,load_oscillation,66662,66708,66733,"{'amp_sigma': 3.7886436983413434, 'period_steps': 7.144667337968385, 'power': 1.6538144971316573, 'precursor_steps': 46, 'outage_steps': 21}",2018-05-26 09:30:00,2018-05-26 21:00:00,2018-05-27 03:15:00
+ETTm2,130,failure,load_oscillation,67323,67343,67359,"{'amp_sigma': 3.6071457646739753, 'period_steps': 5.4921552108538085, 'power': 1.2931205780964423, 'precursor_steps': 20, 'outage_steps': 12}",2018-06-02 06:45:00,2018-06-02 11:45:00,2018-06-02 15:45:00
+ETTm2,131,failure,intermittent_arcing,67642,67701,67717,"{'rate_end': 0.38846766913661784, 'amp_sigma': 3.0291815474196517, 'n_spikes': 7, 'precursor_steps': 59, 'outage_steps': 12}",2018-06-05 14:30:00,2018-06-06 05:15:00,2018-06-06 09:15:00
+ETTm2,132,failure,intermittent_arcing,67973,68032,68062,"{'rate_end': 0.34009778049136824, 'amp_sigma': 5.08716955219879, 'n_spikes': 8, 'precursor_steps': 59, 'outage_steps': 26}",2018-06-09 01:15:00,2018-06-09 16:00:00,2018-06-09 23:30:00
+ETTm2,133,failure,sudden,68748,68748,68774,"{'precursor_steps': 0, 'outage_steps': 22}",2018-06-17 03:00:00,2018-06-17 03:00:00,2018-06-17 09:30:00
+ETTm2,134,failure,load_oscillation,69324,69370,69399,"{'amp_sigma': 2.5005741874485468, 'period_steps': 5.822699309318633, 'power': 1.3869399510598288, 'precursor_steps': 46, 'outage_steps': 25}",2018-06-23 03:00:00,2018-06-23 14:30:00,2018-06-23 21:45:00
+ETTm2,135,nuisance,benign_oscillation,6907,-1,6913,"{'amp_sigma': 1.0737770893020568, 'period_steps': 11.789351592147312}",2016-09-10 22:45:00,,2016-09-11 00:15:00
+ETTm2,136,nuisance,benign_oscillation,63840,-1,63851,"{'amp_sigma': 1.87213221169763, 'period_steps': 7.045693612314156}",2018-04-27 00:00:00,,2018-04-27 02:45:00
+ETTm2,137,nuisance,benign_load_surge,20099,-1,20111,{'amp_sigma': 1.8838113210320566},2017-01-26 08:45:00,,2017-01-26 11:45:00
+ETTm2,138,nuisance,benign_load_surge,23932,-1,23936,{'amp_sigma': 3.801439381770836},2017-03-07 07:00:00,,2017-03-07 08:00:00
+ETTm2,139,nuisance,benign_thermal_bump,52994,-1,53019,{'amp_sigma': 2.2731808035228958},2018-01-04 00:30:00,,2018-01-04 06:45:00
+ETTm2,140,nuisance,benign_load_surge,56204,-1,56216,{'amp_sigma': 1.6593378569087673},2018-02-06 11:00:00,,2018-02-06 14:00:00
+ETTm2,141,nuisance,benign_thermal_bump,60516,-1,60527,{'amp_sigma': 1.7184299888968284},2018-03-23 09:00:00,,2018-03-23 11:45:00
+ETTm2,142,nuisance,benign_thermal_bump,68950,-1,68958,{'amp_sigma': 2.0808472540844516},2018-06-19 05:30:00,,2018-06-19 07:30:00
+ETTm2,143,nuisance,benign_load_surge,35148,-1,35156,{'amp_sigma': 2.463298983883243},2017-07-02 03:00:00,,2017-07-02 05:00:00
+ETTm2,144,nuisance,sensor_glitch,43280,-1,43282,"{'channel': 'MUFL', 'amp_sigma': 3.887097357023422}",2017-09-24 20:00:00,,2017-09-24 20:30:00
+ETTm2,145,nuisance,sensor_glitch,69264,-1,69266,"{'channel': 'OT', 'amp_sigma': 6.178533089818954}",2018-06-22 12:00:00,,2018-06-22 12:30:00
+ETTm2,146,nuisance,sensor_glitch,3192,-1,3194,"{'channel': 'OT', 'amp_sigma': 7.488941785213647}",2016-08-03 06:00:00,,2016-08-03 06:30:00
+ETTm2,147,nuisance,benign_load_surge,5580,-1,5595,{'amp_sigma': 2.731757333630063},2016-08-28 03:00:00,,2016-08-28 06:45:00
+ETTm2,148,nuisance,benign_load_surge,3238,-1,3249,{'amp_sigma': 1.5156243874801207},2016-08-03 17:30:00,,2016-08-03 20:15:00
+ETTm2,149,nuisance,benign_load_surge,7662,-1,7676,{'amp_sigma': 2.9806162374436624},2016-09-18 19:30:00,,2016-09-18 23:00:00
+ETTm2,150,nuisance,sensor_glitch,62509,-1,62510,"{'channel': 'HUFL', 'amp_sigma': 3.3996214232139588}",2018-04-13 03:15:00,,2018-04-13 03:30:00
+ETTm2,151,nuisance,sensor_glitch,60932,-1,60934,"{'channel': 'OT', 'amp_sigma': 5.557752724469666}",2018-03-27 17:00:00,,2018-03-27 17:30:00
+ETTm2,152,nuisance,benign_load_surge,7587,-1,7600,{'amp_sigma': 3.313378779595893},2016-09-18 00:45:00,,2016-09-18 04:00:00
+ETTm2,153,nuisance,benign_thermal_bump,7983,-1,7995,{'amp_sigma': 2.13821003450901},2016-09-22 03:45:00,,2016-09-22 06:45:00
+ETTm2,154,nuisance,benign_oscillation,50792,-1,50796,"{'amp_sigma': 2.0562593290437134, 'period_steps': 11.291295552685913}",2017-12-12 02:00:00,,2017-12-12 03:00:00
+ETTm2,155,nuisance,benign_oscillation,15796,-1,15811,"{'amp_sigma': 1.228866490838528, 'period_steps': 10.331013518004777}",2016-12-12 13:00:00,,2016-12-12 16:45:00
+ETTm2,156,nuisance,benign_thermal_bump,11873,-1,11881,{'amp_sigma': 2.3411358286678485},2016-11-01 16:15:00,,2016-11-01 18:15:00
+ETTm2,157,nuisance,benign_load_surge,63401,-1,63407,{'amp_sigma': 3.665358137055709},2018-04-22 10:15:00,,2018-04-22 11:45:00
+ETTm2,158,nuisance,benign_thermal_bump,15675,-1,15696,{'amp_sigma': 1.6007157950354751},2016-12-11 06:45:00,,2016-12-11 12:00:00
+ETTm2,159,nuisance,benign_load_surge,11670,-1,11675,{'amp_sigma': 3.349076531603891},2016-10-30 13:30:00,,2016-10-30 14:45:00
+ETTm2,160,nuisance,benign_load_surge,57786,-1,57801,{'amp_sigma': 1.8003989359261028},2018-02-22 22:30:00,,2018-02-23 02:15:00
+ETTm2,161,nuisance,benign_thermal_bump,21028,-1,21042,{'amp_sigma': 2.241278105944809},2017-02-05 01:00:00,,2017-02-05 04:30:00
+ETTm2,162,nuisance,benign_thermal_bump,47709,-1,47730,{'amp_sigma': 1.8349169554352553},2017-11-09 23:15:00,,2017-11-10 04:30:00
+ETTm2,163,nuisance,benign_load_surge,25101,-1,25111,{'amp_sigma': 3.706782552197514},2017-03-19 11:15:00,,2017-03-19 13:45:00
+ETTm2,164,nuisance,benign_load_surge,54128,-1,54134,{'amp_sigma': 1.9117244657095513},2018-01-15 20:00:00,,2018-01-15 21:30:00
+ETTm2,165,nuisance,benign_load_surge,18862,-1,18873,{'amp_sigma': 2.059624001904647},2017-01-13 11:30:00,,2017-01-13 14:15:00
+ETTm2,166,nuisance,benign_thermal_bump,51383,-1,51404,{'amp_sigma': 1.6251732961038898},2017-12-18 05:45:00,,2017-12-18 11:00:00
+ETTm2,167,nuisance,benign_oscillation,68278,-1,68289,"{'amp_sigma': 1.0422291846995702, 'period_steps': 7.336950922770342}",2018-06-12 05:30:00,,2018-06-12 08:15:00
+ETTm2,168,nuisance,sensor_glitch,67415,-1,67417,"{'channel': 'MUFL', 'amp_sigma': 3.0146643061299416}",2018-06-03 05:45:00,,2018-06-03 06:15:00
+ETTm2,169,nuisance,benign_load_surge,8015,-1,8030,{'amp_sigma': 3.1092838808395356},2016-09-22 11:45:00,,2016-09-22 15:30:00
+ETTm2,170,nuisance,benign_oscillation,38447,-1,38455,"{'amp_sigma': 2.272100893613162, 'period_steps': 10.631420576825374}",2017-08-05 11:45:00,,2017-08-05 13:45:00
+ETTm2,171,nuisance,benign_load_surge,69004,-1,69016,{'amp_sigma': 3.611972203375675},2018-06-19 19:00:00,,2018-06-19 22:00:00
+ETTm2,172,nuisance,benign_thermal_bump,14600,-1,14626,{'amp_sigma': 2.305975764975957},2016-11-30 02:00:00,,2016-11-30 08:30:00
+ETTm2,173,nuisance,benign_load_surge,22722,-1,22735,{'amp_sigma': 1.592851033279302},2017-02-22 16:30:00,,2017-02-22 19:45:00
+ETTm2,174,nuisance,benign_thermal_bump,32018,-1,32028,{'amp_sigma': 2.905645164904313},2017-05-30 12:30:00,,2017-05-30 15:00:00
+ETTm2,175,nuisance,benign_thermal_bump,40308,-1,40331,{'amp_sigma': 2.5341418803780194},2017-08-24 21:00:00,,2017-08-25 02:45:00
+ETTm2,176,nuisance,benign_oscillation,5004,-1,5018,"{'amp_sigma': 1.0390378088275747, 'period_steps': 5.436193227085504}",2016-08-22 03:00:00,,2016-08-22 06:30:00
+ETTm2,177,nuisance,benign_thermal_bump,25713,-1,25729,{'amp_sigma': 2.5096764724207112},2017-03-25 20:15:00,,2017-03-26 00:15:00
+ETTm2,178,nuisance,benign_thermal_bump,34205,-1,34236,{'amp_sigma': 2.938606678303614},2017-06-22 07:15:00,,2017-06-22 15:00:00
+ETTm2,179,nuisance,benign_thermal_bump,13992,-1,14010,{'amp_sigma': 1.5203077523278556},2016-11-23 18:00:00,,2016-11-23 22:30:00
+ETTm2,180,nuisance,benign_load_surge,488,-1,502,{'amp_sigma': 3.3928256598535054},2016-07-06 02:00:00,,2016-07-06 05:30:00
+ETTm2,181,nuisance,benign_load_surge,17329,-1,17337,{'amp_sigma': 2.1141102294478404},2016-12-28 12:15:00,,2016-12-28 14:15:00
+ETTm2,182,nuisance,sensor_glitch,18043,-1,18044,"{'channel': 'MULL', 'amp_sigma': 5.274257252404574}",2017-01-04 22:45:00,,2017-01-04 23:00:00
+ETTm2,183,nuisance,benign_oscillation,44884,-1,44894,"{'amp_sigma': 1.3289833789862113, 'period_steps': 6.950765210149923}",2017-10-11 13:00:00,,2017-10-11 15:30:00
+ETTm2,184,nuisance,benign_oscillation,6200,-1,6213,"{'amp_sigma': 1.4952152789425792, 'period_steps': 7.932755325584528}",2016-09-03 14:00:00,,2016-09-03 17:15:00
+ETTm2,185,nuisance,benign_thermal_bump,54445,-1,54465,{'amp_sigma': 2.3200824786120764},2018-01-19 03:15:00,,2018-01-19 08:15:00
+ETTm2,186,nuisance,benign_thermal_bump,40491,-1,40520,{'amp_sigma': 1.3172172283105266},2017-08-26 18:45:00,,2017-08-27 02:00:00
+ETTm2,187,nuisance,benign_oscillation,4907,-1,4921,"{'amp_sigma': 2.1293360154185486, 'period_steps': 5.670228630998693}",2016-08-21 02:45:00,,2016-08-21 06:15:00
+ETTm2,188,nuisance,benign_oscillation,38098,-1,38105,"{'amp_sigma': 2.4054264358646216, 'period_steps': 8.386955616983892}",2017-08-01 20:30:00,,2017-08-01 22:15:00
+ETTm2,189,nuisance,benign_load_surge,47673,-1,47683,{'amp_sigma': 1.5317776448735496},2017-11-09 14:15:00,,2017-11-09 16:45:00
+ETTm2,190,nuisance,sensor_glitch,5269,-1,5270,"{'channel': 'LUFL', 'amp_sigma': 6.474182740487912}",2016-08-24 21:15:00,,2016-08-24 21:30:00
+ETTm2,191,nuisance,sensor_glitch,49674,-1,49675,"{'channel': 'HULL', 'amp_sigma': 4.452109714972643}",2017-11-30 10:30:00,,2017-11-30 10:45:00
+ETTm2,192,nuisance,benign_oscillation,41605,-1,41611,"{'amp_sigma': 1.5246177746030813, 'period_steps': 9.291866545260204}",2017-09-07 09:15:00,,2017-09-07 10:45:00
+ETTm2,193,nuisance,benign_load_surge,44133,-1,44143,{'amp_sigma': 3.3183164636263034},2017-10-03 17:15:00,,2017-10-03 19:45:00
+ETTm2,194,nuisance,benign_thermal_bump,8096,-1,8105,{'amp_sigma': 2.883467233551058},2016-09-23 08:00:00,,2016-09-23 10:15:00
+ETTm2,195,nuisance,benign_thermal_bump,24528,-1,24545,{'amp_sigma': 1.632499314748706},2017-03-13 12:00:00,,2017-03-13 16:15:00
+ETTm2,196,nuisance,benign_thermal_bump,1579,-1,1602,{'amp_sigma': 1.8951292914135993},2016-07-17 10:45:00,,2016-07-17 16:30:00
+ETTm2,197,nuisance,benign_load_surge,49394,-1,49408,{'amp_sigma': 2.768604616697299},2017-11-27 12:30:00,,2017-11-27 16:00:00
+ETTm2,198,nuisance,benign_thermal_bump,2600,-1,2626,{'amp_sigma': 2.334626312738708},2016-07-28 02:00:00,,2016-07-28 08:30:00
+ETTm2,199,nuisance,benign_thermal_bump,44703,-1,44714,{'amp_sigma': 2.270533311045886},2017-10-09 15:45:00,,2017-10-09 18:30:00
+ETTm2,200,nuisance,benign_load_surge,20431,-1,20436,{'amp_sigma': 3.1413068348593143},2017-01-29 19:45:00,,2017-01-29 21:00:00
+ETTm2,201,nuisance,benign_load_surge,61870,-1,61877,{'amp_sigma': 1.9262913535424953},2018-04-06 11:30:00,,2018-04-06 13:15:00
+ETTm2,202,nuisance,benign_thermal_bump,35407,-1,35421,{'amp_sigma': 1.5052812789379288},2017-07-04 19:45:00,,2017-07-04 23:15:00
+ETTm2,203,nuisance,sensor_glitch,48570,-1,48572,"{'channel': 'LULL', 'amp_sigma': 3.3649944475489937}",2017-11-18 22:30:00,,2017-11-18 23:00:00
+ETTm2,204,nuisance,sensor_glitch,40050,-1,40051,"{'channel': 'OT', 'amp_sigma': 7.332219797176463}",2017-08-22 04:30:00,,2017-08-22 04:45:00
+ETTm2,205,nuisance,benign_thermal_bump,42210,-1,42235,{'amp_sigma': 1.2505792758474295},2017-09-13 16:30:00,,2017-09-13 22:45:00
+ETTm2,206,nuisance,sensor_glitch,58058,-1,58060,"{'channel': 'MUFL', 'amp_sigma': 4.238106075830966}",2018-02-25 18:30:00,,2018-02-25 19:00:00
+ETTm2,207,nuisance,benign_load_surge,29015,-1,29022,{'amp_sigma': 3.5510307789472986},2017-04-29 05:45:00,,2017-04-29 07:30:00
+ETTm2,208,nuisance,benign_thermal_bump,23470,-1,23499,{'amp_sigma': 1.4969471330503847},2017-03-02 11:30:00,,2017-03-02 18:45:00
+ETTm2,209,nuisance,benign_thermal_bump,29772,-1,29793,{'amp_sigma': 2.5791871810666187},2017-05-07 03:00:00,,2017-05-07 08:15:00
+ETTm2,210,nuisance,sensor_glitch,33626,-1,33627,"{'channel': 'LULL', 'amp_sigma': 6.557298413886392}",2017-06-16 06:30:00,,2017-06-16 06:45:00
+ETTm2,211,nuisance,benign_thermal_bump,1350,-1,1373,{'amp_sigma': 2.125702576603511},2016-07-15 01:30:00,,2016-07-15 07:15:00
+ETTm2,212,nuisance,benign_load_surge,44030,-1,44040,{'amp_sigma': 3.8934825940629683},2017-10-02 15:30:00,,2017-10-02 18:00:00
+ETTm2,213,nuisance,sensor_glitch,46098,-1,46100,"{'channel': 'MUFL', 'amp_sigma': 5.6668975261157275}",2017-10-24 04:30:00,,2017-10-24 05:00:00
+ETTm2,214,nuisance,benign_load_surge,39344,-1,39359,{'amp_sigma': 3.253435945431294},2017-08-14 20:00:00,,2017-08-14 23:45:00
+ETTm2,215,nuisance,benign_thermal_bump,66404,-1,66424,{'amp_sigma': 2.1787758818983805},2018-05-23 17:00:00,,2018-05-23 22:00:00
+ETTm2,216,nuisance,benign_load_surge,36675,-1,36687,{'amp_sigma': 1.658166685632505},2017-07-18 00:45:00,,2017-07-18 03:45:00
+ETTm2,217,nuisance,benign_load_surge,13218,-1,13233,{'amp_sigma': 1.5324317579160558},2016-11-15 16:30:00,,2016-11-15 20:15:00
+ETTm2,218,nuisance,sensor_glitch,19285,-1,19286,"{'channel': 'HUFL', 'amp_sigma': 3.1679903099327156}",2017-01-17 21:15:00,,2017-01-17 21:30:00
+ETTm2,219,nuisance,sensor_glitch,64994,-1,64995,"{'channel': 'LULL', 'amp_sigma': 4.707695271403641}",2018-05-09 00:30:00,,2018-05-09 00:45:00
+ETTm2,220,nuisance,sensor_glitch,52334,-1,52335,"{'channel': 'LUFL', 'amp_sigma': 4.343654695158867}",2017-12-28 03:30:00,,2017-12-28 03:45:00
+ETTm2,221,nuisance,sensor_glitch,35437,-1,35438,"{'channel': 'MULL', 'amp_sigma': 7.414839889175009}",2017-07-05 03:15:00,,2017-07-05 03:30:00
+ETTm2,222,nuisance,benign_thermal_bump,25914,-1,25929,{'amp_sigma': 1.7165636148051937},2017-03-27 22:30:00,,2017-03-28 02:15:00
+ETTm2,223,nuisance,benign_thermal_bump,18583,-1,18594,{'amp_sigma': 2.067650735749014},2017-01-10 13:45:00,,2017-01-10 16:30:00
+ETTm2,224,nuisance,benign_load_surge,51640,-1,51650,{'amp_sigma': 2.910911441908527},2017-12-20 22:00:00,,2017-12-21 00:30:00
+ETTm2,225,nuisance,benign_load_surge,58438,-1,58444,{'amp_sigma': 2.9160528219249717},2018-03-01 17:30:00,,2018-03-01 19:00:00
+ETTm2,226,nuisance,sensor_glitch,62842,-1,62843,"{'channel': 'LUFL', 'amp_sigma': 5.577278574763934}",2018-04-16 14:30:00,,2018-04-16 14:45:00
+ETTm2,227,nuisance,benign_thermal_bump,55918,-1,55949,{'amp_sigma': 1.976452604568634},2018-02-03 11:30:00,,2018-02-03 19:15:00
+ETTm2,228,nuisance,benign_oscillation,16236,-1,16251,"{'amp_sigma': 1.9395407987076756, 'period_steps': 10.429815981753173}",2016-12-17 03:00:00,,2016-12-17 06:45:00
+ETTm2,229,nuisance,benign_oscillation,55073,-1,55085,"{'amp_sigma': 2.2333634089708925, 'period_steps': 10.800718490874004}",2018-01-25 16:15:00,,2018-01-25 19:15:00
+ETTm2,230,nuisance,benign_thermal_bump,7020,-1,7040,{'amp_sigma': 2.2494184536357356},2016-09-12 03:00:00,,2016-09-12 08:00:00
+ETTm2,231,nuisance,benign_thermal_bump,29318,-1,29349,{'amp_sigma': 2.406875492010486},2017-05-02 09:30:00,,2017-05-02 17:15:00
+ETTm2,232,nuisance,benign_load_surge,50298,-1,50310,{'amp_sigma': 2.371934670298699},2017-12-06 22:30:00,,2017-12-07 01:30:00
+ETTm2,233,nuisance,benign_thermal_bump,41266,-1,41289,{'amp_sigma': 2.7155817669804954},2017-09-03 20:30:00,,2017-09-04 02:15:00
+ETTm2,234,nuisance,benign_thermal_bump,1402,-1,1422,{'amp_sigma': 1.1585971601294713},2016-07-15 14:30:00,,2016-07-15 19:30:00
+ETTm2,235,nuisance,benign_thermal_bump,41219,-1,41237,{'amp_sigma': 1.1826197284081472},2017-09-03 08:45:00,,2017-09-03 13:15:00
+ETTm2,236,nuisance,benign_thermal_bump,19425,-1,19437,{'amp_sigma': 2.474548476344769},2017-01-19 08:15:00,,2017-01-19 11:15:00
+ETTm2,237,nuisance,benign_load_surge,40383,-1,40394,{'amp_sigma': 3.3627207856572117},2017-08-25 15:45:00,,2017-08-25 18:30:00
+ETTm2,238,nuisance,benign_thermal_bump,14424,-1,14434,{'amp_sigma': 2.0614253316967215},2016-11-28 06:00:00,,2016-11-28 08:30:00
+ETTm2,239,nuisance,sensor_glitch,67781,-1,67783,"{'channel': 'LULL', 'amp_sigma': 5.275206666654226}",2018-06-07 01:15:00,,2018-06-07 01:45:00
+ETTm2,240,nuisance,benign_load_surge,66465,-1,66475,{'amp_sigma': 1.9939465299642967},2018-05-24 08:15:00,,2018-05-24 10:45:00
+ETTm2,241,nuisance,benign_thermal_bump,9934,-1,9953,{'amp_sigma': 1.6545514778157113},2016-10-12 11:30:00,,2016-10-12 16:15:00
+ETTm2,242,nuisance,benign_load_surge,42569,-1,42578,{'amp_sigma': 2.4596242449247656},2017-09-17 10:15:00,,2017-09-17 12:30:00
+ETTm2,243,nuisance,benign_load_surge,9280,-1,9295,{'amp_sigma': 3.3253260060445724},2016-10-05 16:00:00,,2016-10-05 19:45:00
+ETTm2,244,nuisance,benign_load_surge,2151,-1,2157,{'amp_sigma': 3.905996716222498},2016-07-23 09:45:00,,2016-07-23 11:15:00
+ETTm2,245,nuisance,benign_thermal_bump,51160,-1,51177,{'amp_sigma': 2.302054670222151},2017-12-15 22:00:00,,2017-12-16 02:15:00
+ETTm2,246,nuisance,sensor_glitch,18192,-1,18194,"{'channel': 'OT', 'amp_sigma': 6.501642410614937}",2017-01-06 12:00:00,,2017-01-06 12:30:00
+ETTm2,247,nuisance,benign_oscillation,18955,-1,18960,"{'amp_sigma': 1.1011014635587935, 'period_steps': 4.21489276195471}",2017-01-14 10:45:00,,2017-01-14 12:00:00
+ETTm2,248,nuisance,benign_oscillation,18528,-1,18541,"{'amp_sigma': 1.2362119592696488, 'period_steps': 6.816000979916629}",2017-01-10 00:00:00,,2017-01-10 03:15:00
+ETTm2,249,nuisance,benign_thermal_bump,48912,-1,48929,{'amp_sigma': 2.989532458353313},2017-11-22 12:00:00,,2017-11-22 16:15:00
+ETTm2,250,nuisance,benign_oscillation,59778,-1,59790,"{'amp_sigma': 1.1710817820882329, 'period_steps': 7.316746976502009}",2018-03-15 16:30:00,,2018-03-15 19:30:00
+ETTm2,251,nuisance,benign_oscillation,68423,-1,68430,"{'amp_sigma': 1.303493770055081, 'period_steps': 11.663077594909941}",2018-06-13 17:45:00,,2018-06-13 19:30:00
+ETTm2,252,nuisance,benign_thermal_bump,21644,-1,21665,{'amp_sigma': 2.9648576066120995},2017-02-11 11:00:00,,2017-02-11 16:15:00
+ETTm2,253,nuisance,benign_oscillation,22223,-1,22234,"{'amp_sigma': 2.2021424639667453, 'period_steps': 4.141615628323858}",2017-02-17 11:45:00,,2017-02-17 14:30:00
+ETTm2,254,nuisance,benign_oscillation,29952,-1,29967,"{'amp_sigma': 1.9796800155973766, 'period_steps': 5.668381783789491}",2017-05-09 00:00:00,,2017-05-09 03:45:00
+ETTm2,255,nuisance,sensor_glitch,62408,-1,62409,"{'channel': 'HUFL', 'amp_sigma': 4.322954425097008}",2018-04-12 02:00:00,,2018-04-12 02:15:00
+ETTm2,256,nuisance,benign_load_surge,43218,-1,43233,{'amp_sigma': 3.733693167760387},2017-09-24 04:30:00,,2017-09-24 08:15:00
+ETTm2,257,nuisance,benign_oscillation,39623,-1,39638,"{'amp_sigma': 2.3051758210378037, 'period_steps': 6.44066234941368}",2017-08-17 17:45:00,,2017-08-17 21:30:00
+ETTm2,258,nuisance,benign_load_surge,25644,-1,25656,{'amp_sigma': 2.567010687977719},2017-03-25 03:00:00,,2017-03-25 06:00:00
+ETTm2,259,nuisance,sensor_glitch,65761,-1,65763,"{'channel': 'OT', 'amp_sigma': 3.9824746544223877}",2018-05-17 00:15:00,,2018-05-17 00:45:00
+ETTm2,260,nuisance,benign_oscillation,65249,-1,65254,"{'amp_sigma': 1.6370580835768587, 'period_steps': 9.666012940240744}",2018-05-11 16:15:00,,2018-05-11 17:30:00
+ETTm2,261,nuisance,benign_load_surge,34088,-1,34092,{'amp_sigma': 2.79569645042185},2017-06-21 02:00:00,,2017-06-21 03:00:00
+ETTm2,262,nuisance,benign_load_surge,282,-1,292,{'amp_sigma': 2.8465356048364114},2016-07-03 22:30:00,,2016-07-04 01:00:00
+ETTm2,263,nuisance,benign_load_surge,32749,-1,32754,{'amp_sigma': 3.8758634582159006},2017-06-07 03:15:00,,2017-06-07 04:30:00
+ETTm2,264,nuisance,benign_thermal_bump,27989,-1,27997,{'amp_sigma': 1.7264414818002172},2017-04-18 13:15:00,,2017-04-18 15:15:00
+ETTm2,265,nuisance,benign_thermal_bump,65646,-1,65661,{'amp_sigma': 2.665513453405801},2018-05-15 19:30:00,,2018-05-15 23:15:00
+ETTm2,266,nuisance,benign_load_surge,23311,-1,23324,{'amp_sigma': 1.5828012789993946},2017-02-28 19:45:00,,2017-02-28 23:00:00
+ETTm2,267,nuisance,benign_oscillation,32891,-1,32905,"{'amp_sigma': 2.057504002161392, 'period_steps': 7.846307521825181}",2017-06-08 14:45:00,,2017-06-08 18:15:00
+ETTm2,268,nuisance,benign_oscillation,36257,-1,36269,"{'amp_sigma': 1.9037654285819918, 'period_steps': 7.465536188125025}",2017-07-13 16:15:00,,2017-07-13 19:15:00
+ETTm2,269,nuisance,sensor_glitch,16371,-1,16373,"{'channel': 'HULL', 'amp_sigma': 7.422390711162263}",2016-12-18 12:45:00,,2016-12-18 13:15:00
+ETTm2,270,nuisance,benign_oscillation,7161,-1,7173,"{'amp_sigma': 2.4670788293007972, 'period_steps': 6.046238810448212}",2016-09-13 14:15:00,,2016-09-13 17:15:00
+ETTm2,271,nuisance,benign_thermal_bump,53047,-1,53064,{'amp_sigma': 1.7051673546324126},2018-01-04 13:45:00,,2018-01-04 18:00:00
+ETTm2,272,nuisance,benign_oscillation,38995,-1,39008,"{'amp_sigma': 1.8245244732504577, 'period_steps': 8.66268240245937}",2017-08-11 04:45:00,,2017-08-11 08:00:00
+ETTm2,273,nuisance,benign_thermal_bump,19259,-1,19272,{'amp_sigma': 1.196117490963466},2017-01-17 14:45:00,,2017-01-17 18:00:00
+ETTm2,274,nuisance,benign_thermal_bump,37695,-1,37725,{'amp_sigma': 1.9914383888996283},2017-07-28 15:45:00,,2017-07-28 23:15:00
+ETTm2,275,nuisance,benign_oscillation,63102,-1,63112,"{'amp_sigma': 1.5734871726186856, 'period_steps': 7.564605416954342}",2018-04-19 07:30:00,,2018-04-19 10:00:00
+ETTm2,276,nuisance,benign_oscillation,13430,-1,13437,"{'amp_sigma': 1.8090193204335026, 'period_steps': 6.346720193450559}",2016-11-17 21:30:00,,2016-11-17 23:15:00
+ETTm2,277,nuisance,benign_oscillation,66334,-1,66348,"{'amp_sigma': 1.4731322956315418, 'period_steps': 9.506556396883566}",2018-05-22 23:30:00,,2018-05-23 03:00:00
+ETTm2,278,nuisance,benign_oscillation,35699,-1,35714,"{'amp_sigma': 1.0448470895535371, 'period_steps': 8.280877917599106}",2017-07-07 20:45:00,,2017-07-08 00:30:00
+ETTm2,279,nuisance,benign_thermal_bump,66517,-1,66540,{'amp_sigma': 1.9459589795288619},2018-05-24 21:15:00,,2018-05-25 03:00:00
+ETTm2,280,nuisance,benign_oscillation,28269,-1,28282,"{'amp_sigma': 2.2108939266096193, 'period_steps': 5.8027304750134}",2017-04-21 11:15:00,,2017-04-21 14:30:00
+ETTm2,281,nuisance,benign_oscillation,7608,-1,7623,"{'amp_sigma': 1.6706951269089831, 'period_steps': 11.77149679147115}",2016-09-18 06:00:00,,2016-09-18 09:45:00
+ETTm2,282,nuisance,benign_thermal_bump,15138,-1,15160,{'amp_sigma': 1.3324600241357625},2016-12-05 16:30:00,,2016-12-05 22:00:00
+ETTm2,283,nuisance,benign_oscillation,5068,-1,5082,"{'amp_sigma': 1.5283108847846933, 'period_steps': 8.496053270321191}",2016-08-22 19:00:00,,2016-08-22 22:30:00
+ETTm2,284,nuisance,benign_oscillation,42348,-1,42356,"{'amp_sigma': 1.1228086926979395, 'period_steps': 8.010810313363713}",2017-09-15 03:00:00,,2017-09-15 05:00:00
+ETTm2,285,nuisance,benign_load_surge,9077,-1,9084,{'amp_sigma': 2.9825006486857406},2016-10-03 13:15:00,,2016-10-03 15:00:00
+ETTm2,286,nuisance,benign_thermal_bump,25837,-1,25862,{'amp_sigma': 1.3749512830001218},2017-03-27 03:15:00,,2017-03-27 09:30:00
+ETTm2,287,nuisance,benign_thermal_bump,64562,-1,64582,{'amp_sigma': 1.8061736197852392},2018-05-04 12:30:00,,2018-05-04 17:30:00
+ETTm2,288,nuisance,benign_thermal_bump,35222,-1,35247,{'amp_sigma': 2.775342218321325},2017-07-02 21:30:00,,2017-07-03 03:45:00
+ETTm2,289,nuisance,benign_load_surge,69172,-1,69177,{'amp_sigma': 3.7774861225463834},2018-06-21 13:00:00,,2018-06-21 14:15:00
+ETTm2,290,nuisance,benign_thermal_bump,10883,-1,10914,{'amp_sigma': 2.1633105676943813},2016-10-22 08:45:00,,2016-10-22 16:30:00
+ETTm2,291,nuisance,benign_load_surge,49635,-1,49648,{'amp_sigma': 3.8716452286133047},2017-11-30 00:45:00,,2017-11-30 04:00:00
+ETTm2,292,nuisance,benign_thermal_bump,11992,-1,12002,{'amp_sigma': 2.395813153365789},2016-11-02 22:00:00,,2016-11-03 00:30:00
+ETTm2,293,nuisance,benign_thermal_bump,38844,-1,38874,{'amp_sigma': 2.343687827870953},2017-08-09 15:00:00,,2017-08-09 22:30:00
+ETTm2,294,nuisance,benign_thermal_bump,60750,-1,60759,{'amp_sigma': 2.805883181915185},2018-03-25 19:30:00,,2018-03-25 21:45:00
+ETTm2,295,nuisance,benign_oscillation,5496,-1,5510,"{'amp_sigma': 2.3893794192852287, 'period_steps': 5.514237677400827}",2016-08-27 06:00:00,,2016-08-27 09:30:00
+ETTm2,296,nuisance,benign_load_surge,52537,-1,52549,{'amp_sigma': 2.1843715923572002},2017-12-30 06:15:00,,2017-12-30 09:15:00
+ETTm2,297,nuisance,benign_thermal_bump,58927,-1,58957,{'amp_sigma': 1.2116783812133427},2018-03-06 19:45:00,,2018-03-07 03:15:00
+ETTm2,298,nuisance,sensor_glitch,5734,-1,5736,"{'channel': 'LUFL', 'amp_sigma': 3.4711356215155664}",2016-08-29 17:30:00,,2016-08-29 18:00:00
+ETTm2,299,nuisance,benign_oscillation,33298,-1,33313,"{'amp_sigma': 1.3238725787445544, 'period_steps': 8.141461942197065}",2017-06-12 20:30:00,,2017-06-13 00:15:00
+ETTm2,300,nuisance,benign_thermal_bump,27664,-1,27687,{'amp_sigma': 2.6162938715680415},2017-04-15 04:00:00,,2017-04-15 09:45:00
+ETTm2,301,nuisance,sensor_glitch,30436,-1,30438,"{'channel': 'HUFL', 'amp_sigma': 4.2174028059229745}",2017-05-14 01:00:00,,2017-05-14 01:30:00
+ETTm2,302,nuisance,sensor_glitch,861,-1,862,"{'channel': 'MULL', 'amp_sigma': 7.386351224949288}",2016-07-09 23:15:00,,2016-07-09 23:30:00
+ETTm2,303,nuisance,benign_load_surge,50592,-1,50602,{'amp_sigma': 2.7405890013429404},2017-12-10 00:00:00,,2017-12-10 02:30:00
+ETTm2,304,nuisance,sensor_glitch,46687,-1,46688,"{'channel': 'MUFL', 'amp_sigma': 4.091142964245224}",2017-10-30 07:45:00,,2017-10-30 08:00:00
+ETTm2,305,nuisance,benign_thermal_bump,52478,-1,52499,{'amp_sigma': 1.8545136741083814},2017-12-29 15:30:00,,2017-12-29 20:45:00
+ETTm2,306,nuisance,benign_thermal_bump,68364,-1,68393,{'amp_sigma': 2.712716610977888},2018-06-13 03:00:00,,2018-06-13 10:15:00
+ETTm2,307,nuisance,benign_thermal_bump,6854,-1,6882,{'amp_sigma': 2.925260144746316},2016-09-10 09:30:00,,2016-09-10 16:30:00
+ETTm2,308,nuisance,benign_thermal_bump,15844,-1,15860,{'amp_sigma': 2.3545722728300262},2016-12-13 01:00:00,,2016-12-13 05:00:00
+ETTm2,309,nuisance,benign_load_surge,19924,-1,19939,{'amp_sigma': 1.8112442028159994},2017-01-24 13:00:00,,2017-01-24 16:45:00
+ETTm2,310,nuisance,benign_thermal_bump,37012,-1,37028,{'amp_sigma': 1.9047515954782055},2017-07-21 13:00:00,,2017-07-21 17:00:00
+ETTm2,311,nuisance,benign_load_surge,19777,-1,19789,{'amp_sigma': 3.171061267491117},2017-01-23 00:15:00,,2017-01-23 03:15:00
+ETTm2,312,nuisance,benign_load_surge,42411,-1,42423,{'amp_sigma': 2.7166759502776925},2017-09-15 18:45:00,,2017-09-15 21:45:00
+ETTm2,313,nuisance,benign_thermal_bump,21124,-1,21138,{'amp_sigma': 1.28533577509303},2017-02-06 01:00:00,,2017-02-06 04:30:00
+ETTm2,314,nuisance,benign_oscillation,37323,-1,37335,"{'amp_sigma': 2.3751280728965662, 'period_steps': 9.372853053901618}",2017-07-24 18:45:00,,2017-07-24 21:45:00
+ETTm2,315,nuisance,benign_load_surge,63375,-1,63387,{'amp_sigma': 2.440439194085734},2018-04-22 03:45:00,,2018-04-22 06:45:00

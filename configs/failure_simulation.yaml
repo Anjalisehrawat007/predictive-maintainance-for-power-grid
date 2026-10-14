@@ -1,0 +1,70 @@
+# =====================================================================
+# Failure-simulation layer — SmartGrid AI
+#
+# WHY THIS EXISTS: the ETT dataset contains REAL transformer measurements
+# (load at three voltage levels + oil temperature) but NO failure labels.
+# This file defines the documented, seeded process that injects failure
+# precursors, trips and harmless look-alike disturbances ON TOP OF the real
+# signals.  Every injected perturbation is stored separately (sim_* columns),
+# so the real measurement is always recoverable, and none of it is a model
+# input (enforced by src/preprocessing/leakage.py and tests).
+#
+# Units: magnitudes are multiples of each channel's LOCAL sigma = std of the
+# deviation of the real signal from its trailing 24 h mean, estimated on the
+# training period only.
+# =====================================================================
+simulation:
+  seed: 2024                       # deterministic: asset i uses seed + i
+  scale_estimation_frac: 0.70      # only the first 70 % (training period) sets the sigma scales
+  failure_gap_days: [3.0, 8.0]     # uniform gap between consecutive failures (accelerated vs reality)
+  precursor_hours: [3.0, 18.0]     # duration D of the incipient-fault stage before the trip
+  outage_hours: [2.0, 8.0]         # asset offline after the trip (rows excluded from scoring)
+
+  # ---- failure mechanisms (probabilities) -------------------------------
+  failure_types:
+    thermal_runaway: 0.35          # cooling degradation: OT rises A·σ·s^p above what load explains
+    load_oscillation: 0.25         # growing oscillation (period 1–3 h) on HV/MV useful load + lagged OT
+    intermittent_arcing: 0.25      # Bernoulli spike bursts on reactive load, rate rising as s²
+    sudden: 0.15                   # NO precursor — fundamentally unpredictable from these sensors
+
+  # ---- signature magnitudes (s = elapsed fraction of the precursor) -----
+  magnitudes:
+    thermal_amp: [2.0, 5.0]        # final OT offset (× local σ)
+    thermal_power: [1.5, 3.0]      # envelope exponent p (slow start)
+    osc_amp: [1.5, 4.0]            # final oscillation amplitude (× local σ)
+    osc_period_steps: [4, 12]      # oscillation period (15-min steps)
+    arc_rate_end: [0.25, 0.6]      # spike probability per step at the trip
+    arc_amp: [2.0, 6.0]            # spike magnitude (× local σ)
+
+  # ---- harmless look-alikes (never followed by a failure) ---------------
+  nuisance_per_day: 0.25
+  nuisance_types:
+    benign_thermal_bump: 0.35      # 2–8 h OT bump of 1–3 σ (mimics early thermal runaway)
+    benign_load_surge: 0.30        # 1–4 h step in HV/MV load with thermal lag
+    benign_oscillation: 0.20       # 1–4 h constant-amplitude oscillation
+    sensor_glitch: 0.15            # 1–3 isolated spikes on a random channel
+
+  # ---- realism knobs: OFF in the reference benchmark ---------------------
+  # Present keys under `variability` switch them on (used by the stress profiles below).
+  #   amp_scale:       multiply each signature by U(lo, hi)            (weaker signatures)
+  #   onset_delay_max: signature absent for up to this fraction of D   (delayed onset)
+  #   dropout_prob:    1–3 h segments of the signature missing          (intermittent / incomplete)
+  #   shape_noise:     multiplicative AR(1) irregularity of the envelope (irregular growth)
+  #   asset_amp:       per-asset amplitude multiplier U(lo, hi)          (asset-specific variation)
+  #   overlap_prob:    probability a benign disturbance may overlap a precursor (overlapping disturbances)
+
+# ---------------------------------------------------------------------
+# Controlled stress levels for the formal robustness evaluation
+# (src/final/robustness.py).  NORMAL = the reference benchmark.
+# ---------------------------------------------------------------------
+stress_profiles:
+  NORMAL: {}
+  MILD:
+    variability: {amp_scale: [0.8, 1.0], onset_delay_max: 0.15, dropout_prob: 0.1, shape_noise: 0.05,
+                  asset_amp: [0.9, 1.1], overlap_prob: 0.1}
+  MODERATE:
+    variability: {amp_scale: [0.65, 1.0], onset_delay_max: 0.3, dropout_prob: 0.2, shape_noise: 0.1,
+                  asset_amp: [0.8, 1.2], overlap_prob: 0.25}
+  SEVERE:
+    variability: {amp_scale: [0.5, 1.0], onset_delay_max: 0.5, dropout_prob: 0.3, shape_noise: 0.15,
+                  asset_amp: [0.7, 1.3], overlap_prob: 0.4}

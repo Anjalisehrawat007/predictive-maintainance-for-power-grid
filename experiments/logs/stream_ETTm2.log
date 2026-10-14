@@ -1,0 +1,24 @@
+22:14:46 | INFO    | sgpm.stream | Replaying ETTm2/test rows 59228..69680 with best_attention_model (warn=0.659, crit=0.962, k=2)
+22:16:15 | INFO    | sgpm.stream | Wrote reports/stream/stream_ETTm2_test.csv
+{
+  "asset": "ETTm2",
+  "split": "test",
+  "model": "best_attention_model",
+  "observations": 10452,
+  "status_counts": {
+    "NORMAL": 9690,
+    "OFFLINE": 376,
+    "WARNING": 218,
+    "WARMUP": 160,
+    "CRITICAL": 8
+  },
+  "failures": 20,
+  "failures_with_active_warning": 11,
+  "online_lead_time_median_min": 105.0,
+  "latency_ms_median": 8.425832987995818,
+  "latency_ms_p95": 8.608200153685175,
+  "latency_ms_max": 38.94450000370853,
+  "warning_threshold": 0.6592720746994019,
+  "critical_threshold": 0.9617807865142822,
+  "alarm_time_fraction": 0.022791448164582492
+}

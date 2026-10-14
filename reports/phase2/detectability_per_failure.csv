@@ -1,0 +1,263 @@
+asset,event_id,type,split,failure_time,precursor_h,signal_metric,signal_strength,class,detected,lead_time_min
+ETTm1,0,intermittent_arcing,train,2016-07-07 09:00:00,6.0,visible spikes (4 h),8.0,A,,
+ETTm1,1,intermittent_arcing,train,2016-07-14 10:45:00,10.5,visible spikes (4 h),3.0,B,,
+ETTm1,2,load_oscillation,train,2016-07-17 11:00:00,7.0,HUFL peak / local σ,5.041610173517226,A,,
+ETTm1,3,thermal_runaway,train,2016-07-23 10:45:00,13.75,OT peak / local σ,3.719202409710842,A,,
+ETTm1,4,intermittent_arcing,train,2016-07-29 22:45:00,13.75,visible spikes (4 h),4.0,A,,
+ETTm1,5,intermittent_arcing,train,2016-08-05 23:00:00,3.0,visible spikes (4 h),1.0,C,,
+ETTm1,6,load_oscillation,train,2016-08-12 23:15:00,14.0,HUFL peak / local σ,9.856801547317735,A,,
+ETTm1,7,load_oscillation,train,2016-08-20 11:00:00,7.0,HUFL peak / local σ,8.63822959126472,A,,
+ETTm1,8,load_oscillation,train,2016-08-26 01:15:00,8.0,HUFL peak / local σ,6.395916073478141,A,,
+ETTm1,9,sudden,train,2016-08-30 08:15:00,0.0,,,D,,
+ETTm1,10,thermal_runaway,train,2016-09-05 08:30:00,10.25,OT peak / local σ,3.74896704424402,A,,
+ETTm1,11,sudden,train,2016-09-09 01:15:00,0.0,,,D,,
+ETTm1,12,sudden,train,2016-09-16 03:30:00,0.0,,,D,,
+ETTm1,13,sudden,train,2016-09-21 08:00:00,0.0,,,D,,
+ETTm1,14,thermal_runaway,train,2016-09-25 03:00:00,5.0,OT peak / local σ,5.294040407333141,A,,
+ETTm1,15,thermal_runaway,train,2016-09-28 08:30:00,9.5,OT peak / local σ,4.814581377802383,A,,
+ETTm1,16,sudden,train,2016-10-02 18:00:00,0.0,,,D,,
+ETTm1,17,sudden,train,2016-10-08 16:30:00,0.0,,,D,,
+ETTm1,18,thermal_runaway,train,2016-10-12 04:30:00,11.0,OT peak / local σ,2.639646064293691,B,,
+ETTm1,19,load_oscillation,train,2016-10-19 13:00:00,3.0,HUFL peak / local σ,4.170833541039847,A,,
+ETTm1,20,thermal_runaway,train,2016-10-26 07:45:00,10.0,OT peak / local σ,2.2727805348033585,B,,
+ETTm1,21,thermal_runaway,train,2016-10-30 01:30:00,13.0,OT peak / local σ,3.148493951267281,A,,
+ETTm1,22,thermal_runaway,train,2016-11-05 19:30:00,16.25,OT peak / local σ,3.4651965502930455,A,,
+ETTm1,23,thermal_runaway,train,2016-11-11 01:00:00,15.5,OT peak / local σ,4.0447471179484475,A,,
+ETTm1,24,intermittent_arcing,train,2016-11-15 11:15:00,3.0,visible spikes (4 h),4.0,A,,
+ETTm1,25,intermittent_arcing,train,2016-11-21 14:15:00,14.0,visible spikes (4 h),7.0,A,,
+ETTm1,26,sudden,train,2016-11-24 23:15:00,0.0,,,D,,
+ETTm1,27,sudden,train,2016-11-30 17:45:00,0.0,,,D,,
+ETTm1,28,intermittent_arcing,train,2016-12-05 17:45:00,12.0,visible spikes (4 h),9.0,A,,
+ETTm1,29,thermal_runaway,train,2016-12-09 01:15:00,8.0,OT peak / local σ,2.284680105435311,B,,
+ETTm1,30,intermittent_arcing,train,2016-12-12 18:15:00,16.0,visible spikes (4 h),10.0,A,,
+ETTm1,31,intermittent_arcing,train,2016-12-20 01:00:00,8.75,visible spikes (4 h),10.0,A,,
+ETTm1,32,thermal_runaway,train,2016-12-24 09:45:00,7.0,OT peak / local σ,3.826867014433834,A,,
+ETTm1,33,sudden,train,2016-12-29 10:00:00,0.0,,,D,,
+ETTm1,34,intermittent_arcing,train,2017-01-02 15:00:00,9.25,visible spikes (4 h),7.0,A,,
+ETTm1,35,sudden,train,2017-01-09 10:15:00,0.0,,,D,,
+ETTm1,36,load_oscillation,train,2017-01-16 12:00:00,13.75,HUFL peak / local σ,5.362401186175924,A,,
+ETTm1,37,load_oscillation,train,2017-01-20 18:30:00,11.5,HUFL peak / local σ,6.5570465469461645,A,,
+ETTm1,38,thermal_runaway,train,2017-01-24 23:30:00,4.5,OT peak / local σ,4.903487960760546,A,,
+ETTm1,39,load_oscillation,train,2017-02-01 12:30:00,15.5,HUFL peak / local σ,2.3597599022885674,B,,
+ETTm1,40,thermal_runaway,train,2017-02-07 07:30:00,4.0,OT peak / local σ,6.783915960676044,A,,
+ETTm1,41,thermal_runaway,train,2017-02-12 07:30:00,12.5,OT peak / local σ,5.731109941028944,A,,
+ETTm1,42,load_oscillation,train,2017-02-19 03:00:00,4.0,HUFL peak / local σ,2.927849788324999,B,,
+ETTm1,43,load_oscillation,train,2017-02-26 12:30:00,13.75,HUFL peak / local σ,3.350332362542212,A,,
+ETTm1,44,thermal_runaway,train,2017-03-02 04:45:00,6.25,OT peak / local σ,2.2774647011726774,B,,
+ETTm1,45,thermal_runaway,train,2017-03-07 12:00:00,12.75,OT peak / local σ,2.3542713875828114,B,,
+ETTm1,46,intermittent_arcing,train,2017-03-10 12:15:00,6.25,visible spikes (4 h),6.0,A,,
+ETTm1,47,thermal_runaway,train,2017-03-16 05:30:00,14.75,OT peak / local σ,1.9079054319990978,B,,
+ETTm1,48,load_oscillation,train,2017-03-21 13:30:00,13.25,HUFL peak / local σ,2.753900705360083,B,,
+ETTm1,49,thermal_runaway,train,2017-03-28 23:45:00,9.75,OT peak / local σ,4.483154705776522,A,,
+ETTm1,50,load_oscillation,train,2017-04-05 00:00:00,9.5,HUFL peak / local σ,1.3592602285794428,C,,
+ETTm1,51,intermittent_arcing,train,2017-04-09 09:45:00,5.0,visible spikes (4 h),3.0,B,,
+ETTm1,52,load_oscillation,train,2017-04-15 00:45:00,6.25,HUFL peak / local σ,2.252351973909148,B,,
+ETTm1,53,thermal_runaway,train,2017-04-19 22:15:00,9.75,OT peak / local σ,1.6336563735630556,B,,
+ETTm1,54,load_oscillation,train,2017-04-27 17:30:00,17.0,HUFL peak / local σ,3.2588728781174994,A,,
+ETTm1,55,thermal_runaway,train,2017-05-03 22:00:00,9.5,OT peak / local σ,2.185628240472334,B,,
+ETTm1,56,thermal_runaway,train,2017-05-09 05:00:00,12.5,OT peak / local σ,3.248693158320276,A,,
+ETTm1,57,intermittent_arcing,train,2017-05-16 21:30:00,9.25,visible spikes (4 h),7.0,A,,
+ETTm1,58,sudden,train,2017-05-24 08:15:00,0.0,,,D,,
+ETTm1,59,intermittent_arcing,train,2017-05-28 07:00:00,12.75,visible spikes (4 h),8.0,A,,
+ETTm1,60,thermal_runaway,train,2017-06-01 11:00:00,15.25,OT peak / local σ,5.407493419967677,A,,
+ETTm1,61,thermal_runaway,train,2017-06-06 18:00:00,4.5,OT peak / local σ,2.390376223787277,B,,
+ETTm1,62,load_oscillation,train,2017-06-13 17:45:00,15.5,HUFL peak / local σ,3.877732888091239,A,,
+ETTm1,63,intermittent_arcing,train,2017-06-16 19:00:00,17.25,visible spikes (4 h),7.0,A,,
+ETTm1,64,thermal_runaway,train,2017-06-22 10:45:00,9.75,OT peak / local σ,6.285886000488636,A,,
+ETTm1,65,load_oscillation,train,2017-06-26 17:15:00,7.25,HUFL peak / local σ,2.6644486339413294,B,,
+ETTm1,66,thermal_runaway,train,2017-07-01 12:15:00,13.5,OT peak / local σ,3.542197884038764,A,,
+ETTm1,67,sudden,train,2017-07-07 14:00:00,0.0,,,D,,
+ETTm1,68,sudden,train,2017-07-11 17:30:00,0.0,,,D,,
+ETTm1,69,thermal_runaway,train,2017-07-17 22:30:00,7.75,OT peak / local σ,6.019793438479292,A,,
+ETTm1,70,thermal_runaway,train,2017-07-25 01:15:00,3.25,OT peak / local σ,4.189301007782788,A,,
+ETTm1,71,sudden,train,2017-08-02 00:45:00,0.0,,,D,,
+ETTm1,72,thermal_runaway,train,2017-08-09 04:45:00,11.5,OT peak / local σ,4.049868997912589,A,,
+ETTm1,73,thermal_runaway,train,2017-08-14 10:15:00,16.75,OT peak / local σ,2.9880390748684142,B,,
+ETTm1,74,thermal_runaway,train,2017-08-21 13:30:00,12.0,OT peak / local σ,4.364142163302779,A,,
+ETTm1,75,thermal_runaway,train,2017-08-25 09:15:00,8.5,OT peak / local σ,2.563913287081452,B,,
+ETTm1,76,intermittent_arcing,train,2017-09-01 19:30:00,8.75,visible spikes (4 h),6.0,A,,
+ETTm1,77,intermittent_arcing,train,2017-09-07 13:00:00,5.5,visible spikes (4 h),9.0,A,,
+ETTm1,78,load_oscillation,train,2017-09-11 01:45:00,3.5,HUFL peak / local σ,2.5756720912421414,B,,
+ETTm1,79,intermittent_arcing,train,2017-09-17 15:45:00,3.75,visible spikes (4 h),0.0,C,,
+ETTm1,80,intermittent_arcing,train,2017-09-24 02:00:00,4.75,visible spikes (4 h),2.0,B,,
+ETTm1,81,load_oscillation,train,2017-09-29 19:15:00,8.75,HUFL peak / local σ,4.417876311635498,A,,
+ETTm1,82,intermittent_arcing,train,2017-10-07 13:45:00,10.25,visible spikes (4 h),7.0,A,,
+ETTm1,83,sudden,train,2017-10-15 12:15:00,0.0,,,D,,
+ETTm1,84,load_oscillation,train,2017-10-21 03:30:00,16.5,HUFL peak / local σ,2.363918477437917,B,,
+ETTm1,85,thermal_runaway,train,2017-10-26 16:15:00,10.0,OT peak / local σ,7.325454885692485,A,,
+ETTm1,86,intermittent_arcing,train,2017-11-02 01:30:00,8.0,visible spikes (4 h),4.0,A,,
+ETTm1,87,intermittent_arcing,train,2017-11-09 18:15:00,16.75,visible spikes (4 h),8.0,A,,
+ETTm1,88,thermal_runaway,train,2017-11-14 12:45:00,8.25,OT peak / local σ,7.219365920224696,A,,
+ETTm1,89,thermal_runaway,train,2017-11-18 14:15:00,17.0,OT peak / local σ,9.16610014340287,A,,
+ETTm1,90,load_oscillation,val,2017-11-25 11:15:00,13.5,HUFL peak / local σ,2.2597049005429617,B,True,360.0
+ETTm1,91,thermal_runaway,val,2017-12-01 08:15:00,13.25,OT peak / local σ,7.717698339540163,A,True,330.0
+ETTm1,92,thermal_runaway,val,2017-12-09 05:15:00,15.0,OT peak / local σ,4.006379044607284,A,False,
+ETTm1,93,sudden,val,2017-12-16 17:15:00,0.0,,,D,False,
+ETTm1,94,intermittent_arcing,val,2017-12-22 07:30:00,14.5,visible spikes (4 h),8.0,A,True,240.0
+ETTm1,95,sudden,val,2017-12-29 05:30:00,0.0,,,D,False,
+ETTm1,96,load_oscillation,val,2018-01-06 00:30:00,12.75,HUFL peak / local σ,3.3499956122382675,A,True,210.0
+ETTm1,97,thermal_runaway,val,2018-01-12 13:00:00,14.25,OT peak / local σ,3.3775159221637012,A,False,
+ETTm1,98,load_oscillation,val,2018-01-17 00:45:00,6.5,HUFL peak / local σ,1.492697735340257,C,True,165.0
+ETTm1,99,intermittent_arcing,val,2018-01-22 03:30:00,5.0,visible spikes (4 h),3.0,B,True,45.0
+ETTm1,100,thermal_runaway,val,2018-01-27 04:15:00,9.75,OT peak / local σ,6.633017900262966,A,True,255.0
+ETTm1,101,intermittent_arcing,val,2018-01-31 19:15:00,15.75,visible spikes (4 h),6.0,A,True,165.0
+ETTm1,102,sudden,val,2018-02-08 14:00:00,0.0,,,D,False,
+ETTm1,103,thermal_runaway,val,2018-02-14 05:00:00,5.75,OT peak / local σ,6.545643810685447,A,True,90.0
+ETTm1,104,intermittent_arcing,val,2018-02-20 08:30:00,17.5,visible spikes (4 h),10.0,A,True,45.0
+ETTm1,105,load_oscillation,val,2018-02-27 02:15:00,17.5,HUFL peak / local σ,2.23101957969019,B,True,240.0
+ETTm1,106,load_oscillation,val,2018-03-04 07:30:00,12.5,HUFL peak / local σ,3.3098003050171556,A,True,255.0
+ETTm1,107,thermal_runaway,val,2018-03-08 21:00:00,17.5,OT peak / local σ,5.608966870395078,A,True,180.0
+ETTm1,108,intermittent_arcing,test,2018-03-12 18:00:00,4.5,visible spikes (4 h),4.0,A,False,
+ETTm1,109,thermal_runaway,test,2018-03-20 06:45:00,10.5,OT peak / local σ,4.001635774450578,A,True,165.0
+ETTm1,110,thermal_runaway,test,2018-03-26 14:45:00,10.0,OT peak / local σ,7.842495885439877,A,True,45.0
+ETTm1,111,load_oscillation,test,2018-04-01 20:30:00,5.75,HUFL peak / local σ,1.6528510529266203,B,True,90.0
+ETTm1,112,load_oscillation,test,2018-04-05 06:00:00,3.25,HUFL peak / local σ,1.4339647259863555,C,True,30.0
+ETTm1,113,intermittent_arcing,test,2018-04-10 06:45:00,12.25,visible spikes (4 h),6.0,A,True,285.0
+ETTm1,114,thermal_runaway,test,2018-04-15 20:30:00,11.5,OT peak / local σ,3.407622368357536,A,False,
+ETTm1,115,thermal_runaway,test,2018-04-19 20:30:00,13.5,OT peak / local σ,5.793906131131637,A,False,
+ETTm1,116,intermittent_arcing,test,2018-04-25 17:45:00,15.0,visible spikes (4 h),8.0,A,True,195.0
+ETTm1,117,intermittent_arcing,test,2018-05-01 19:15:00,4.5,visible spikes (4 h),0.0,C,False,
+ETTm1,118,load_oscillation,test,2018-05-07 09:15:00,17.5,HUFL peak / local σ,2.926549742492104,B,True,540.0
+ETTm1,119,thermal_runaway,test,2018-05-10 22:00:00,16.5,OT peak / local σ,5.0871009473616615,A,True,75.0
+ETTm1,120,load_oscillation,test,2018-05-15 22:15:00,13.25,HUFL peak / local σ,1.896868539897637,B,True,255.0
+ETTm1,121,thermal_runaway,test,2018-05-19 18:30:00,15.75,OT peak / local σ,4.59822608242193,A,False,
+ETTm1,122,intermittent_arcing,test,2018-05-23 16:00:00,4.5,visible spikes (4 h),2.0,B,False,
+ETTm1,123,intermittent_arcing,test,2018-05-30 10:30:00,10.75,visible spikes (4 h),7.0,A,True,150.0
+ETTm1,124,intermittent_arcing,test,2018-06-04 22:00:00,14.25,visible spikes (4 h),5.0,A,True,150.0
+ETTm1,125,thermal_runaway,test,2018-06-09 04:30:00,14.25,OT peak / local σ,6.015476029197364,A,False,
+ETTm1,126,intermittent_arcing,test,2018-06-17 03:30:00,3.0,visible spikes (4 h),3.0,B,True,15.0
+ETTm1,127,load_oscillation,test,2018-06-21 17:30:00,14.75,HUFL peak / local σ,1.892100475849519,B,True,135.0
+ETTm2,0,intermittent_arcing,train,2016-07-08 23:15:00,8.5,visible spikes (4 h),4.0,A,,
+ETTm2,1,load_oscillation,train,2016-07-13 01:15:00,12.25,HUFL peak / local σ,5.887052227335589,A,,
+ETTm2,2,thermal_runaway,train,2016-07-20 23:30:00,16.5,OT peak / local σ,3.197563975177162,A,,
+ETTm2,3,intermittent_arcing,train,2016-07-26 07:30:00,15.25,visible spikes (4 h),7.0,A,,
+ETTm2,4,thermal_runaway,train,2016-07-30 06:45:00,13.0,OT peak / local σ,3.6440206305934435,A,,
+ETTm2,5,load_oscillation,train,2016-08-04 21:15:00,7.25,HUFL peak / local σ,4.479299745617903,A,,
+ETTm2,6,thermal_runaway,train,2016-08-09 18:30:00,8.0,OT peak / local σ,2.405050100761343,B,,
+ETTm2,7,intermittent_arcing,train,2016-08-14 16:15:00,14.25,visible spikes (4 h),5.0,A,,
+ETTm2,8,load_oscillation,train,2016-08-18 21:00:00,17.75,HUFL peak / local σ,1.6480642172206155,B,,
+ETTm2,9,intermittent_arcing,train,2016-08-26 05:15:00,15.0,visible spikes (4 h),10.0,A,,
+ETTm2,10,load_oscillation,train,2016-09-01 15:15:00,6.75,HUFL peak / local σ,2.834455951162411,B,,
+ETTm2,11,thermal_runaway,train,2016-09-08 09:15:00,10.25,OT peak / local σ,3.3801192094727694,A,,
+ETTm2,12,load_oscillation,train,2016-09-15 02:30:00,6.0,HUFL peak / local σ,6.24407994031402,A,,
+ETTm2,13,load_oscillation,train,2016-09-20 19:45:00,14.0,HUFL peak / local σ,6.49702966697155,A,,
+ETTm2,14,thermal_runaway,train,2016-09-26 17:15:00,5.75,OT peak / local σ,2.991921437369039,B,,
+ETTm2,15,load_oscillation,train,2016-10-01 03:30:00,17.25,HUFL peak / local σ,2.2541265775145245,B,,
+ETTm2,16,intermittent_arcing,train,2016-10-08 11:00:00,7.75,visible spikes (4 h),3.0,B,,
+ETTm2,17,sudden,train,2016-10-13 15:45:00,0.0,,,D,,
+ETTm2,18,intermittent_arcing,train,2016-10-21 06:00:00,16.0,visible spikes (4 h),6.0,A,,
+ETTm2,19,load_oscillation,train,2016-10-26 07:45:00,17.25,HUFL peak / local σ,4.28883258914937,A,,
+ETTm2,20,thermal_runaway,train,2016-10-29 11:45:00,12.25,OT peak / local σ,5.872885716344173,A,,
+ETTm2,21,load_oscillation,train,2016-11-04 23:30:00,5.25,HUFL peak / local σ,2.6126151950302763,B,,
+ETTm2,22,sudden,train,2016-11-08 00:15:00,0.0,,,D,,
+ETTm2,23,thermal_runaway,train,2016-11-13 15:30:00,9.25,OT peak / local σ,3.1290603812169695,A,,
+ETTm2,24,load_oscillation,train,2016-11-21 02:45:00,8.75,HUFL peak / local σ,6.85624735490075,A,,
+ETTm2,25,intermittent_arcing,train,2016-11-26 20:00:00,7.75,visible spikes (4 h),5.0,A,,
+ETTm2,26,thermal_runaway,train,2016-12-02 14:00:00,12.5,OT peak / local σ,5.366867643372603,A,,
+ETTm2,27,intermittent_arcing,train,2016-12-08 06:45:00,7.75,visible spikes (4 h),2.0,B,,
+ETTm2,28,intermittent_arcing,train,2016-12-15 17:30:00,11.75,visible spikes (4 h),7.0,A,,
+ETTm2,29,intermittent_arcing,train,2016-12-22 08:30:00,10.25,visible spikes (4 h),5.0,A,,
+ETTm2,30,load_oscillation,train,2016-12-26 22:45:00,7.25,HUFL peak / local σ,4.485410886266253,A,,
+ETTm2,31,sudden,train,2017-01-01 05:00:00,0.0,,,D,,
+ETTm2,32,intermittent_arcing,train,2017-01-08 13:30:00,11.5,visible spikes (4 h),10.0,A,,
+ETTm2,33,intermittent_arcing,train,2017-01-16 12:00:00,3.5,visible spikes (4 h),0.0,C,,
+ETTm2,34,intermittent_arcing,train,2017-01-20 22:30:00,6.0,visible spikes (4 h),8.0,A,,
+ETTm2,35,sudden,train,2017-01-27 21:30:00,0.0,,,D,,
+ETTm2,36,intermittent_arcing,train,2017-02-02 23:15:00,8.75,visible spikes (4 h),5.0,A,,
+ETTm2,37,load_oscillation,train,2017-02-08 13:45:00,5.0,HUFL peak / local σ,3.9599653761926015,A,,
+ETTm2,38,load_oscillation,train,2017-02-16 13:15:00,9.75,HUFL peak / local σ,3.923647381574,A,,
+ETTm2,39,intermittent_arcing,train,2017-02-21 03:30:00,14.5,visible spikes (4 h),7.0,A,,
+ETTm2,40,intermittent_arcing,train,2017-02-25 20:00:00,7.5,visible spikes (4 h),5.0,A,,
+ETTm2,41,thermal_runaway,train,2017-03-04 06:45:00,7.5,OT peak / local σ,2.2987436053730628,B,,
+ETTm2,42,intermittent_arcing,train,2017-03-10 02:00:00,5.0,visible spikes (4 h),4.0,A,,
+ETTm2,43,sudden,train,2017-03-16 19:00:00,0.0,,,D,,
+ETTm2,44,intermittent_arcing,train,2017-03-24 06:45:00,14.75,visible spikes (4 h),2.0,B,,
+ETTm2,45,intermittent_arcing,train,2017-03-30 20:45:00,3.5,visible spikes (4 h),5.0,A,,
+ETTm2,46,load_oscillation,train,2017-04-04 01:15:00,14.5,HUFL peak / local σ,8.283386932044337,A,,
+ETTm2,47,load_oscillation,train,2017-04-11 15:30:00,7.75,HUFL peak / local σ,4.196985045396632,A,,
+ETTm2,48,load_oscillation,train,2017-04-17 17:15:00,7.75,HUFL peak / local σ,1.6854801885636232,B,,
+ETTm2,49,intermittent_arcing,train,2017-04-24 19:30:00,17.25,visible spikes (4 h),1.0,C,,
+ETTm2,50,thermal_runaway,train,2017-04-28 13:45:00,13.5,OT peak / local σ,2.6561053245408286,B,,
+ETTm2,51,thermal_runaway,train,2017-05-05 20:45:00,3.25,OT peak / local σ,3.2262508200869577,A,,
+ETTm2,52,thermal_runaway,train,2017-05-13 10:15:00,8.5,OT peak / local σ,3.3164341328922546,A,,
+ETTm2,53,intermittent_arcing,train,2017-05-16 12:00:00,14.5,visible spikes (4 h),5.0,A,,
+ETTm2,54,intermittent_arcing,train,2017-05-19 12:00:00,9.0,visible spikes (4 h),5.0,A,,
+ETTm2,55,thermal_runaway,train,2017-05-22 16:00:00,15.75,OT peak / local σ,2.9684664659824485,B,,
+ETTm2,56,load_oscillation,train,2017-05-26 00:15:00,16.25,HUFL peak / local σ,2.1585721339049466,B,,
+ETTm2,57,load_oscillation,train,2017-05-29 03:45:00,5.5,HUFL peak / local σ,1.3484322464665384,C,,
+ETTm2,58,thermal_runaway,train,2017-06-05 13:15:00,14.25,OT peak / local σ,4.576768443957246,A,,
+ETTm2,59,sudden,train,2017-06-11 03:00:00,0.0,,,D,,
+ETTm2,60,thermal_runaway,train,2017-06-18 15:00:00,6.0,OT peak / local σ,3.2943684044708204,A,,
+ETTm2,61,load_oscillation,train,2017-06-24 00:30:00,15.25,HUFL peak / local σ,2.7170535530218882,B,,
+ETTm2,62,load_oscillation,train,2017-06-27 00:45:00,13.5,HUFL peak / local σ,5.771465096224246,A,,
+ETTm2,63,intermittent_arcing,train,2017-06-30 06:45:00,8.75,visible spikes (4 h),9.0,A,,
+ETTm2,64,intermittent_arcing,train,2017-07-06 21:15:00,5.75,visible spikes (4 h),3.0,B,,
+ETTm2,65,intermittent_arcing,train,2017-07-10 21:15:00,14.5,visible spikes (4 h),8.0,A,,
+ETTm2,66,intermittent_arcing,train,2017-07-16 05:45:00,3.25,visible spikes (4 h),2.0,B,,
+ETTm2,67,load_oscillation,train,2017-07-22 13:00:00,4.75,HUFL peak / local σ,2.302505677567328,B,,
+ETTm2,68,thermal_runaway,train,2017-07-26 13:45:00,11.0,OT peak / local σ,3.8103088843457673,A,,
+ETTm2,69,intermittent_arcing,train,2017-07-30 22:30:00,7.25,visible spikes (4 h),9.0,A,,
+ETTm2,70,thermal_runaway,train,2017-08-07 08:45:00,14.75,OT peak / local σ,3.2136665860270126,A,,
+ETTm2,71,load_oscillation,train,2017-08-13 03:45:00,6.5,HUFL peak / local σ,3.2869726403682606,A,,
+ETTm2,72,sudden,train,2017-08-16 05:15:00,0.0,,,D,,
+ETTm2,73,thermal_runaway,train,2017-08-19 21:15:00,7.75,OT peak / local σ,5.3431518548707375,A,,
+ETTm2,74,thermal_runaway,train,2017-08-23 18:30:00,4.0,OT peak / local σ,4.410023459976524,A,,
+ETTm2,75,intermittent_arcing,train,2017-08-29 19:30:00,11.0,visible spikes (4 h),7.0,A,,
+ETTm2,76,thermal_runaway,train,2017-09-01 22:00:00,8.5,OT peak / local σ,3.41127611341067,A,,
+ETTm2,77,intermittent_arcing,train,2017-09-05 14:45:00,11.75,visible spikes (4 h),10.0,A,,
+ETTm2,78,intermittent_arcing,train,2017-09-12 14:15:00,15.75,visible spikes (4 h),7.0,A,,
+ETTm2,79,sudden,train,2017-09-19 16:00:00,0.0,,,D,,
+ETTm2,80,thermal_runaway,train,2017-09-27 00:30:00,12.25,OT peak / local σ,7.219660325194488,A,,
+ETTm2,81,intermittent_arcing,train,2017-10-01 16:15:00,10.0,visible spikes (4 h),10.0,A,,
+ETTm2,82,thermal_runaway,train,2017-10-08 04:15:00,13.0,OT peak / local σ,4.359996280906029,A,,
+ETTm2,83,thermal_runaway,train,2017-10-12 22:30:00,11.5,OT peak / local σ,2.813570304012178,B,,
+ETTm2,84,load_oscillation,train,2017-10-18 06:45:00,17.75,HUFL peak / local σ,2.144404602938245,B,,
+ETTm2,85,thermal_runaway,train,2017-10-25 23:15:00,9.75,OT peak / local σ,4.363309026232864,A,,
+ETTm2,86,sudden,train,2017-10-29 03:15:00,0.0,,,D,,
+ETTm2,87,intermittent_arcing,train,2017-11-01 21:45:00,9.75,visible spikes (4 h),8.0,A,,
+ETTm2,88,load_oscillation,train,2017-11-07 11:30:00,3.5,HUFL peak / local σ,2.3908172233619673,B,,
+ETTm2,89,intermittent_arcing,train,2017-11-11 17:15:00,12.75,visible spikes (4 h),9.0,A,,
+ETTm2,90,sudden,train,2017-11-16 21:30:00,0.0,,,D,,
+ETTm2,92,intermittent_arcing,val,2017-11-26 02:45:00,11.5,visible spikes (4 h),6.0,A,True,75.0
+ETTm2,93,intermittent_arcing,val,2017-12-02 06:45:00,10.75,visible spikes (4 h),4.0,A,True,30.0
+ETTm2,94,thermal_runaway,val,2017-12-08 13:45:00,7.25,OT peak / local σ,5.291249042718656,A,True,240.0
+ETTm2,95,thermal_runaway,val,2017-12-13 05:45:00,9.25,OT peak / local σ,3.8106768622300047,A,True,360.0
+ETTm2,96,intermittent_arcing,val,2017-12-17 02:15:00,4.0,visible spikes (4 h),4.0,A,False,
+ETTm2,97,sudden,val,2017-12-22 04:15:00,0.0,,,D,False,
+ETTm2,98,load_oscillation,val,2017-12-26 17:00:00,4.25,HUFL peak / local σ,1.900271154351977,B,False,
+ETTm2,99,intermittent_arcing,val,2018-01-02 15:30:00,17.25,visible spikes (4 h),8.0,A,True,135.0
+ETTm2,100,thermal_runaway,val,2018-01-06 10:30:00,11.25,OT peak / local σ,4.4024792468345275,A,True,315.0
+ETTm2,101,load_oscillation,val,2018-01-11 10:30:00,17.75,HUFL peak / local σ,2.8027601633151242,B,True,240.0
+ETTm2,102,load_oscillation,val,2018-01-14 12:15:00,8.5,HUFL peak / local σ,3.1558624448644594,A,True,120.0
+ETTm2,103,load_oscillation,val,2018-01-17 17:00:00,11.75,HUFL peak / local σ,2.2029715609745897,B,True,165.0
+ETTm2,104,sudden,val,2018-01-20 21:45:00,0.0,,,D,False,
+ETTm2,105,intermittent_arcing,val,2018-01-24 02:00:00,14.5,visible spikes (4 h),5.0,A,True,150.0
+ETTm2,106,intermittent_arcing,val,2018-01-28 14:45:00,15.0,visible spikes (4 h),6.0,A,True,180.0
+ETTm2,107,load_oscillation,val,2018-02-01 11:15:00,17.5,HUFL peak / local σ,2.34736137884868,B,True,345.0
+ETTm2,108,thermal_runaway,val,2018-02-05 01:30:00,12.0,OT peak / local σ,3.952080535959833,A,True,285.0
+ETTm2,109,intermittent_arcing,val,2018-02-11 12:00:00,15.75,visible spikes (4 h),7.0,A,True,225.0
+ETTm2,110,thermal_runaway,val,2018-02-17 20:45:00,13.5,OT peak / local σ,3.612383082129709,A,True,525.0
+ETTm2,111,thermal_runaway,val,2018-02-21 19:00:00,15.5,OT peak / local σ,4.147173828753521,A,True,195.0
+ETTm2,112,intermittent_arcing,val,2018-02-27 07:45:00,11.25,visible spikes (4 h),4.0,A,True,75.0
+ETTm2,113,intermittent_arcing,val,2018-03-03 08:30:00,13.25,visible spikes (4 h),9.0,A,True,300.0
+ETTm2,114,intermittent_arcing,val,2018-03-08 02:45:00,7.5,visible spikes (4 h),11.0,A,True,255.0
+ETTm2,115,sudden,test,2018-03-13 23:15:00,0.0,,,D,False,
+ETTm2,116,thermal_runaway,test,2018-03-19 14:45:00,10.0,OT peak / local σ,2.5666172970929138,B,True,45.0
+ETTm2,117,load_oscillation,test,2018-03-24 23:15:00,11.5,HUFL peak / local σ,4.750754800562514,A,True,165.0
+ETTm2,118,thermal_runaway,test,2018-03-30 10:45:00,11.75,OT peak / local σ,3.299168239675867,A,True,120.0
+ETTm2,119,intermittent_arcing,test,2018-04-04 00:30:00,17.75,visible spikes (4 h),8.0,A,True,60.0
+ETTm2,120,thermal_runaway,test,2018-04-08 01:45:00,8.75,OT peak / local σ,2.1384629336465526,B,True,105.0
+ETTm2,121,sudden,test,2018-04-14 11:15:00,0.0,,,D,False,
+ETTm2,122,sudden,test,2018-04-20 09:45:00,0.0,,,D,False,
+ETTm2,123,thermal_runaway,test,2018-04-26 05:45:00,6.5,OT peak / local σ,3.5897316575534775,A,True,60.0
+ETTm2,124,intermittent_arcing,test,2018-04-29 19:45:00,3.5,visible spikes (4 h),2.0,B,False,
+ETTm2,125,sudden,test,2018-05-03 06:00:00,0.0,,,D,False,
+ETTm2,126,sudden,test,2018-05-09 23:00:00,0.0,,,D,False,
+ETTm2,127,thermal_runaway,test,2018-05-14 17:45:00,7.5,OT peak / local σ,3.7171817645472025,A,True,120.0
+ETTm2,128,sudden,test,2018-05-21 02:30:00,0.0,,,D,False,
+ETTm2,129,load_oscillation,test,2018-05-26 21:00:00,11.5,HUFL peak / local σ,6.315862297952659,A,True,285.0
+ETTm2,130,load_oscillation,test,2018-06-02 11:45:00,5.0,HUFL peak / local σ,6.030135905871184,A,True,60.0
+ETTm2,131,intermittent_arcing,test,2018-06-06 05:15:00,14.75,visible spikes (4 h),8.0,A,False,
+ETTm2,132,intermittent_arcing,test,2018-06-09 16:00:00,14.75,visible spikes (4 h),8.0,A,True,45.0
+ETTm2,133,sudden,test,2018-06-17 03:00:00,0.0,,,D,False,
+ETTm2,134,load_oscillation,test,2018-06-23 14:30:00,11.5,HUFL peak / local σ,3.194808110066858,A,True,195.0

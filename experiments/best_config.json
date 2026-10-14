@@ -1,0 +1,16 @@
+{
+  "model_type": "gru_attention",
+  "feature_set": "stationary",
+  "seq_len": 48,
+  "horizon": 8,
+  "loss": "weighted_bce",
+  "hidden_size": 64,
+  "num_layers": 1,
+  "dropout": 0.4,
+  "lr": 0.002,
+  "negative_ratio": null,
+  "train_overrides": {
+    "weight_decay": 0.001,
+    "input_noise": 0.1
+  }
+}

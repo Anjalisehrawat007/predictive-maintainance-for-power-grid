@@ -1,0 +1,37 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# raw data is downloaded automatically — never commit it
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*.parquet
+experiments/preds/
+experiments/optuna.db
+
+# Phase 2
+frontend/node_modules/
+frontend/dist/
+experiments/phase2/preds/
+reports/phase2/alert_acks.json
+
+# local / OS
+.env
+.DS_Store
+*.log
+!experiments/**/*.log
+.ruff_cache/
+npm-debug.log*
+.claude/
+
+# Row-level sensor values derived from ETDataset (CC BY-ND 4.0 forbids sharing adapted material).
+# Regenerated locally and deterministically by `make data` (engine log) and `make stream` (Phase-1 stream logs).
+reports/phase2/engine_log/
+reports/stream/*.csv
+
+# Trained artefacts learned from ETDataset (CC BY-ND 4.0). Whether trained weights are "adapted material" is
+# unresolved, so they are NOT published. `make data` retrains the deployed models locally (`make models`, ~20–30 min;
+# verified bit-identical on the development machine). Small JSON metadata (thresholds, calibrators) stays committed.
+models/**/*.pt
+models/*.onnx
+models/preprocessor.pkl
