@@ -26,7 +26,8 @@ npm-debug.log*
 
 # Row-level sensor values derived from ETDataset (CC BY-ND 4.0 forbids sharing adapted material).
 # Regenerated locally and deterministically by `make data` (engine log) and `make stream` (Phase-1 stream logs).
-reports/phase2/engine_log/
+reports/phase2/engine_log/*
+!reports/phase2/engine_log/timings.json
 reports/stream/*.csv
 
 # Trained artefacts learned from ETDataset (CC BY-ND 4.0). Whether trained weights are "adapted material" is
@@ -35,4 +36,4 @@ reports/stream/*.csv
 models/**/*.pt
 models/*.onnx
 models/preprocessor.pkl
-site/
+.deploy-web/

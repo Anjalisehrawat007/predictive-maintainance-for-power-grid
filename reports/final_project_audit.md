@@ -46,7 +46,7 @@ Status legend: **Fixed** · **Mitigated** (reduced, documented) · **Accepted** 
 | E7 | No containerisation or env template. | **Mitigated**: `Dockerfile`, `docker-compose.yml`, `.env.example`. **Docker was not available on the development machine, so the image was not built here.** |
 | E8 | The simulation parameters were mixed into the main config. | **Fixed**: `configs/failure_simulation.yaml` documents every mechanism, merged at load. |
 | E9 | No frontend unit tests or performance trace. | **Fixed**: Vitest tests for formatting and adapters; `window.__sgPerf` trace used by the benchmark. |
-| E10 | `backend/export_static.py` (full static snapshot for Vercel) would have published per-step, fault-injected ETDataset sensor values. | **Replaced** by `backend/export_results.py`: a results-only static site (aggregate JSON, guarded against sensor rows), deployed to Vercel. |
+| E10 | `backend/export_static.py` (full static snapshot for Vercel) would have published per-step, fault-injected ETDataset sensor values. | **Replaced** by a dynamic public deployment: Vercel frontend + FastAPI engine on a Hugging Face Space in public mode (`SGPM_PUBLIC=1`: no dataset rows on the server; visitors use synthetic scenarios or their own uploads; weights fetched from a private repo). |
 | E11 | The legacy Streamlit dashboard (`dashboard/`, `app.py`) duplicates part of the React UI. | **Accepted**: kept as an internal research/debug view and labelled as legacy in the README. |
 | E12 | `src/streaming/engine.py` (Phase-1 `stream.py`) still uses the pandas feature path. | **Accepted**: CLI-only reproduction tool; the served engine (`backend/intelligence.py`) uses the fast path. |
 

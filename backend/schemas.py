@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import math
 from datetime import datetime
+from typing import Literal
 
 from pydantic import BaseModel, Field, field_validator
 
@@ -57,4 +58,27 @@ class PredictBody(BaseModel):
         ts = [r.timestamp for r in rows]
         if any(b <= a for a, b in zip(ts, ts[1:])):
             raise ValueError("timestamps must be strictly increasing")
+        return rows
+
+
+class ScenarioBody(BaseModel):
+    """Scenario Lab: synthetic normal operation + a visitor-chosen injected fault."""
+    asset: str = Field("ETTm1", min_length=1, max_length=32)
+    month: int = Field(4, ge=1, le=12)
+    fault: Literal["none", "thermal_runaway", "load_oscillation", "intermittent_arcing", "sudden"] = "thermal_runaway"
+    severity: float = Field(1.0, ge=0.25, le=2.0)
+    precursor_hours: float = Field(8.0, ge=3.0, le=18.0)
+    seed: int = Field(0, ge=0, le=1_000_000)
+
+
+class UploadBody(PredictBody):
+    """Visitor-provided readings, streamed through the engine. Rows must be consecutive 15-minute readings."""
+
+    @field_validator("rows")
+    @classmethod
+    def regular(cls, rows: list[SensorRow]) -> list[SensorRow]:
+        ts = [r.timestamp for r in rows]
+        bad = [i for i, (a, b) in enumerate(zip(ts, ts[1:]), 1) if (b - a).total_seconds() != 900]
+        if bad:
+            raise ValueError(f"rows must be consecutive 15-minute readings (first gap at row {bad[0]})")
         return rows

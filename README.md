@@ -7,9 +7,15 @@ within the next 2 hours. Its score is calibrated, given a model-confidence estim
 alerts by a streaming engine. The engine is served through FastAPI and a React/TypeScript operations center
 with **Incident Replay** and a guided **Demo Mode** that run the real engine on held-out data.
 
-**Live results site:** <https://predictive-maintenance-power-grid.vercel.app>. It is a static snapshot of the
-results pages (Failure Intelligence, Model Lab, Methodology). The live engine views (Command Center, Incident
-Replay, Demo Mode) need the Python engine and the ETDataset sensor rows, so they [run locally](#quick-start).
+**Live website:** <https://predictive-maintenance-power-grid.vercel.app>. The real engine runs on a Hugging Face
+Space, and visitors drive it:
+- **Scenario Lab:** inject a fault (type, severity, precursor length) into a synthetic transformer stream and watch
+  the model react live.
+- **Upload & Score:** run your own CSV of readings through the engine.
+- **Results pages:** Failure Intelligence, Model Lab and Methodology.
+
+The views that replay the held-out ETDataset rows (Command Center, Incident Replay, Demo Mode) are not served
+publicly because of the data license; they [run locally](#quick-start).
 
 > [!IMPORTANT]
 > **Sensor data are real; failure events are simulated.** The sensor data come from ETDataset (two real
@@ -236,9 +242,31 @@ optional: `make train` (~2.5 h), then `make final`.
 `make data`, including model training). They **have never been built or run**, because Docker was unavailable
 in the development environment. Treat them as an untested starting point.
 
-**Static results site** (`make site`): a `VITE_STATIC=1` frontend build plus aggregate JSON exported from the real
-API by [`backend/export_results.py`](backend/export_results.py), which refuses to write anything that looks like
-sensor rows. Deploy with `cd site && vercel deploy --prod`. Live views show a notice and a real screenshot.
+## Live website (public deployment)
+```mermaid
+flowchart LR
+  V[Visitor] --> W[React app on Vercel<br/>VITE_PUBLIC=1]
+  W -->|HTTPS + CORS| S[FastAPI engine<br/>Hugging Face Docker Space<br/>SGPM_PUBLIC=1]
+  S -->|start-up, token| M[(Private HF model repo<br/>trained weights)]
+```
+- **Public mode** (`SGPM_PUBLIC=1`) keeps no ETDataset rows on the server. Endpoints that would replay held-out
+  rows return 404 (tested).
+- **What visitors can do:** create **scenarios** (`POST /api/scenarios`) or **uploads** (`POST /api/uploads`).
+  Both stream through the same engine as the local app.
+- **Synthetic baseline:** generated from aggregate statistics of the training period
+  ([`src/scenario/baseline.py`](src/scenario/baseline.py)). Each month's daily profiles, volatility, tails and
+  cross-channel correlation are matched to the real data; no rows are stored.
+- **How the model behaves on synthetic data** ([`src/scenario/validate.py`](src/scenario/validate.py)):
+  - false alarms: 0.72/day on fault-free runs, against 0.25/day on real held-out data;
+  - typical-severity faults: all warned in time, median lead 3–4.5 h;
+  - weak faults: 40–95 % warned.
+  The UI shows these numbers. Synthetic runs are illustrative, not the benchmark.
+- **Weights:** they live in a private model repo and are downloaded at container start, so they're never in the
+  public Space or its image.
+- **Deploy:**
+  1. `hf auth login`, then `make deploy-engine`.
+  2. In the Space settings, add the secret `HF_TOKEN` (a read token for the private model repo).
+  3. `make deploy-web API_BASE=https://<user>-smartgrid-ai-engine.hf.space`.
 
 ## API
 FastAPI ([`backend/app.py`](backend/app.py)). The model, calibrator, ONNX session and seed ensemble are loaded

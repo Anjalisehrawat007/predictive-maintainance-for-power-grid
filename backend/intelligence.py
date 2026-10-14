@@ -102,10 +102,18 @@ def load_deployment(cfg: dict | None = None) -> Deployment:
     return dep
 
 
+HEALTH_REF = PROJECT_ROOT / "configs" / "health_reference.json"
+
+
 def _asset_stats(cfg, art) -> dict:
-    """Training-period reference quantiles for the derived health indicator (train rows only)."""
+    """Training-period reference quantiles for the derived health indicator (train rows only).
+    Computed from the processed data when available and cached as aggregate JSON, so a deployment without
+    dataset rows (public mode) can still compute the health indicator."""
     from src.data.dataset import load_processed
     from src.preprocessing.splits import compute_bounds
+    proc = PROJECT_ROOT / "data" / "processed"
+    if not all((proc / f"{a}.parquet").exists() for a in cfg["dataset"]["assets"]):
+        return json.loads(HEALTH_REF.read_text())
     dfs, _ = load_processed(cfg)
     out = {}
     for a, df in dfs.items():
@@ -117,6 +125,7 @@ def _asset_stats(cfg, art) -> dict:
         lv = F[["HUFL_volratio", "MUFL_volratio", "HULL_volratio"]].max(axis=1)[ok].dropna()
         out[a] = {"resid_sigma": rs, "thermal_q50": float(th.quantile(.5)), "thermal_q99": float(th.quantile(.99)),
                   "load_q50": float(lv.quantile(.5)), "load_q99": float(lv.quantile(.99))}
+    HEALTH_REF.write_text(json.dumps(out, indent=1))
     return out
 
 

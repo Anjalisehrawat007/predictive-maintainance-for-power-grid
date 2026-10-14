@@ -5,6 +5,7 @@ import { Bar, BarChart, CartesianGrid, Cell, Legend, ResponsiveContainer, Toolti
 import { Link, useNavigate } from 'react-router-dom'
 import Panel, { Empty } from '../components/Panel'
 import { api } from '../lib/api'
+import { PUBLIC } from '../lib/deploy'
 import { dur, pct, riskPct, ts } from '../lib/format'
 import { C, TYPE_COLOR, tooltipStyle } from '../lib/palette'
 import { useGrid } from '../store/grid'
@@ -113,7 +114,7 @@ export default function FailureIntel() {
               <tbody>{missed.map((f) => (
                 <tr key={`${f.asset}${f.event_id}`} className="border-t border-line/60"><td className="px-3 py-1.5 font-mono">{f.label}</td><td className="num px-3">{ts(f.failure_time)}</td>
                   <td className="px-3">{f.type.replace('_', ' ')}</td><td className="num px-3">{f.class}</td><td className="num px-3 text-ink-2">{f.signal_strength == null ? '—' : Number(f.signal_strength).toFixed(1)}</td>
-                  <td className="px-3"><Link className="flex items-center gap-1 text-accent" to={`/replay?asset=${f.asset}&event=${f.event_id}`}><History size={12} />replay</Link></td></tr>))}</tbody>
+                  <td className="px-3">{!PUBLIC && <Link className="flex items-center gap-1 text-accent" to={`/replay?asset=${f.asset}&event=${f.event_id}`}><History size={12} />replay</Link>}</td></tr>))}</tbody>
             </table>
           </div>
         </Panel>
@@ -130,7 +131,7 @@ export default function FailureIntel() {
                 <td className="px-3 py-1.5 font-mono">{e.asset === 'ETTm1' ? 'T1' : 'T2'}</td><td className="num px-3">{ts(e.start)}</td><td className="num px-3">{dur(e.duration_h * 60)}</td>
                 <td className="px-3">{e.category}</td><td className="px-3 text-ink-2">{e.injected_event ?? '—'}</td><td className="num px-3">{riskPct(e.peak_risk)}</td>
                 <td className="num px-3">{pct(e.confidence_at_peak)}</td><td className="num px-3 text-ink-2">{e.max_real_abs_zscore?.toFixed(1)}</td>
-                <td className="px-3"><button onClick={() => inspect(e)} className="flex items-center gap-1 text-accent" aria-label={`Inspect false alarm at ${ts(e.start)}`}><Search size={12} />inspect</button></td>
+                <td className="px-3">{!PUBLIC && <button onClick={() => inspect(e)} className="flex items-center gap-1 text-accent" aria-label={`Inspect false alarm at ${ts(e.start)}`}><Search size={12} />inspect</button>}</td>
               </tr>))}</tbody>
           </table></div> : <Empty>No false alarms in this category.</Empty>}
       </Panel>

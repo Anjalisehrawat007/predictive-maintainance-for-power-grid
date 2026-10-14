@@ -3,6 +3,7 @@ produced by the pipeline — nothing is generated here."""
 from __future__ import annotations
 
 import json
+import os
 from functools import cached_property
 
 import numpy as np
@@ -17,6 +18,10 @@ P2 = R / "phase2"
 LOG = P2 / "engine_log"
 ASSET_LABEL = {"ETTm1": "T1", "ETTm2": "T2"}
 ACK_FILE = P2 / "alert_acks.json"
+# Public deployment: no ETDataset rows on the server (CC BY-ND 4.0). Only committed metadata, reports and
+# aggregate parameters are used; endpoints that would serve held-out rows are disabled (backend/app.py).
+PUBLIC = os.environ.get("SGPM_PUBLIC") == "1"
+SPLITS = PROJECT_ROOT / "data" / "splits" / "split_bounds.json"
 
 
 def _json(path, default=None):
@@ -50,7 +55,19 @@ class Store:
 
     @cached_property
     def data(self):
+        if PUBLIC:
+            ev = pd.read_csv(PROJECT_ROOT / "data" / "processed" / "events.csv",
+                             parse_dates=["onset_time", "failure_time", "end_time"])
+            return {}, ev
         return load_processed(self.cfg)
+
+    @property
+    def assets(self) -> list[str]:
+        return list(self.cfg["dataset"]["assets"])
+
+    @cached_property
+    def split_meta(self) -> dict:
+        return _json(SPLITS, {})
 
     @property
     def dfs(self):
@@ -64,6 +81,8 @@ class Store:
     def bounds(self):
         from src.features.engineering import FeatureEngineer
         lb = FeatureEngineer.from_config(self.cfg).lookback
+        if PUBLIC:
+            return {a: compute_bounds(int(self.split_meta[a]["n"]), self.cfg, lb) for a in self.assets}
         return {a: compute_bounds(len(df), self.cfg, lb) for a, df in self.dfs.items()}
 
     @cached_property
@@ -139,5 +158,9 @@ class Store:
                 v = lg.loc[r.failure_idx, "lead_time_min"] if lg is not None and r.failure_idx in lg.index else None
                 lt.append(v)
             f["engine_lead_time_min"] = lt
+        elif "lead_time_min" in f:
+            # no engine log (public deployment): the offline evaluation is used; the two are equal for all
+            # 40 test failures (tests/test_api_robustness.py::test_incident_list_is_consistent_with_final_evaluation)
+            f["engine_lead_time_min"] = f["lead_time_min"]
         f["label"] = f.asset.map(ASSET_LABEL)
         return f.sort_values("failure_time")

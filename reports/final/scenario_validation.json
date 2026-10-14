@@ -1,0 +1,289 @@
+{
+ "about": "Validate the Scenario Lab: how does the deployed model behave on SYNTHETIC baselines?",
+ "threshold_raw": 0.24112579226493835,
+ "false_alarms": [
+  {
+   "asset": "ETTm1",
+   "month": 1,
+   "false_alarms_per_day": 0.7255813953488373
+  },
+  {
+   "asset": "ETTm1",
+   "month": 4,
+   "false_alarms_per_day": 0.8093023255813951
+  },
+  {
+   "asset": "ETTm1",
+   "month": 7,
+   "false_alarms_per_day": 1.5069767441860464
+  },
+  {
+   "asset": "ETTm1",
+   "month": 10,
+   "false_alarms_per_day": 1.0046511627906978
+  },
+  {
+   "asset": "ETTm2",
+   "month": 1,
+   "false_alarms_per_day": 0.11162790697674418
+  },
+  {
+   "asset": "ETTm2",
+   "month": 4,
+   "false_alarms_per_day": 0.5302325581395348
+  },
+  {
+   "asset": "ETTm2",
+   "month": 7,
+   "false_alarms_per_day": 0.5581395348837208
+  },
+  {
+   "asset": "ETTm2",
+   "month": 10,
+   "false_alarms_per_day": 0.5023255813953489
+  }
+ ],
+ "detection": [
+  {
+   "asset": "ETTm1",
+   "fault": "thermal_runaway",
+   "severity": 0.5,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 13,
+   "detection_rate": 0.65,
+   "lead_median_min": 75.0
+  },
+  {
+   "asset": "ETTm1",
+   "fault": "thermal_runaway",
+   "severity": 1.0,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 20,
+   "detection_rate": 1.0,
+   "lead_median_min": 187.5
+  },
+  {
+   "asset": "ETTm1",
+   "fault": "thermal_runaway",
+   "severity": 1.5,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 20,
+   "detection_rate": 1.0,
+   "lead_median_min": 285.0
+  },
+  {
+   "asset": "ETTm1",
+   "fault": "load_oscillation",
+   "severity": 0.5,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 10,
+   "detection_rate": 0.5,
+   "lead_median_min": 60.0
+  },
+  {
+   "asset": "ETTm1",
+   "fault": "load_oscillation",
+   "severity": 1.0,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 20,
+   "detection_rate": 1.0,
+   "lead_median_min": 225.0
+  },
+  {
+   "asset": "ETTm1",
+   "fault": "load_oscillation",
+   "severity": 1.5,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 20,
+   "detection_rate": 1.0,
+   "lead_median_min": 277.5
+  },
+  {
+   "asset": "ETTm1",
+   "fault": "intermittent_arcing",
+   "severity": 0.5,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 8,
+   "detection_rate": 0.4,
+   "lead_median_min": 90.0
+  },
+  {
+   "asset": "ETTm1",
+   "fault": "intermittent_arcing",
+   "severity": 1.0,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 20,
+   "detection_rate": 1.0,
+   "lead_median_min": 255.0
+  },
+  {
+   "asset": "ETTm1",
+   "fault": "intermittent_arcing",
+   "severity": 1.5,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 20,
+   "detection_rate": 1.0,
+   "lead_median_min": 270.0
+  },
+  {
+   "asset": "ETTm1",
+   "fault": "sudden",
+   "severity": 0.5,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 6,
+   "detection_rate": 0.3,
+   "lead_median_min": 307.5
+  },
+  {
+   "asset": "ETTm1",
+   "fault": "sudden",
+   "severity": 1.0,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 6,
+   "detection_rate": 0.3,
+   "lead_median_min": 307.5
+  },
+  {
+   "asset": "ETTm1",
+   "fault": "sudden",
+   "severity": 1.5,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 6,
+   "detection_rate": 0.3,
+   "lead_median_min": 307.5
+  },
+  {
+   "asset": "ETTm2",
+   "fault": "thermal_runaway",
+   "severity": 0.5,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 19,
+   "detection_rate": 0.95,
+   "lead_median_min": 150.0
+  },
+  {
+   "asset": "ETTm2",
+   "fault": "thermal_runaway",
+   "severity": 1.0,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 20,
+   "detection_rate": 1.0,
+   "lead_median_min": 195.0
+  },
+  {
+   "asset": "ETTm2",
+   "fault": "thermal_runaway",
+   "severity": 1.5,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 20,
+   "detection_rate": 1.0,
+   "lead_median_min": 240.0
+  },
+  {
+   "asset": "ETTm2",
+   "fault": "load_oscillation",
+   "severity": 0.5,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 18,
+   "detection_rate": 0.9,
+   "lead_median_min": 127.5
+  },
+  {
+   "asset": "ETTm2",
+   "fault": "load_oscillation",
+   "severity": 1.0,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 20,
+   "detection_rate": 1.0,
+   "lead_median_min": 195.0
+  },
+  {
+   "asset": "ETTm2",
+   "fault": "load_oscillation",
+   "severity": 1.5,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 20,
+   "detection_rate": 1.0,
+   "lead_median_min": 225.0
+  },
+  {
+   "asset": "ETTm2",
+   "fault": "intermittent_arcing",
+   "severity": 0.5,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 19,
+   "detection_rate": 0.95,
+   "lead_median_min": 150.0
+  },
+  {
+   "asset": "ETTm2",
+   "fault": "intermittent_arcing",
+   "severity": 1.0,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 20,
+   "detection_rate": 1.0,
+   "lead_median_min": 217.5
+  },
+  {
+   "asset": "ETTm2",
+   "fault": "intermittent_arcing",
+   "severity": 1.5,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 20,
+   "detection_rate": 1.0,
+   "lead_median_min": 240.0
+  },
+  {
+   "asset": "ETTm2",
+   "fault": "sudden",
+   "severity": 0.5,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 0,
+   "detection_rate": 0.0,
+   "lead_median_min": null
+  },
+  {
+   "asset": "ETTm2",
+   "fault": "sudden",
+   "severity": 1.0,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 0,
+   "detection_rate": 0.0,
+   "lead_median_min": null
+  },
+  {
+   "asset": "ETTm2",
+   "fault": "sudden",
+   "severity": 1.5,
+   "precursor_hours": 8,
+   "n": 20,
+   "detected": 0,
+   "detection_rate": 0.0,
+   "lead_median_min": null
+  }
+ ],
+ "false_alarms_per_day_overall": 0.7186046511627907
+}

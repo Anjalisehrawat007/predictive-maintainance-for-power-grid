@@ -57,5 +57,9 @@ export interface Incident {
   failure_time: string; onset_time: string; class?: string; signal_strength?: number; signal_metric?: string
   detected?: boolean; lead_time_min?: number | null; engine_lead_time_min?: number | null
 }
-export interface SessionSummary { id: string; assets: string[]; mode: string; start: number; stop: number; cursor: number; incident?: Incident | null; warmup_ms: number; start_timestamp: string; stop_timestamp: string }
+export type Fault = 'none' | 'thermal_runaway' | 'load_oscillation' | 'intermittent_arcing' | 'sudden'
+export interface ScenarioRequest { asset: string; month: number; fault: Fault; severity: number; precursor_hours: number; seed: number }
+/** Session context: a held-out incident (local), a synthetic scenario or an upload (public). */
+export interface SessionContext extends Partial<Incident> { fault?: Fault; severity?: number; month?: number; seed?: number; precursor_hours?: number; rows?: number }
+export interface SessionSummary { id: string; assets: string[]; mode: string; start: number; stop: number; cursor: number; incident?: SessionContext | null; warmup_ms: number; start_timestamp: string; stop_timestamp: string }
 export interface StepResult { session: string; cursor: number; done: boolean; records: Record<string, EngineRecord[]>; events: FeedEvent[]; alerts: Alert[] }

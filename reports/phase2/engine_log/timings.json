@@ -1,0 +1,44 @@
+{
+  "median_ms": {
+    "ingest": 0.0066,
+    "features": 0.6178,
+    "sequence": 0.0004,
+    "inference": 0.0873,
+    "confidence": 1.2739,
+    "calibration": 0.0566,
+    "explain": 3.7025,
+    "risk_engine": 0.0207,
+    "alert_engine": 0.0042,
+    "total": 5.7813
+  },
+  "p95_ms": {
+    "ingest": 0.0069,
+    "features": 0.6504,
+    "sequence": 0.0005,
+    "inference": 0.0964,
+    "confidence": 1.3206,
+    "calibration": 0.0644,
+    "explain": 3.792,
+    "risk_engine": 0.0237,
+    "alert_engine": 0.0059,
+    "total": 5.9322
+  },
+  "n_steps": 20904,
+  "onnx_inference": true,
+  "model": "best_attention_model",
+  "wall_s": 124.4,
+  "consistency_with_phase1_stream": {
+    "ETTm1": {
+      "rows_compared": 10452,
+      "max_abs_raw_score_diff": 8.052086370508027e-05,
+      "status_identical_after_warmup": null,
+      "note": "raw scores match the Phase-1 stream; statuses differ by design (final operating point thresholds)"
+    },
+    "ETTm2": {
+      "rows_compared": 10452,
+      "max_abs_raw_score_diff": 9.462753772754295e-06,
+      "status_identical_after_warmup": null,
+      "note": "raw scores match the Phase-1 stream; statuses differ by design (final operating point thresholds)"
+    }
+  }
+}

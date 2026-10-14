@@ -1,20 +1,31 @@
-import { Activity, Bell, BookOpen, Boxes, FlaskConical, History, LayoutDashboard, PlayCircle, ShieldAlert, Zap } from 'lucide-react'
+import { Activity, Bell, BookOpen, Boxes, FileUp, FlaskConical, History, LayoutDashboard, PlayCircle, ShieldAlert, SlidersHorizontal, Zap } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { modelName } from '../lib/format'
 import { useGrid } from '../store/grid'
 import DemoGuide from './DemoGuide'
-import { STATIC } from '../lib/staticMode'
+import { PUBLIC } from '../lib/deploy'
 
-const NAV = [
+const NAV_LOCAL = [
   { to: '/', label: 'Command Center', Icon: LayoutDashboard },
   { to: '/replay', label: 'Incident Replay', Icon: History },
+  { to: '/scenario', label: 'Scenario Lab', Icon: SlidersHorizontal },
+  { to: '/upload', label: 'Upload & Score', Icon: FileUp },
   { to: '/assets', label: 'Asset Explorer', Icon: Boxes },
   { to: '/alerts', label: 'Alert Center', Icon: Bell },
   { to: '/failures', label: 'Failure Intelligence', Icon: ShieldAlert },
   { to: '/models', label: 'Model Lab', Icon: FlaskConical },
   { to: '/methodology', label: 'Model & Methodology', Icon: BookOpen },
 ]
+// public deployment: only views that need no held-out dataset rows
+const NAV_PUBLIC = [
+  { to: '/', label: 'Scenario Lab', Icon: SlidersHorizontal },
+  { to: '/upload', label: 'Upload & Score', Icon: FileUp },
+  { to: '/failures', label: 'Failure Intelligence', Icon: ShieldAlert },
+  { to: '/models', label: 'Model Lab', Icon: FlaskConical },
+  { to: '/methodology', label: 'Model & Methodology', Icon: BookOpen },
+]
+const NAV = PUBLIC ? NAV_PUBLIC : NAV_LOCAL
 
 export default function Shell({ children }: { children: ReactNode }) {
   const { system, error, mode, playing, reducedMotion, toggleReduced, liveAlerts, activeLogAlerts, demo, setDemo } = useGrid()
@@ -48,7 +59,7 @@ export default function Shell({ children }: { children: ReactNode }) {
             <span>Reduced motion</span>
             <input type="checkbox" checked={reducedMotion} onChange={toggleReduced} className="accent-[var(--color-accent)]" aria-label="Toggle reduced motion" />
           </label>
-          <p className="leading-snug">Failure events are <b className="text-ink-2">simulated</b>; sensor data are real (ETDataset).</p>
+          <p className="leading-snug">{PUBLIC ? <>Model trained on real ETDataset readings with <b className="text-ink-2">simulated</b> faults; this site runs it on synthetic or uploaded data.</> : <>Failure events are <b className="text-ink-2">simulated</b>; sensor data are real (ETDataset).</>}</p>
         </div>
       </nav>
       <div className="flex min-w-0 flex-1 flex-col">
@@ -56,25 +67,26 @@ export default function Shell({ children }: { children: ReactNode }) {
           <div className="md:hidden text-[13px] font-bold tracking-[0.14em]">SMARTGRID AI</div>
           <div className="flex items-center gap-2 text-[11.5px] font-mono" role="status" aria-live="polite">
             <span className={`h-2 w-2 rounded-full ${online ? 'bg-ok' : 'bg-crit'}`} aria-hidden />
-            <span className={online ? 'text-ok' : 'text-crit'}>{STATIC ? (online ? 'STATIC RESULTS SNAPSHOT' : 'LOADING') : online ? 'SYSTEM ONLINE' : error ? 'BACKEND UNREACHABLE' : 'CONNECTING'}</span>
+            <span className={online ? 'text-ok' : 'text-crit'}>{online ? 'SYSTEM ONLINE' : error ? 'ENGINE UNREACHABLE' : PUBLIC ? 'WAKING THE ENGINE…' : 'CONNECTING'}</span>
           </div>
           <div className="flex items-center gap-2 text-[11.5px] font-mono text-ink-2">
             <Activity size={13} aria-hidden className={playing ? 'text-accent' : ''} />
-            {STATIC ? 'LIVE ENGINE · RUN LOCALLY' : onReplay ? 'INCIDENT REPLAY · LIVE ENGINE' : mode === 'live' ? (playing ? 'LIVE ENGINE · STREAMING' : 'LIVE ENGINE · PAUSED') : 'ENGINE LOG · SCRUB MODE'}
+            {PUBLIC ? 'LIVE ENGINE · YOUR SCENARIOS & DATA' : onReplay ? 'INCIDENT REPLAY · LIVE ENGINE' : mode === 'live' ? (playing ? 'LIVE ENGINE · STREAMING' : 'LIVE ENGINE · PAUSED') : 'ENGINE LOG · SCRUB MODE'}
           </div>
           {system && <div className="hidden lg:block text-[11.5px] font-mono text-ink-3">
             MODEL {modelName(system.model.type).toUpperCase()} · {system.model.parameters.toLocaleString()} params · {system.model.onnx_runtime ? 'ONNX Runtime' : 'PyTorch'} · {system.model.calibration} calibration
           </div>}
-          {!STATIC && <button onClick={() => setDemo(!demo)} aria-pressed={demo} disabled={!online}
+          {!PUBLIC && <button onClick={() => setDemo(!demo)} aria-pressed={demo} disabled={!online}
             className="ml-auto flex items-center gap-1.5 rounded border border-accent/60 px-2 py-1 text-[11.5px] font-semibold text-accent hover:bg-accent/10 disabled:opacity-40"><PlayCircle size={13} aria-hidden />Demo mode</button>}
-          <div className={`${STATIC ? 'ml-auto ' : ''}rounded border border-warn/40 bg-warn/5 px-2 py-1 text-[11px] text-warn`}>Simulated failure events · real sensor data</div>
+          <div className={`${PUBLIC ? 'ml-auto ' : ''}rounded border border-warn/40 bg-warn/5 px-2 py-1 text-[11px] text-warn`}>{PUBLIC ? 'Synthetic scenarios & your data · model trained on real data with simulated faults' : 'Simulated failure events · real sensor data'}</div>
         </header>
         <nav aria-label="Mobile" className="flex gap-1 overflow-x-auto border-b border-line px-2 py-1 md:hidden scroll-thin">
           {NAV.map(({ to, label }) => <NavLink key={to} to={to} end={to === '/'} className={({ isActive }) => `whitespace-nowrap rounded px-2 py-1 text-xs ${isActive ? 'bg-surface-2 text-ink' : 'text-ink-2'}`}>{label}</NavLink>)}
         </nav>
-        {error && !STATIC && <div role="alert" className="mx-5 mt-3 rounded border border-crit/50 bg-crit/10 px-3 py-2 text-sm text-crit">Backend error: {error}. Start it with <code className="font-mono">.venv/bin/uvicorn backend.app:app --port 8000</code></div>}
+        {error && <div role="alert" className="mx-5 mt-3 rounded border border-crit/50 bg-crit/10 px-3 py-2 text-sm text-crit">{PUBLIC ? <>The model engine is waking up (free hosting sleeps when idle; this takes up to a minute). Retrying automatically… <span className="text-ink-3">({error})</span></>
+          : <>Backend error: {error}. Start it with <code className="font-mono">.venv/bin/uvicorn backend.app:app --port 8000</code></>}</div>}
         <main id="main" className="min-w-0 flex-1 p-4 lg:p-5">{children}</main>
-        {online && !STATIC && <DemoGuide />}
+        {online && !PUBLIC && <DemoGuide />}
       </div>
     </div>
   )

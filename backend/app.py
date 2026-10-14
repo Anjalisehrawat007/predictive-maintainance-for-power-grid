@@ -27,18 +27,18 @@ from contextlib import asynccontextmanager
 
 import numpy as np
 import pandas as pd
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import FileResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 
-from backend.intelligence import EVENT_RULES, HEALTH_WEIGHTS, load_deployment
+from backend.intelligence import EVENT_RULES, HEALTH_WEIGHTS, SENSORS, load_deployment
 from backend.observability import METRICS, RequestContextMiddleware, log_event, setup_logging
-from backend.schemas import AckBody, PredictBody, ReplayBody, SessionCreate, StepBody
+from backend.schemas import AckBody, PredictBody, ReplayBody, ScenarioBody, SessionCreate, StepBody, UploadBody
 from backend.sessions import Session, SessionManager
-from backend.store import ASSET_LABEL, R, Store, _clean, _json, records
+from backend.store import ASSET_LABEL, PUBLIC, R, Store, _clean, _json, records
 from src.phase2.calibration import CONFIDENCE_BINS
 from src.utils.config import PROJECT_ROOT
 
@@ -99,14 +99,23 @@ def dep():
     return _STATE["dep"]
 
 
+def _no_rows_in_public():
+    """Endpoints that would serve held-out ETDataset rows are disabled on the public deployment."""
+    if PUBLIC:
+        raise HTTPException(404, "not available on the public deployment: this view replays ETDataset sensor rows "
+                                 "(CC BY-ND 4.0, not redistributed). Use the Scenario Lab or upload your own data, "
+                                 "or run the project locally.")
+
+
 def _require_log():
+    _no_rows_in_public()
     if not STORE.log:
         raise HTTPException(503, "engine log not built — run: python -m backend.precompute")
 
 
 def _asset(a: str) -> str:
-    if a not in STORE.dfs:
-        raise HTTPException(404, f"unknown asset {a!r}; known: {list(STORE.dfs)}")
+    if a not in STORE.assets:
+        raise HTTPException(404, f"unknown asset {a!r}; known: {STORE.assets}")
     return a
 
 
@@ -125,7 +134,8 @@ def health():
 @app.get("/api/ready")
 def ready():
     """Readiness: model loaded, data available, engine log built."""
-    checks = {"model_loaded": _STATE["dep"] is not None, "data_loaded": bool(STORE.dfs), "engine_log": bool(STORE.log)}
+    checks = {"model_loaded": _STATE["dep"] is not None, "data_loaded": PUBLIC or bool(STORE.dfs),
+              "engine_log": PUBLIC or bool(STORE.log)}
     body = {"ready": all(checks.values()), "checks": checks, "model_error": _STATE["error"], "loaded_at": _STATE["loaded_at"]}
     return JSONResponse(body, status_code=200 if body["ready"] else 503)
 
@@ -173,9 +183,9 @@ def system():
              "engine_step_ms_p50": p50("engine step · total (ingest→alert)"),
              "engine_step_ms_p99": st.get("engine step · total (ingest→alert)", {}).get("p99")} if perf else {}
     lo, hi = _test_range()
-    a0 = next(iter(STORE.dfs))
+    a0 = STORE.assets[0]
     return _clean({
-        "status": "online", "time": time.time(), "disclosure": DISCLOSURE,
+        "status": "online", "time": time.time(), "disclosure": DISCLOSURE, "public": PUBLIC,
         "model": {"name": m["active_model"], "type": m["model_type"], "parameters": int(sum(p.numel() for p in d.art.model.parameters())),
                   "seq_len": d.art.seq_len, "window_hours": d.art.seq_len * 15 / 60, "horizon_min": d.horizon_min,
                   "feature_set": m["feature_set"], "n_features": len(d.art.feature_names), "onnx_runtime": d.onnx is not None,
@@ -184,9 +194,9 @@ def system():
         "thresholds": {"warning_raw": d.warn_raw, "critical_raw": d.crit_raw, "warning_risk": d.warn_cal,
                        "critical_risk": d.crit_cal, "persistence_steps": STORE.cfg["threshold"]["persistence_k"],
                        "confidence_bins": CONFIDENCE_BINS},
-        "dataset": {"name": STORE.cfg["dataset"]["name"], "assets": [{"id": a, "label": ASSET_LABEL.get(a, a)} for a in STORE.dfs],
+        "dataset": {"name": STORE.cfg["dataset"]["name"], "assets": [{"id": a, "label": ASSET_LABEL.get(a, a)} for a in STORE.assets],
                     "sampling_min": STORE.cfg["dataset"]["freq_minutes"],
-                    "test_period": [str(STORE.dfs[a0].timestamp.iloc[lo]), str(STORE.dfs[a0].timestamp.iloc[hi - 1])],
+                    "test_period": STORE.split_meta.get(a0, {}).get("test", [None, None]),
                     "test_index": [lo, hi]},
         "benchmark": bench, "engine_timings": STORE.timings,
         "health_weights": HEALTH_WEIGHTS, "event_rules": EVENT_RULES,
@@ -198,7 +208,7 @@ def assets():
     tf = STORE.test_failures()
     return [{"id": a, "label": ASSET_LABEL.get(a, a), "name": f"Transformer {ASSET_LABEL.get(a, a)}",
              "substation": f"Substation {'A' if a.endswith('1') else 'B'}", "source": f"ETDataset {a}",
-             "test_failures": int((tf.asset == a).sum())} for a in STORE.dfs]
+             "test_failures": int((tf.asset == a).sum())} for a in STORE.assets]
 
 
 # --------------------------------------------------------------------------- engine log (scrubber)
@@ -265,6 +275,7 @@ def _session(**kw) -> Session:
 
 @app.post("/api/sessions")
 def create_session(body: SessionCreate | None = None):
+    _no_rows_in_public()
     body = body or SessionCreate()
     lo, hi = _test_range()
     start = lo if body.start_index is None else body.start_index
@@ -273,8 +284,69 @@ def create_session(body: SessionCreate | None = None):
         raise HTTPException(400, f"start_index must be inside the held-out test period [{lo}, {hi})")
     if stop <= start:
         raise HTTPException(400, "stop_index must be greater than start_index")
-    assets_ = [_asset(a) for a in (body.assets or list(STORE.dfs))]
+    assets_ = [_asset(a) for a in (body.assets or STORE.assets)]
     return _session(assets=assets_, start=start, stop=min(stop, hi), mode="live").summary()
+
+
+# ---- visitor-driven sessions: no ETDataset rows are served (allowed on the public deployment) ----
+def _frame_session(df: pd.DataFrame, asset: str, mode: str, meta: dict) -> dict:
+    d = dep()
+    warm = d.art.fe.lookback + d.art.seq_len - 1
+    s = SESSIONS.add(Session(d, {asset: df.reset_index(drop=True)}, [asset], start=warm, stop=len(df), mode=mode,
+                             incident=meta, persistence_k=STORE.cfg["threshold"]["persistence_k"],
+                             merge_gap=STORE.cfg["threshold"]["merge_gap_steps"]))
+    return _clean(s.summary())
+
+
+@app.post("/api/scenarios")
+def create_scenario(body: ScenarioBody):
+    """Scenario Lab: synthetic normal operation (fitted on aggregate training statistics, no dataset rows)
+    plus a visitor-chosen fault injected with the benchmark's simulator; streamed through the real engine."""
+    from src.scenario.scenario import build
+    d = dep()
+    _asset(body.asset)
+    warm = d.art.fe.lookback + d.art.seq_len - 1
+    df, meta = build(body.asset, body.month, body.fault, body.severity, body.precursor_hours, body.seed, warm)
+    return _frame_session(df, body.asset, "scenario", meta | {"label": ASSET_LABEL.get(body.asset, body.asset),
+                                                              "type": body.fault, "event_id": None})
+
+
+@app.get("/api/scenarios/validation")
+def scenario_validation():
+    """Measured behaviour of the deployed model on synthetic baselines (src/scenario/validate.py)."""
+    return _json(R / "final" / "scenario_validation.json", {})
+
+
+@app.get("/api/samples/synthetic.csv")
+def sample_csv(asset: str = "ETTm1", month: int = Query(4, ge=1, le=12), fault: str = "thermal_runaway",
+               seed: int = Query(0, ge=0, le=1_000_000)):
+    """Synthetic template for the upload feature (same generator as the Scenario Lab; no dataset rows)."""
+    from src.scenario.scenario import FAULTS, build
+    _asset(asset)
+    if fault not in FAULTS:
+        raise HTTPException(422, f"fault must be one of {list(FAULTS)}")
+    d = dep()
+    df, _ = build(asset, month, fault, 1.0, 8, seed, d.art.fe.lookback + d.art.seq_len - 1)
+    csv = df[["timestamp", *SENSORS]].round(4).to_csv(index=False, date_format="%Y-%m-%d %H:%M:%S")
+    return Response(csv, media_type="text/csv",
+                    headers={"Content-Disposition": f'attachment; filename="synthetic_{asset}_{fault}.csv"'})
+
+
+@app.post("/api/uploads")
+def create_upload(body: UploadBody):
+    """Stream visitor-provided readings through the engine. ``asset`` picks which transformer's training
+    statistics are used for scaling (the model was trained per transformer)."""
+    d = dep()
+    _asset(body.asset)
+    need = d.art.fe.lookback + d.art.seq_len
+    if len(body.rows) < need:
+        raise HTTPException(422, f"need at least {need} consecutive 15-minute rows (history for the first prediction); "
+                                 f"got {len(body.rows)}")
+    df = pd.DataFrame([r.model_dump() for r in body.rows])
+    df["timestamp"] = pd.to_datetime(df.timestamp).dt.tz_localize(None)
+    df["offline"], df["failure"], df["sim_phase"], df["sim_event_type"] = False, 0, "normal", ""
+    return _frame_session(df, body.asset, "upload", {"label": ASSET_LABEL.get(body.asset, body.asset), "type": "upload",
+                                                     "rows": len(df), "event_id": None})
 
 
 @app.post("/api/sessions/{sid}/step")
@@ -315,6 +387,7 @@ def incidents():
 
 @app.post("/api/incidents/{asset}/{event_id}/replay")
 def replay_incident(asset: str, event_id: int, body: ReplayBody | None = None):
+    _no_rows_in_public()
     body = body or ReplayBody()
     _asset(asset)
     tf = STORE.test_failures()
