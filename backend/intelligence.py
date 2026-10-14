@@ -9,20 +9,28 @@ through separately and labelled as such; it never enters the model.
 from __future__ import annotations
 
 import json
+import os
 import time
 from collections import deque
 from dataclasses import dataclass, field
 
 import numpy as np
 import pandas as pd
-import torch
 
-from src.explainability.importance import feature_group
-from src.models.recurrent import build_model
-from src.phase2.calibration import Calibrator
+from src.explainability.groups import feature_group
 from src.streaming.alerts import AlertPolicy
-from src.streaming.artifacts import Artifacts, deployment_manifest, load_artifacts
+from src.streaming.artifacts import Artifacts, deployment_manifest, load_artifacts, load_artifacts_lite
+from src.streaming.calibration import ServingCalibrator
 from src.utils.config import PROJECT_ROOT, load_config
+
+# ONNX-only serving (e.g. a serverless deployment): no PyTorch; attribution by occlusion instead of
+# integrated gradients. Selected with SGPM_ENGINE=onnx, or automatically when PyTorch is not installed.
+try:
+    import torch  # noqa: F401
+    HAVE_TORCH = True
+except ImportError:                                   # pragma: no cover - exercised in the serverless build
+    HAVE_TORCH = False
+ENGINE = os.environ.get("SGPM_ENGINE", "torch" if HAVE_TORCH else "onnx")
 
 SENSORS = ["HUFL", "HULL", "MUFL", "MULL", "LUFL", "LULL", "OT"]
 GROUP_LABEL = {"OT": "Oil temperature", "thermal residual (OT vs load)": "Thermal residual (OT vs load)",
@@ -38,12 +46,82 @@ def _clip01(x):
     return float(min(1.0, max(0.0, x)))
 
 
+def _sigmoid(z):
+    return 1 / (1 + np.exp(-np.asarray(z, dtype=float)))
+
+
+class TorchScorer:
+    """Reference scorer: ONNX (if verified identical) or PyTorch for the score, PyTorch seed members,
+    integrated-gradients attribution."""
+    attribution_method = "integrated gradients"
+
+    def __init__(self, model, members, onnx):
+        self.model, self.members, self.onnx = model, members, onnx
+
+    def logit(self, x: np.ndarray) -> float:
+        import torch
+        if self.onnx is not None:
+            return float(self.onnx.run(None, {"x": x})[0][0])
+        with torch.no_grad():
+            return float(self.model(torch.from_numpy(x))[0])
+
+    def member_probs(self, x: np.ndarray) -> np.ndarray:
+        import torch
+        with torch.no_grad():
+            t = torch.from_numpy(x)
+            return np.array([float(torch.sigmoid(m(t))[0]) for m in self.members])
+
+    def attribution(self, x: np.ndarray, groups: dict, steps: int = 12) -> np.ndarray:
+        """Signed (L, F) integrated-gradients attribution."""
+        import torch
+        xt = torch.from_numpy(x)
+        alphas = torch.linspace(1 / steps, 1, steps)[:, None, None]
+        xi = (alphas * xt).requires_grad_(True)
+        g, = torch.autograd.grad(self.model(xi).sum(), xi)
+        return (xt[0] * g.mean(0)).detach().numpy()
+
+
+class OnnxScorer:
+    """Dependency-light scorer (no PyTorch): ONNX Runtime for the model and the seed members.
+    Attribution by occlusion: the drop in the model's logit when a sensor group (or one time step) is replaced by
+    its training mean (0 after scaling). Computed in one batched ONNX call."""
+    attribution_method = "occlusion"
+
+    def __init__(self, sess, member_sessions):
+        self.sess, self.member_sessions = sess, member_sessions
+
+    def logit(self, x: np.ndarray) -> float:
+        return float(self.sess.run(None, {"x": x})[0][0])
+
+    def member_probs(self, x: np.ndarray) -> np.ndarray:
+        return np.array([float(_sigmoid(m.run(None, {"x": x})[0][0])) for m in self.member_sessions])
+
+    def attribution(self, x: np.ndarray, groups: dict) -> np.ndarray:
+        L, F = x.shape[1], x.shape[2]
+        names = list(groups)
+        batch = [x[0]]
+        for g in names:
+            v = x[0].copy(); v[:, groups[g]] = 0.0; batch.append(v)
+        for t in range(L):
+            v = x[0].copy(); v[t, :] = 0.0; batch.append(v)
+        out = self.sess.run(None, {"x": np.stack(batch).astype(np.float32)})[0].reshape(-1)
+        dg, dt = out[0] - out[1:1 + len(names)], out[0] - out[1 + len(names):]     # logit drop per group / step
+        # spread each group's contribution over its features, scaled by each time step's share (an (L, F) map
+        # with the same group sums and time profile as the occlusion results)
+        tw = np.abs(dt) / (np.abs(dt).sum() + 1e-12)
+        attr = np.zeros((L, F))
+        for g, d in zip(names, dg):
+            idx = groups[g]
+            attr[:, idx] = (d / len(idx)) * tw[:, None]
+        return attr
+
+
 @dataclass
 class Deployment:
     name: str
     art: Artifacts
     members: list
-    calibrator: Calibrator
+    calibrator: ServingCalibrator
     warn_raw: float
     crit_raw: float
     onnx: object | None
@@ -51,6 +129,13 @@ class Deployment:
     group_index: dict[str, list[int]]
     asset_stats: dict = field(default_factory=dict)
     manifest: dict = field(default_factory=dict)
+    scorer: object = None
+
+    @property
+    def parameters(self) -> int:
+        if self.art.model is not None:
+            return int(sum(p.numel() for p in self.art.model.parameters()))
+        return int(json.loads((PROJECT_ROOT / "models" / "onnx_manifest.json").read_text())["parameters"])
 
     @property
     def warn_cal(self):
@@ -61,43 +146,59 @@ class Deployment:
         return float(self.calibrator([self.crit_raw])[0])
 
 
-def load_deployment(cfg: dict | None = None) -> Deployment:
+def _onnx_session(path):
+    import onnxruntime as ort
+    so = ort.SessionOptions(); so.intra_op_num_threads = 1
+    return ort.InferenceSession(str(path), so, providers=["CPUExecutionProvider"])
+
+
+def load_deployment(cfg: dict | None = None, engine: str | None = None) -> Deployment:
     """Model served by the platform: models/phase2/deployment.json if present, else Phase-1 selection."""
     cfg = cfg or load_config()
     manifest = deployment_manifest(cfg)
-    art = load_artifacts(cfg, manifest.get("primary_model_file"))
-    meta = art.meta
-    members = []
-    for i in range(3):
-        f = PROJECT_ROOT / "models" / f"ensemble_member{i}.pt"
-        if f.exists():
-            m = build_model(meta["model_type"], len(art.feature_names), meta["hidden_size"], meta["num_layers"],
-                            meta["dropout"])
-            m.load_state_dict(torch.load(f, map_location="cpu"))
-            members.append(m.eval())
-    cal_path = PROJECT_ROOT / "models" / "phase2" / manifest.get("calibrator", "calibrator_phase1_selected.json")
-    cal = Calibrator.from_dict(json.loads(cal_path.read_text())) if cal_path.exists() else Calibrator("identity")
-    onnx = None
-    onnx_path = PROJECT_ROOT / "models" / f"{meta['active_model']}.onnx"
-    if onnx_path.exists():
-        try:
-            import onnxruntime as ort
-            so = ort.SessionOptions(); so.intra_op_num_threads = 1
-            sess = ort.InferenceSession(str(onnx_path), so, providers=["CPUExecutionProvider"])
-            x = np.random.randn(2, art.seq_len, len(art.feature_names)).astype(np.float32)
-            with torch.no_grad():
-                ref = art.model(torch.from_numpy(x)).numpy()
-            if np.allclose(sess.run(None, {"x": x})[0], ref, atol=1e-4):
-                onnx = sess                       # only used if numerically identical to PyTorch
-        except Exception:
-            onnx = None
+    mdir = PROJECT_ROOT / "models"
+    cal_path = mdir / "phase2" / manifest.get("calibrator", "calibrator_phase1_selected.json")
+    cal = ServingCalibrator.from_dict(json.loads(cal_path.read_text())) if cal_path.exists() else ServingCalibrator()
+    if (engine or ENGINE) == "onnx":
+        art = load_artifacts_lite(cfg)
+        meta = art.meta
+        sess = _onnx_session(mdir / f"{meta['active_model']}.onnx")
+        msess = [_onnx_session(mdir / f"ensemble_member{i}.onnx") for i in range(3) if (mdir / f"ensemble_member{i}.onnx").exists()]
+        members, onnx, scorer = msess, sess, OnnxScorer(sess, msess)
+    else:
+        import torch
+
+        from src.models.recurrent import build_model
+        art = load_artifacts(cfg, manifest.get("primary_model_file"))
+        meta = art.meta
+        members = []
+        for i in range(3):
+            f = mdir / f"ensemble_member{i}.pt"
+            if f.exists():
+                m = build_model(meta["model_type"], len(art.feature_names), meta["hidden_size"], meta["num_layers"],
+                                meta["dropout"])
+                m.load_state_dict(torch.load(f, map_location="cpu"))
+                members.append(m.eval())
+        onnx = None
+        onnx_path = mdir / f"{meta['active_model']}.onnx"
+        if onnx_path.exists():
+            try:
+                sess = _onnx_session(onnx_path)
+                x = np.random.randn(2, art.seq_len, len(art.feature_names)).astype(np.float32)
+                with torch.no_grad():
+                    ref = art.model(torch.from_numpy(x)).numpy()
+                if np.allclose(sess.run(None, {"x": x})[0], ref, atol=1e-4):
+                    onnx = sess                       # only used if numerically identical to PyTorch
+            except Exception:
+                onnx = None
+        scorer = TorchScorer(art.model, members, onnx)
     groups: dict[str, list[int]] = {}
     for j, n in enumerate(art.feature_names):
         groups.setdefault(feature_group(n), []).append(j)
     pol = AlertPolicy.from_config(cfg, meta, manifest)
     warn, crit = pol.warning_threshold, pol.critical_threshold
     dep = Deployment(meta["active_model"], art, members, cal, warn, crit, onnx,
-                     meta["horizon"] * 15, groups, manifest=manifest)
+                     meta["horizon"] * 15, groups, manifest=manifest, scorer=scorer)
     dep.asset_stats = _asset_stats(cfg, art)
     return dep
 
@@ -112,7 +213,8 @@ def _asset_stats(cfg, art) -> dict:
     from src.data.dataset import load_processed
     from src.preprocessing.splits import compute_bounds
     proc = PROJECT_ROOT / "data" / "processed"
-    if not all((proc / f"{a}.parquet").exists() for a in cfg["dataset"]["assets"]):
+    public = os.environ.get("SGPM_PUBLIC") == "1"          # public deployment never reads dataset rows
+    if public or not all((proc / f"{a}.parquet").exists() for a in cfg["dataset"]["assets"]):
         return json.loads(HEALTH_REF.read_text())
     dfs, _ = load_processed(cfg)
     out = {}
@@ -146,14 +248,8 @@ class AssetStream:
                      "spikes": False, "offline": False}
 
     # ---------------------------------------------------------------- helpers
-    def _attribution(self, x: torch.Tensor, steps: int = 12) -> tuple[dict, list]:
-        model = self.dep.art.model
-        model.eval()
-        alphas = torch.linspace(1 / steps, 1, steps)[:, None, None]
-        xi = (alphas * x).requires_grad_(True)
-        out = model(xi).sum()
-        g, = torch.autograd.grad(out, xi)
-        attr = (x[0] * g.mean(0)).detach().numpy()                       # (L, F) integrated gradients
+    def _attribution(self, x: np.ndarray) -> tuple[dict, list]:
+        attr = self.dep.scorer.attribution(x, self.dep.group_index)          # signed (L, F)
         mag = np.abs(attr)
         tot = mag.sum() + 1e-12
         shares = {GROUP_LABEL.get(gname, gname): float(mag[:, idx].sum() / tot)
@@ -162,7 +258,7 @@ class AssetStream:
         temporal = (mag.sum(1) / tot).tolist()
         sig = sorted(({"signal": k, "share": v, "direction": "raises risk" if signed[k] > 0 else "lowers risk"}
                       for k, v in shares.items()), key=lambda d: -d["share"])
-        return {"signals": sig, "temporal": temporal}, sig[:2]
+        return {"signals": sig, "temporal": temporal, "method": self.dep.scorer.attribution_method}, sig[:2]
 
     def _health(self, F: pd.Series, risk: float, conf: float) -> dict:
         s = self.dep.asset_stats[self.asset]
@@ -265,17 +361,11 @@ class AssetStream:
             T["sequence"] = time.perf_counter() - t
         if len(self.feat) == self.dep.art.seq_len:
             t = time.perf_counter()
-            x = torch.from_numpy(np.asarray(self.feat, dtype=np.float32))[None]
-            if self.dep.onnx is not None:
-                logit = float(self.dep.onnx.run(None, {"x": x.numpy()})[0][0])
-            else:
-                with torch.no_grad():
-                    logit = float(self.dep.art.model(x)[0])
-            raw = 1 / (1 + np.exp(-logit))
+            x = np.asarray(self.feat, dtype=np.float32)[None]
+            raw = float(_sigmoid(self.dep.scorer.logit(x)))
             T["inference"] = time.perf_counter() - t
             t = time.perf_counter()
-            with torch.no_grad():
-                mp = np.array([float(torch.sigmoid(m(x))[0]) for m in self.dep.members]) if self.dep.members else np.array([raw])
+            mp = self.dep.scorer.member_probs(x) if self.dep.members else np.array([raw])
             conf = float(np.clip(1 - 2 * mp.std(), 0, 1))
             T["confidence"] = time.perf_counter() - t
             t = time.perf_counter()

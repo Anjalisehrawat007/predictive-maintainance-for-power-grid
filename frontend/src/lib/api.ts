@@ -1,5 +1,5 @@
 import { API_BASE } from './deploy'
-import type { Alert, Incident, ScenarioRequest, SessionSummary, StepResult, SystemInfo, Timeline } from './types'
+import type { Alert, Incident, RunResult, ScenarioRequest, SessionSummary, StepResult, SystemInfo, Timeline } from './types'
 
 async function req<T>(path: string, init?: RequestInit): Promise<T> {
   // no-store: never show cached (possibly stale) model output when the backend is unavailable
@@ -33,6 +33,8 @@ export const api = {
   patterns: () => req<{ signal: string; alarms: number; followed_by_failure: number; share_followed: number }[]>('/api/patterns'),
   methodology: () => req<Record<string, any>>('/api/methodology'),
   scenario: (body: ScenarioRequest) => post<SessionSummary>('/api/scenarios', body),
+  runScenario: (body: ScenarioRequest) => post<RunResult>('/api/scenarios/run', body),
+  runUpload: (asset: string, rows: Record<string, string | number>[]) => post<RunResult>('/api/uploads/run', { asset, rows }),
   scenarioValidation: () => req<Record<string, any>>('/api/scenarios/validation'),
   upload: (asset: string, rows: Record<string, string | number>[]) => post<SessionSummary>('/api/uploads', { asset, rows }),
   sampleUrl: (asset: string, fault: string, month: number) => `${API_BASE}/api/samples/synthetic.csv?asset=${asset}&fault=${fault}&month=${month}`,

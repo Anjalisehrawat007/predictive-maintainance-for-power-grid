@@ -16,7 +16,7 @@ React/TypeScript operations dashboard with incident replay.
   that single-split validation overstated PR-AUC (0.55 vs 0.36). A 3-seed × 5-simulation protocol replaced it;
   under it the GRU beat TCN, LSTM and Transformer challengers.
 - Shipped a FastAPI + ONNX Runtime streaming engine (14.3 → 5.5 ms p50 per reading) and a React/TypeScript
-  dashboard with Incident Replay. Fixed a path-traversal vulnerability; 86 automated tests (pytest + Vitest).
+  dashboard with Incident Replay. Fixed a path-traversal vulnerability; 98 automated tests (pytest + Vitest).
 
 ### ATS Keywords
 Python · PyTorch · GRU · LSTM · temporal attention · time-series forecasting · anomaly detection · predictive
@@ -36,7 +36,7 @@ reproducibility · Docker (configuration only)
 | Calibration | Brier 0.0248 → 0.0125, ECE 0.039 → 0.003 | isotonic, fitted on validation only |
 | Latency | 5.49 ms p50 / 6.07 ms p99 per reading; ONNX 0.072 ms vs PyTorch 0.391 ms | Apple M2, 1 thread |
 | Speed-up | 14.3 → 5.5 ms (features 7.2 → 0.51 ms) | NumPy newest-row features + ONNX |
-| Tests | 76 pytest + 10 Vitest, 0 skipped | incl. 16 temporal-integrity tests |
+| Tests | 85 pytest + 13 Vitest, 0 skipped | incl. 16 temporal-integrity tests |
 
 Avoid precision (0.17) as a headline. Mention it when asked about trade-offs.
 

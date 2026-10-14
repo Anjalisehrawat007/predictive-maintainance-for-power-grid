@@ -26,7 +26,7 @@ React, TypeScript
   an incremental NumPy newest-row path. It matches the full recomputation within 1e-8 relative difference and
   gave identical alarm decisions over all 20,904 test steps.
 - Found and fixed a path-traversal vulnerability in static-file serving, with a regression test. Added
-  86 automated tests (76 pytest + 10 Vitest), including a temporal-integrity suite proving no test data
+  98 automated tests (85 pytest + 13 Vitest), including a temporal-integrity suite proving no test data
   reaches model selection.
 
 ## C. ML/AI focused
@@ -59,7 +59,7 @@ React, TypeScript
   after optimisation) and a React/TypeScript operations dashboard. The dashboard includes Incident Replay and a
   guided demo on held-out data.
 - Hardened and tested the system: fixed a path-traversal vulnerability, added input validation and
-  observability, and wrote 86 automated tests including temporal-integrity checks that prove test-set isolation.
+  observability, and wrote 98 automated tests including temporal-integrity checks that prove test-set isolation.
 
 ---
 
@@ -109,4 +109,4 @@ test failures."
 | Brier / ECE | 0.0248 → 0.0125 / 0.039 → 0.003 | `final_metrics.json` |
 | Engine step latency | 5.49 ms p50, 6.07 ms p99 (Apple M2, 1 thread) | `reports/final/performance.json` |
 | ONNX vs PyTorch | 0.072 vs 0.391 ms p50 | same |
-| Tests | 76 pytest + 10 Vitest, 0 skipped | `reports/final_project_quality_report.md` |
+| Tests | 85 pytest + 13 Vitest, 0 skipped | `reports/final_project_quality_report.md` |

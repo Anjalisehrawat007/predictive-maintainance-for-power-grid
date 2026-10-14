@@ -7,8 +7,8 @@ within the next 2 hours. Its score is calibrated, given a model-confidence estim
 alerts by a streaming engine. The engine is served through FastAPI and a React/TypeScript operations center
 with **Incident Replay** and a guided **Demo Mode** that run the real engine on held-out data.
 
-**Live website:** <https://predictive-maintenance-power-grid.vercel.app>. The real engine runs on a Hugging Face
-Space, and visitors drive it:
+**Live website:** <https://predictive-maintenance-power-grid.vercel.app>. The real engine runs as a serverless
+function on Vercel's free tier, and visitors drive it:
 - **Scenario Lab:** inject a fault (type, severity, precursor length) into a synthetic transformer stream and watch
   the model react live.
 - **Upload & Score:** run your own CSV of readings through the engine.
@@ -245,14 +245,25 @@ in the development environment. Treat them as an untested starting point.
 ## Live website (public deployment)
 ```mermaid
 flowchart LR
-  V[Visitor] --> W[React app on Vercel<br/>VITE_PUBLIC=1]
-  W -->|HTTPS + CORS| S[FastAPI engine<br/>Hugging Face Docker Space<br/>SGPM_PUBLIC=1]
-  S -->|start-up, token| M[(Private HF model repo<br/>trained weights)]
+  V[Visitor] --> W[React app<br/>static, VITE_PUBLIC=1]
+  W -->|same origin /api| F[FastAPI engine · Vercel Python function<br/>SGPM_PUBLIC=1 · SGPM_ENGINE=onnx]
+  F --> O[(ONNX model + 3 seed members<br/>bundled in the function only)]
 ```
+One free Vercel deployment serves both the static React app and the engine. The engine runs as a Python
+serverless function with ONNX Runtime, NumPy and pandas only; PyTorch, scikit-learn and SciPy aren't installed.
+
+- **Same results as the full engine.** The ONNX engine reproduces the reference engine's raw scores, calibrated
+  risk, confidence, alert statuses and lead times (tested, `tests/test_onnx_engine.py`). The ONNX exports match
+  PyTorch to within 2e-6 in logits. The lightweight isotonic calibrator equals scikit-learn's prediction (tested).
+- **One difference: attribution.** Integrated gradients need PyTorch's gradients, so the web engine uses
+  **occlusion** instead: the drop in the model's output when a sensor group, or one time step, is replaced by its
+  training mean. The UI names the method in use.
+- **Stateless runs.** Serverless functions don't keep sessions, so `POST /api/scenarios/run` and
+  `POST /api/uploads/run` compute the whole stream in one request (about 0.9 s for a scenario on Vercel). The
+  browser then plays the returned engine records back at the chosen speed; nothing is generated client-side.
+  Uploads are capped at 2,000 rows.
 - **Public mode** (`SGPM_PUBLIC=1`) keeps no ETDataset rows on the server. Endpoints that would replay held-out
   rows return 404 (tested).
-- **What visitors can do:** create **scenarios** (`POST /api/scenarios`) or **uploads** (`POST /api/uploads`).
-  Both stream through the same engine as the local app.
 - **Synthetic baseline:** generated from aggregate statistics of the training period
   ([`src/scenario/baseline.py`](src/scenario/baseline.py)). Each month's daily profiles, volatility, tails and
   cross-channel correlation are matched to the real data; no rows are stored.
@@ -261,12 +272,11 @@ flowchart LR
   - typical-severity faults: all warned in time, median lead 3–4.5 h;
   - weak faults: 40–95 % warned.
   The UI shows these numbers. Synthetic runs are illustrative, not the benchmark.
-- **Weights:** they live in a private model repo and are downloaded at container start, so they're never in the
-  public Space or its image.
-- **Deploy:**
-  1. `hf auth login`, then `make deploy-engine`.
-  2. In the Space settings, add the secret `HF_TOKEN` (a read token for the private model repo).
-  3. `make deploy-web API_BASE=https://<user>-smartgrid-ai-engine.hf.space`.
+- **Weights:** bundled only inside the serverless function. They aren't static files (requests for them return
+  the web app), and Vercel's source protection keeps the deployment source private. They aren't in this Git
+  repository either (see [DATASET.md](DATASET.md)).
+- **Deploy:** `make deploy` exports ONNX, assembles `.deploy-vercel/` ([`deploy/vercel_bundle.py`](deploy/vercel_bundle.py))
+  and runs `vercel deploy --prod`.
 
 ## API
 FastAPI ([`backend/app.py`](backend/app.py)). The model, calibrator, ONNX session and seed ensemble are loaded
@@ -285,7 +295,7 @@ FastAPI ([`backend/app.py`](backend/app.py)). The model, calibrator, ONNX sessio
 
 ## Testing
 ```bash
-make test      # pytest (76 tests) + Vitest (10 tests)
+make test      # pytest (85 tests) + Vitest (13 tests)
 make check     # + ruff, pip-audit, tsc, oxlint, production build, npm audit
 ```
 

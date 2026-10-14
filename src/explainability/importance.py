@@ -13,18 +13,7 @@ import pandas as pd
 import torch
 from sklearn.metrics import average_precision_score
 
-SENSORS = ["HUFL", "HULL", "MUFL", "MULL", "LUFL", "LULL", "OT"]
-
-
-def feature_group(name: str) -> str:
-    if name.startswith("OT_resid"):
-        return "thermal residual (OT vs load)"
-    for s in SENSORS:
-        if name == s or name.startswith(s + "_"):
-            return s
-    if name.startswith("load_total"):
-        return "total load"
-    return "calendar (hour/day)"
+from src.explainability.groups import SENSORS, feature_group  # noqa: F401  (re-exported)
 
 
 def gather_windows(X: np.ndarray, rows: np.ndarray, L: int) -> np.ndarray:

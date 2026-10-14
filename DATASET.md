@@ -56,6 +56,17 @@ ONNX exports and the fitted preprocessor are **not** in the repository.
 The Phase-2/final research checkpoints (`models/phase2/{architecture,features,horizon,cross_asset}/`) are only
 needed to re-run those studies (`src/phase2/experiments.py`), not to run the app.
 
+## The live website
+
+The public site (<https://predictive-maintenance-power-grid.vercel.app>) serves **no ETDataset rows**:
+- Visitors run synthetic scenarios, generated from aggregate statistics, or upload their own data.
+- Endpoints that would replay held-out rows are disabled.
+- To run the model, the ONNX weights and fitted preprocessing are bundled inside the serverless function. They
+  can't be downloaded from the site (requests for them return the web page), and Vercel's source protection keeps
+  the deployment source private.
+- Using a model trained on CC BY-ND data to provide an online demo, without redistributing the data or weights,
+  is again not addressed by the license text. Treat it as a judgement call, not a certainty.
+
 ## Figures and screenshots
 
 `reports/figures/*.png` and `docs/screenshots/*.png` include charts of sensor curves, some with simulated faults

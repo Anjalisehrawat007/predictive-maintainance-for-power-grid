@@ -43,6 +43,7 @@ export interface SystemInfo {
   thresholds: { warning_raw: number; critical_raw: number; warning_risk: number; critical_risk: number; persistence_steps: number; confidence_bins?: Record<'HIGH' | 'MEDIUM' | 'LOW', number> }
   dataset: { name: string; assets: { id: string; label: string }[]; sampling_min: number; test_period: [string, string]; test_index: [number, number] }
   benchmark: Record<string, number | string>
+  engine?: { runtime: string; attribution: string; max_run_rows: number }
   engine_timings: { median_ms?: Record<string, number>; p95_ms?: Record<string, number>; n_steps?: number; onnx_inference?: boolean }
   health_weights: Record<string, number>
 }
@@ -61,5 +62,7 @@ export type Fault = 'none' | 'thermal_runaway' | 'load_oscillation' | 'intermitt
 export interface ScenarioRequest { asset: string; month: number; fault: Fault; severity: number; precursor_hours: number; seed: number }
 /** Session context: a held-out incident (local), a synthetic scenario or an upload (public). */
 export interface SessionContext extends Partial<Incident> { fault?: Fault; severity?: number; month?: number; seed?: number; precursor_hours?: number; rows?: number }
+/** A stateless run: the engine computed every step server-side in one request (serverless deployment). */
+export interface RunResult { session: SessionSummary; records: EngineRecord[]; events: FeedEvent[]; compute_ms: number; attribution_method: string }
 export interface SessionSummary { id: string; assets: string[]; mode: string; start: number; stop: number; cursor: number; incident?: SessionContext | null; warmup_ms: number; start_timestamp: string; stop_timestamp: string }
 export interface StepResult { session: string; cursor: number; done: boolean; records: Record<string, EngineRecord[]>; events: FeedEvent[]; alerts: Alert[] }

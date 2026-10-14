@@ -88,6 +88,8 @@ class Store:
     @cached_property
     def log(self) -> dict[str, pd.DataFrame]:
         out = {}
+        if PUBLIC:                       # engine log holds dataset rows: never read on the public deployment
+            return out
         for a in self.dfs:
             f = LOG / f"{a}.parquet"
             if f.exists():
@@ -97,12 +99,12 @@ class Store:
     @cached_property
     def log_events(self) -> pd.DataFrame:
         f = LOG / "events.parquet"
-        return pd.read_parquet(f) if f.exists() else pd.DataFrame()
+        return pd.read_parquet(f) if f.exists() and not PUBLIC else pd.DataFrame()
 
     @cached_property
     def log_alerts(self) -> pd.DataFrame:
         f = LOG / "alerts.parquet"
-        return pd.read_parquet(f) if f.exists() else pd.DataFrame()
+        return pd.read_parquet(f) if f.exists() and not PUBLIC else pd.DataFrame()
 
     @cached_property
     def timings(self) -> dict:

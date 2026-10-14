@@ -1,0 +1,10 @@
+{
+ "model": "best_attention_model",
+ "parameters": 31425,
+ "max_abs_logit_diff_vs_pytorch": {
+  "best_attention_model.onnx": 9.5367431640625e-07,
+  "ensemble_member0.onnx": 4.76837158203125e-07,
+  "ensemble_member1.onnx": 1.9073486328125e-06,
+  "ensemble_member2.onnx": 9.5367431640625e-07
+ }
+}

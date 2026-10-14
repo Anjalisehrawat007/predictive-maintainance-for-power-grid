@@ -6,7 +6,7 @@ import { api } from '../lib/api'
 import { pct } from '../lib/format'
 import { useGrid } from '../store/grid'
 
-function stepDesc(m: { n_features: number; type: string; seq_len: number; window_hours: number; horizon_min: number; calibration: string; onnx_runtime: boolean; ensemble_members: number }): Record<string, string> {
+function stepDesc(attribution: string, m: { n_features: number; type: string; seq_len: number; window_hours: number; horizon_min: number; calibration: string; onnx_runtime: boolean; ensemble_members: number }): Record<string, string> {
   return {
     'Sensor ingestion': '7 real SCADA channels every 15 min: HV/MV/LV active & reactive load, oil temperature.',
     'Causal preprocessing': 'Per-transformer scaling with statistics fitted on the training period only; offline rows are masked, never filled from the future.',
@@ -16,7 +16,7 @@ function stepDesc(m: { n_features: number; type: string; seq_len: number; window
     'Failure probability': 'The raw score from weighted-BCE training. It ranks risk but is not a probability.',
     Calibration: `${m.calibration} calibration fitted on validation data maps the raw score to a calibrated probability.`,
     Confidence: `Model confidence = 1 − 2·σ of ${m.ensemble_members} independently seeded models (agreement, not physical certainty).`,
-    'Risk engine': 'Trend (1 h), derived health indicator and integrated-gradients attribution (what the model relied on, not causes).',
+    'Risk engine': `Trend (1 h), derived health indicator and ${attribution} attribution (what the model relied on, not causes).`,
     Alert: 'WARNING after 2 consecutive steps above the validated threshold; CRITICAL above the 90 %-precision threshold; events on threshold crossings.',
   }
 }
@@ -29,7 +29,7 @@ export default function Methodology() {
   if (err) return <Empty><span role="alert">Could not load data from the ML backend ({err}). Is the API running on port 8000?</span></Empty>
   if (!d || !system) return <Empty>Loading…</Empty>
   const shift = d.shift?.resim
-  const STEP_DESC = stepDesc(system.model)
+  const STEP_DESC = stepDesc(system.engine?.attribution ?? 'integrated-gradients', system.model)
   const leak = Object.entries(d.leakage ?? {}) as [string, { passed: boolean; detail: string }][]
   const timings = system.engine_timings.median_ms ?? {}
   // stage → engine timing keys (median ms over the engine-log run); preprocessing is timed together with the features

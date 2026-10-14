@@ -97,9 +97,9 @@ React 19 + TypeScript + Vite + Tailwind + Framer Motion + Recharts + Zustand. A 
 FastAPI with lifespan model loading, an intelligence engine (features → ONNX → calibration → confidence → attribution → risk → alerts), a session manager, Pydantic schemas, structured logs with request IDs, a metrics endpoint, and path-safe static serving.
 
 ## 18. Test results
-**Python:** `pytest` 76 passed, 0 skipped (unit, integration, API robustness, 16 temporal-integrity, streaming). The one test previously skipped on fresh clones (`test_spa_shell_is_not_cached`, needed a local frontend build) now uses a temporary build directory and runs everywhere. `ruff`: all checks passed. `pip-audit`: no known vulnerabilities. **Clean-copy reproduction** (only files git would commit): `make setup` → `make data` → `make check` all exit 0.
+**Python:** `pytest` 85 passed, 0 skipped (unit, integration, API robustness, 16 temporal-integrity, streaming). The one test previously skipped on fresh clones (`test_spa_shell_is_not_cached`, needed a local frontend build) now uses a temporary build directory and runs everywhere. `ruff`: all checks passed. `pip-audit`: no known vulnerabilities. **Clean-copy reproduction** (only files git would commit): `make setup` → `make data` → `make check` all exit 0.
 
-**Frontend:** `tsc` 0 errors; `oxlint` 0 warnings; Vitest 10 passed; production build OK; `npm audit`: 0 vulnerabilities. **Browser:** all 7 routes load with 0 console errors and 0 failed requests; Incident Replay (T2 thermal runaway) shows FIRST RELIABLE WARNING 3h 00m BEFORE FAILURE, equal to the offline evaluation; Demo Mode streams the real engine on held-out data; backend-down state shows a clear banner (dev server).
+**Frontend:** `tsc` 0 errors; `oxlint` 0 warnings; Vitest 13 passed; production build OK; `npm audit`: 0 vulnerabilities. **Browser:** all 7 routes load with 0 console errors and 0 failed requests; Incident Replay (T2 thermal runaway) shows FIRST RELIABLE WARNING 3h 00m BEFORE FAILURE, equal to the offline evaluation; Demo Mode streams the real engine on held-out data; backend-down state shows a clear banner (dev server).
 
 ## 19. Security review
 Path traversal fixed; validated inputs with bounds; narrowed CORS; no secrets in the repo (`.env.example` only); no subprocess calls in the API; no `eval`/`exec`; pickle loaded only for the project's own locally produced preprocessor; `pip-audit` and `npm audit`: 0 known vulnerabilities; no debug mode; FastAPI docs remain enabled (demo). No authentication (local single-user demo; stated, not hidden).
@@ -125,7 +125,7 @@ No scores — strengths and remaining limitations per dimension.
 | Security | Path traversal found and fixed with regression test; Pydantic validation; no stack traces; narrowed CORS; 0 known dependency vulnerabilities. | No authentication or rate limiting (local demo). |
 | Performance | Engine step ≈ 5.5 ms p50 (14.3 → 5.5 ms via NumPy newest-row features); ONNX 5.4× faster than eager PyTorch; p50/p95/p99 reported. | Measured on one laptop; attribution + confidence dominate the step. |
 | Frontend quality | 7 data-driven routes, Incident Replay, guided Demo Mode on real held-out data, responsive, reduced-motion, backend-down state. | Desktop-first; frontend perf trace measured once (earlier session). |
-| Testing | 76 Python tests (16 temporal-integrity), 10 Vitest tests, 0 skipped; lint, types, build, audits in `make check`. | No browser end-to-end test suite (UI verified manually + scripted screenshots). |
+| Testing | 85 Python tests (16 temporal-integrity), 13 Vitest tests, 0 skipped; lint, types, build, audits in `make check`. | No browser end-to-end test suite (UI verified manually + scripted screenshots). |
 | Research credibility | Every metric traceable to `reports/final/*.json`; recall over all vs predictable failures; false-alarm base rates; historical vs final clearly separated. | Not validated on real failures or other transformers. |
 
 **Recommended resume claims** (defensible): leakage-safe temporal evaluation; GRU + temporal attention selected under a

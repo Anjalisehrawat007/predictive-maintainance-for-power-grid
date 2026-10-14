@@ -110,7 +110,7 @@ No scores — strengths and remaining limitations per dimension.
 | Security | Path traversal found and fixed with regression test; Pydantic validation; no stack traces; narrowed CORS; 0 known dependency vulnerabilities. | No authentication or rate limiting (local demo). |
 | Performance | Engine step ≈ 5.5 ms p50 (14.3 → 5.5 ms via NumPy newest-row features); ONNX 5.4× faster than eager PyTorch; p50/p95/p99 reported. | Measured on one laptop; attribution + confidence dominate the step. |
 | Frontend quality | 7 data-driven routes, Incident Replay, guided Demo Mode on real held-out data, responsive, reduced-motion, backend-down state. | Desktop-first; frontend perf trace measured once (earlier session). |
-| Testing | 76 Python tests (16 temporal-integrity), 10 Vitest tests, 0 skipped; lint, types, build, audits in `make check`. | No browser end-to-end test suite (UI verified manually + scripted screenshots). |
+| Testing | 85 Python tests (16 temporal-integrity), 13 Vitest tests, 0 skipped; lint, types, build, audits in `make check`. | No browser end-to-end test suite (UI verified manually + scripted screenshots). |
 | Research credibility | Every metric traceable to `reports/final/*.json`; recall over all vs predictable failures; false-alarm base rates; historical vs final clearly separated. | Not validated on real failures or other transformers. |
 
 **Recommended resume claims** (defensible): leakage-safe temporal evaluation; GRU + temporal attention selected under a

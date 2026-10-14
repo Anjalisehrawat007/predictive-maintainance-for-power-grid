@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react'
 import Panel from '../components/Panel'
 import SessionPlayer from '../components/SessionPlayer'
 import { api } from '../lib/api'
+import { PUBLIC } from '../lib/deploy'
 import { TYPE_COLOR } from '../lib/palette'
 import type { Fault } from '../lib/types'
 import { useGrid } from '../store/grid'
@@ -36,6 +37,7 @@ export default function ScenarioLab() {
     return rows.length ? rows.reduce((a: number, d: any) => a + d.false_alarms_per_day, 0) / rows.length : null
   }, [val, asset])
   const label = assets.find((a) => a.id === asset)?.label ?? asset
+  const req = { asset, month, fault, severity, precursor_hours: precursor, seed }
 
   return (
     <div className="space-y-3">
@@ -92,7 +94,7 @@ export default function ScenarioLab() {
         </div>
         <div className="xl:col-span-9">
           <SessionPlayer kind="scenario" ready title={`Transformer ${label} · ${f.label}${hasPrecursor ? ` · ${severity}× · ${precursor} h precursor` : ''} · ${MONTHS[month - 1]}`}
-            create={() => api.scenario({ asset, month, fault, severity, precursor_hours: precursor, seed })} />
+            {...(PUBLIC ? { run: () => api.runScenario(req) } : { create: () => api.scenario(req) })} />
         </div>
       </div>
     </div>

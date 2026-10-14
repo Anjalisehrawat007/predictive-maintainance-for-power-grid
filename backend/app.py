@@ -39,7 +39,7 @@ from backend.observability import METRICS, RequestContextMiddleware, log_event, 
 from backend.schemas import AckBody, PredictBody, ReplayBody, ScenarioBody, SessionCreate, StepBody, UploadBody
 from backend.sessions import Session, SessionManager
 from backend.store import ASSET_LABEL, PUBLIC, R, Store, _clean, _json, records
-from src.phase2.calibration import CONFIDENCE_BINS
+from src.streaming.calibration import CONFIDENCE_BINS
 from src.utils.config import PROJECT_ROOT
 
 setup_logging(os.environ.get("SGPM_LOG_LEVEL", "INFO"))
@@ -146,7 +146,7 @@ def model_info():
     m = d.art.meta
     f = PROJECT_ROOT / "models" / f"{m['active_model']}.pt"
     return _clean({
-        "name": m["active_model"], "architecture": m["model_type"], "parameters": int(sum(p.numel() for p in d.art.model.parameters())),
+        "name": m["active_model"], "architecture": m["model_type"], "parameters": d.parameters,
         "weights_sha256": hashlib.sha256(f.read_bytes()).hexdigest()[:16] if f.exists() else None,
         "input": {"features": d.art.feature_names, "n_features": len(d.art.feature_names), "seq_len": d.art.seq_len,
                   "window_hours": d.art.seq_len * 15 / 60, "feature_set": m["feature_set"]},
@@ -186,7 +186,9 @@ def system():
     a0 = STORE.assets[0]
     return _clean({
         "status": "online", "time": time.time(), "disclosure": DISCLOSURE, "public": PUBLIC,
-        "model": {"name": m["active_model"], "type": m["model_type"], "parameters": int(sum(p.numel() for p in d.art.model.parameters())),
+        "engine": {"runtime": type(d.scorer).__name__, "attribution": d.scorer.attribution_method,
+                   "max_run_rows": MAX_RUN_ROWS},
+        "model": {"name": m["active_model"], "type": m["model_type"], "parameters": d.parameters,
                   "seq_len": d.art.seq_len, "window_hours": d.art.seq_len * 15 / 60, "horizon_min": d.horizon_min,
                   "feature_set": m["feature_set"], "n_features": len(d.art.feature_names), "onnx_runtime": d.onnx is not None,
                   "ensemble_members": len(d.members), "calibration": d.calibrator.method,
@@ -327,7 +329,9 @@ def sample_csv(asset: str = "ETTm1", month: int = Query(4, ge=1, le=12), fault: 
         raise HTTPException(422, f"fault must be one of {list(FAULTS)}")
     d = dep()
     df, _ = build(asset, month, fault, 1.0, 8, seed, d.art.fe.lookback + d.art.seq_len - 1)
-    csv = df[["timestamp", *SENSORS]].round(4).to_csv(index=False, date_format="%Y-%m-%d %H:%M:%S")
+    out = df[["timestamp", *SENSORS]].copy()
+    out[SENSORS] = out[SENSORS].round(4)
+    csv = out.to_csv(index=False, date_format="%Y-%m-%d %H:%M:%S")
     return Response(csv, media_type="text/csv",
                     headers={"Content-Disposition": f'attachment; filename="synthetic_{asset}_{fault}.csv"'})
 
@@ -347,6 +351,40 @@ def create_upload(body: UploadBody):
     df["offline"], df["failure"], df["sim_phase"], df["sim_event_type"] = False, 0, "normal", ""
     return _frame_session(df, body.asset, "upload", {"label": ASSET_LABEL.get(body.asset, body.asset), "type": "upload",
                                                      "rows": len(df), "event_id": None})
+
+
+# ---- stateless runs (serverless-friendly): the whole stream is computed by the engine in one request; the
+# browser then plays the returned records back at the chosen speed. Nothing is generated client-side.
+MAX_RUN_ROWS = int(os.environ.get("SGPM_MAX_RUN_ROWS", "2000" if PUBLIC else "5000"))
+
+
+def _run_to_end(summary: dict) -> dict:
+    s = SESSIONS.get(summary["id"])
+    t = time.perf_counter()
+    out = s.step(s.stop - s.cursor)
+    ms = (time.perf_counter() - t) * 1000
+    SESSIONS.drop(s.id)
+    recs = next(iter(out["records"].values()))
+    for r in recs:                                    # trim what the UI does not use
+        r.pop("member_scores", None)
+        if r.get("timings_ms"):
+            r["timings_ms"] = {"total": r["timings_ms"].get("total")}
+    return _clean({"session": summary, "records": recs, "events": out["events"], "alerts": out["alerts"],
+                   "compute_ms": round(ms, 1), "attribution_method": dep().scorer.attribution_method})
+
+
+@app.post("/api/scenarios/run")
+def run_scenario(body: ScenarioBody):
+    """Scenario Lab, stateless: build the scenario and stream it through the engine in one request."""
+    return _run_to_end(create_scenario(body))
+
+
+@app.post("/api/uploads/run")
+def run_upload(body: UploadBody):
+    """Upload & Score, stateless: stream the visitor's rows through the engine in one request."""
+    if len(body.rows) > MAX_RUN_ROWS:
+        raise HTTPException(422, f"at most {MAX_RUN_ROWS} rows per run on this deployment; got {len(body.rows)}")
+    return _run_to_end(create_upload(body))
 
 
 @app.post("/api/sessions/{sid}/step")
@@ -553,7 +591,7 @@ def methodology():
                   "input_window": f"{d.art.seq_len * 15 / 60:.0f} hours", "horizon": f"{d.horizon_min // 60} hours",
                   "features": f"{len(d.art.feature_names)} causal features ({d.art.meta['feature_set']})",
                   "model": f"{MODEL_NAMES.get(d.art.meta['model_type'], d.art.meta['model_type'])} "
-                           f"({sum(p.numel() for p in d.art.model.parameters()):,} parameters)",
+                           f"({d.parameters:,} parameters)",
                   "split": "chronological 70/15/15 per asset with embargo",
                   "threshold_rule": "max F1 subject to recall ≥ 0.70 on pooled fresh validation simulations; alarm after 2 consecutive steps",
                   "model_selection": "mean PR-AUC over 3 seeds × 5 fresh validation simulations (test never used)"},

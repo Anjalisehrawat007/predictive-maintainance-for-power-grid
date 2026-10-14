@@ -6,7 +6,7 @@ export const MAX_ROWS = 5000
 export type CsvRow = Record<string, string | number> & { timestamp: string }
 export interface ParsedCsv { rows: CsvRow[]; error?: string; note?: string }
 
-export function parseSensorCsv(text: string): ParsedCsv {
+export function parseSensorCsv(text: string, maxRows: number = MAX_ROWS): ParsedCsv {
   const lines = text.replace(/^﻿/, '').split(/\r?\n/).filter((l) => l.trim())
   if (lines.length < 2) return { rows: [], error: 'The file is empty.' }
   const head = lines[0].split(',').map((h) => h.trim().replace(/^"|"$/g, ''))
@@ -21,7 +21,7 @@ export function parseSensorCsv(text: string): ParsedCsv {
   }
   let body = lines.slice(1)
   let note: string | undefined
-  if (body.length > MAX_ROWS) { note = `using the last ${MAX_ROWS} of ${body.length} rows`; body = body.slice(-MAX_ROWS) }
+  if (body.length > maxRows) { note = `using the last ${maxRows} of ${body.length} rows`; body = body.slice(-maxRows) }
   if (body.length < MIN_ROWS) return { rows: [], error: `Need at least ${MIN_ROWS} rows (about 40 h at 15 min); got ${body.length}.` }
   const rows: CsvRow[] = []
   let prev: number | null = null

@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { api } from '../lib/api'
 import { dur, liveRecord, minutesBetween, riskPct, ts } from '../lib/format'
 import { C, TYPE_COLOR } from '../lib/palette'
-import type { EngineRecord, FeedEvent, SessionSummary } from '../lib/types'
+import type { EngineRecord, FeedEvent, RunResult, SessionSummary } from '../lib/types'
 import { useGrid } from '../store/grid'
 import { RiskChart, SensorChart, SensorLegend } from './Charts'
 import EventFeed from './EventFeed'
@@ -29,10 +29,13 @@ const STAGES = [
 type StageKey = typeof STAGES[number]['key']
 const SPEEDS = [1, 4, 16, 64]
 
-/** Streams any engine session (synthetic scenario or uploaded data) through the REAL engine, step by step:
- *  stage progression, risk & sensor charts, attribution, events and a measured result. Nothing is pre-rendered. */
-export default function SessionPlayer({ create, ready, kind, title }: {
-  create: () => Promise<SessionSummary>; ready: boolean; kind: 'scenario' | 'upload'; title: string
+/** Streams an engine session (synthetic scenario or uploaded data) through the REAL engine: stage progression,
+ *  risk & sensor charts, attribution, events and a measured result.
+ *  - ``create``: stateful session, stepped on the server tick by tick (local / long-running server).
+ *  - ``run``: stateless run (serverless deployment) — the engine computes every step in ONE request, and the
+ *    returned records are then played back here at the chosen speed. Nothing is generated client-side. */
+export default function SessionPlayer({ create, run: runAll, ready, kind, title }: {
+  create?: () => Promise<SessionSummary>; run?: () => Promise<RunResult>; ready: boolean; kind: 'scenario' | 'upload'; title: string
 }) {
   const system = useGrid((s) => s.system)
   const [session, setSession] = useState<SessionSummary | null>(null)
@@ -45,6 +48,8 @@ export default function SessionPlayer({ create, ready, kind, title }: {
   const [error, setError] = useState<string>()
   const [speed, setSpeed] = useState(kind === 'upload' ? 16 : 4)
   const [pick, setPick] = useState<string[] | null>(null)
+  const [computeMs, setComputeMs] = useState<number | null>(null)
+  const queue = useRef<{ records: EngineRecord[]; events: FeedEvent[] } | null>(null)
   const timer = useRef<ReturnType<typeof setInterval> | null>(null)
   const busy = useRef(false)
   const state = useRef({ session, stages })
@@ -63,7 +68,17 @@ export default function SessionPlayer({ create, ready, kind, title }: {
     if (!s || busy.current) return
     busy.current = true
     try {
-      const r = await api.step(s.id, n)
+      let r: { records: Record<string, EngineRecord[]>; events: FeedEvent[]; cursor: number; done: boolean }
+      if (queue.current) {                       // playback of a stateless run (already computed by the engine)
+        const q = queue.current
+        const chunk = q.records.splice(0, n)
+        const lastIdx = chunk.at(-1)?.index ?? -1
+        const k = q.events.findIndex((e) => e.index > lastIdx)
+        const evs = q.events.splice(0, k < 0 ? q.events.length : k)
+        r = { records: { [s.assets[0]]: chunk }, events: evs, cursor: s.cursor + chunk.length, done: q.records.length === 0 }
+      } else {
+        r = await api.step(s.id, n)
+      }
       const newRecs = (r.records[s.assets[0]] ?? []).map(liveRecord)
       const st = { ...state.current.stages }
       const warnRisk = system?.thresholds.warning_risk ?? 0.04
@@ -86,8 +101,18 @@ export default function SessionPlayer({ create, ready, kind, title }: {
   const start = async () => {
     stop(); setRecs([]); setEvents([]); setDone(false); setError(undefined); setPick(null); setBusyStart(true)
     try {
-      if (session) api.dropSession(session.id).catch(() => {})
-      const s = await create()
+      if (session && !queue.current) api.dropSession(session.id).catch(() => {})
+      let s: SessionSummary
+      if (runAll) {
+        const res = await runAll()
+        s = res.session
+        queue.current = { records: [...res.records], events: [...res.events].sort((a, b) => a.index - b.index) }
+        setComputeMs(res.compute_ms)
+      } else {
+        queue.current = null
+        setComputeMs(null)
+        s = await create!()
+      }
       setSession(s); state.current.session = s
       const first = { normal: s.start_timestamp }
       setStages(first); state.current.stages = first
@@ -149,6 +174,7 @@ export default function SessionPlayer({ create, ready, kind, title }: {
               </li>)
           })}
         </ol>}
+        {computeMs != null && <div className="mb-1 font-mono text-[10.5px] text-ink-3">engine computed {session ? session.stop - session.start : ''} steps in {computeMs.toFixed(0)} ms on the server · playback paced for reading</div>}
         {session && <div className="mb-2 h-1.5 overflow-hidden rounded bg-line" role="progressbar" aria-valuenow={Math.round(progress * 100)} aria-valuemin={0} aria-valuemax={100} aria-label="Stream progress">
           <motion.div className="h-full bg-accent" animate={{ width: `${progress * 100}%` }} transition={{ duration: 0.3 }} /></div>}
         {recs.length && th ? <>

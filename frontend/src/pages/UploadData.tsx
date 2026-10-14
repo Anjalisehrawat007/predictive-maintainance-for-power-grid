@@ -3,7 +3,8 @@ import { useState } from 'react'
 import Panel from '../components/Panel'
 import SessionPlayer from '../components/SessionPlayer'
 import { api } from '../lib/api'
-import { parseSensorCsv, type ParsedCsv } from '../lib/csv'
+import { PUBLIC } from '../lib/deploy'
+import { MAX_ROWS, MIN_ROWS, parseSensorCsv, type ParsedCsv } from '../lib/csv'
 import { useGrid } from '../store/grid'
 
 export default function UploadData() {
@@ -12,10 +13,11 @@ export default function UploadData() {
   const [parsed, setParsed] = useState<ParsedCsv>()
   const [name, setName] = useState<string>()
   const assets = system?.dataset.assets ?? [{ id: 'ETTm1', label: 'T1' }, { id: 'ETTm2', label: 'T2' }]
+  const maxRows = system?.engine?.max_run_rows ?? MAX_ROWS
 
   const load = async (file: File) => {
     setName(file.name)
-    setParsed(parseSensorCsv(await file.text()))
+    setParsed(parseSensorCsv(await file.text(), maxRows))
   }
   const ok = !!parsed && !parsed.error
 
@@ -33,7 +35,7 @@ export default function UploadData() {
               <label className="flex cursor-pointer flex-col items-center gap-1 rounded border border-dashed border-line-2 px-3 py-5 text-center hover:bg-surface-2">
                 <FileUp size={18} className="text-accent" aria-hidden />
                 <span>{name ?? 'Choose a CSV file'}</span>
-                <span className="text-[11px] text-ink-3">162 – 5,000 consecutive 15-min rows</span>
+                <span className="text-[11px] text-ink-3">{MIN_ROWS} – {maxRows.toLocaleString()} consecutive 15-min rows</span>
                 <input type="file" accept=".csv,text/csv" className="sr-only" onChange={(e) => e.target.files?.[0] && load(e.target.files[0])} aria-label="Upload sensor CSV" />
               </label>
               {parsed && (parsed.error
@@ -60,7 +62,7 @@ export default function UploadData() {
         </div>
         <div className="xl:col-span-9">
           <SessionPlayer kind="upload" ready={ok} title={name ? `Your data · ${name}` : 'Your data'}
-            create={() => api.upload(asset, parsed!.rows)} />
+            {...(PUBLIC ? { run: () => api.runUpload(asset, parsed!.rows) } : { create: () => api.upload(asset, parsed!.rows) })} />
         </div>
       </div>
     </div>

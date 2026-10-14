@@ -112,3 +112,13 @@ def test_sample_csv_round_trips_into_upload(client):
     assert list(df.columns) == ["timestamp", *SENS]
     rows = [{"timestamp": t, **{c: float(v[c]) for c in SENS}} for t, (_, v) in zip(df.timestamp, df.iterrows())]
     assert client.post("/api/uploads", json={"asset": "ETTm2", "rows": rows}).status_code == 200
+
+
+def test_stateless_runs_equal_stepped_sessions(client):
+    body = {"asset": "ETTm1", "month": 10, "fault": "intermittent_arcing", "severity": 1.0, "precursor_hours": 6, "seed": 5}
+    run = client.post("/api/scenarios/run", json=body).json()
+    stepped, _ = _run(client, client.post("/api/scenarios", json=body).json()["id"])
+    assert [r["raw_score"] for r in run["records"]] == [r["raw_score"] for r in stepped]
+    assert [r["status"] for r in run["records"]] == [r["status"] for r in stepped]
+    assert run["compute_ms"] > 0 and run["attribution_method"] in ("integrated gradients", "occlusion")
+    assert client.post("/api/scenarios/run", json=body | {"precursor_hours": 40}).status_code == 422

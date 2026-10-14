@@ -7,15 +7,13 @@ from dataclasses import dataclass
 
 import numpy as np
 import pandas as pd
-import torch
 
-from src.models.recurrent import build_model
 from src.utils.config import resolve
 
 
 @dataclass
 class Artifacts:
-    model: torch.nn.Module
+    model: object | None          # torch.nn.Module; None for the ONNX-only serving build
     meta: dict
     fe: object
     scaler: object
@@ -42,7 +40,21 @@ def deployment_manifest(cfg: dict) -> dict:
     return json.loads(path.read_text()) if path.exists() else {}
 
 
+def load_artifacts_lite(cfg: dict) -> Artifacts:
+    """Metadata + fitted preprocessing only (no PyTorch): for the ONNX-only serving build."""
+    mdir = resolve(cfg, "models_dir")
+    meta = json.loads((mdir / "model_metadata.json").read_text())
+    with open(mdir / "preprocessor.pkl", "rb") as f:
+        pre = pickle.load(f)
+    name = meta["selected_model"]
+    meta = meta | {"active_model": name, "active_threshold": meta["family_models"][name]["threshold"]}
+    return Artifacts(None, meta, pre["fe"], pre["scaler"], pre["scaler_columns"], pre["feature_names"])
+
+
 def load_artifacts(cfg: dict, model_file: str | None = None) -> Artifacts:
+    import torch
+
+    from src.models.recurrent import build_model
     mdir = resolve(cfg, "models_dir")
     meta = json.loads((mdir / "model_metadata.json").read_text())
     with open(mdir / "preprocessor.pkl", "rb") as f:

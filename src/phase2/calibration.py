@@ -24,6 +24,7 @@ from src.models.recurrent import build_model
 from src.phase2 import resim
 from src.phase2.analysis import ece
 from src.phase2.common import P2_MODELS, P2_REPORTS, write_md
+from src.streaming.calibration import CONFIDENCE_BINS, confidence_bin  # noqa: F401  (re-exported)
 from src.training.trainer import WindowBatcher, predict_proba
 from src.utils.plotting import INK2, SERIES, apply_style, plt, save
 
@@ -122,16 +123,6 @@ def mc_dropout(model, W, n=20):
     out = np.stack([torch.sigmoid(model(W)).numpy() for _ in range(n)])
     model.eval()
     return out.std(0)
-
-
-# Model-confidence bins (lower bounds). Single definition used by evaluation, the API and the UI.
-CONFIDENCE_BINS = {"HIGH": 0.9, "MEDIUM": 0.7, "LOW": 0.0}
-
-
-def confidence_bin(conf: np.ndarray) -> np.ndarray:
-    """Label each confidence value HIGH / MEDIUM / LOW using CONFIDENCE_BINS."""
-    c = np.asarray(conf, dtype=float)
-    return np.where(c >= CONFIDENCE_BINS["HIGH"], "HIGH", np.where(c >= CONFIDENCE_BINS["MEDIUM"], "MEDIUM", "LOW"))
 
 
 def confidence_from_members(member_probs: np.ndarray) -> np.ndarray:

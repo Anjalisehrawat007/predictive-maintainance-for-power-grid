@@ -36,4 +36,4 @@ reports/stream/*.csv
 models/**/*.pt
 models/*.onnx
 models/preprocessor.pkl
-.deploy-web/
+.deploy-vercel/

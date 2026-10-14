@@ -96,9 +96,10 @@ function HistoricalPattern({ signal }: { signal?: string }) {
   )
 }
 
-/** "Why is risk changing?" — integrated-gradients attribution grouped by sensor. */
+/** "Why is risk changing?" — attribution grouped by sensor (integrated gradients; occlusion on the ONNX-only engine). */
 export function Explain({ rec }: { rec?: EngineRecord }) {
   const spec = useModelSpec()
+  const method = useGrid((s) => s.system?.engine?.attribution) ?? 'integrated gradients'
   const at = (rec?.attribution ?? []).slice(0, 7)
   const tp = rec?.temporal_attribution
   const max = Math.max(0.0001, ...at.map((a) => a.share))
@@ -128,7 +129,7 @@ export function Explain({ rec }: { rec?: EngineRecord }) {
         </div>
       )}
       <HistoricalPattern signal={rec?.signals?.[0]?.signal} />
-      <p className="mt-2 text-[10.5px] leading-snug text-ink-3"><b>What the model relied on</b> (integrated gradients, grouped by sensor) — <b>not</b> what physically caused a failure. Attribution is associational.</p>
+      <p className="mt-2 text-[10.5px] leading-snug text-ink-3"><b>What the model relied on</b> ({method}, grouped by sensor) — <b>not</b> what physically caused a failure. Attribution is associational.</p>
     </div>
   )
 }
