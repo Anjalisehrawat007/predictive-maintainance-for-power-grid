@@ -35,7 +35,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 os.environ.setdefault("SGPM_PUBLIC", "1")       # never serve dataset rows
 os.environ.setdefault("SGPM_ENGINE", "onnx")    # no PyTorch in the function
-os.environ.setdefault("SGPM_CORS_ORIGINS", "")  # same-origin: the web app is served by this deployment
+# the web app is same-origin; the author's portfolio embeds a live demo that calls the engine cross-origin
+os.environ.setdefault("SGPM_CORS_ORIGINS", "https://anjali-portfolio-hazel.vercel.app,http://localhost:3000")
 
 from backend.app import app  # noqa: E402,F401
 '''
