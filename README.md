@@ -7,6 +7,10 @@ within the next 2 hours. Its score is calibrated, given a model-confidence estim
 alerts by a streaming engine. The engine is served through FastAPI and a React/TypeScript operations center
 with **Incident Replay** and a guided **Demo Mode** that run the real engine on held-out data.
 
+**Live results site:** <https://predictive-maintenance-power-grid.vercel.app>. It is a static snapshot of the
+results pages (Failure Intelligence, Model Lab, Methodology). The live engine views (Command Center, Incident
+Replay, Demo Mode) need the Python engine and the ETDataset sensor rows, so they [run locally](#quick-start).
+
 > [!IMPORTANT]
 > **Sensor data are real; failure events are simulated.** The sensor data come from ETDataset (two real
 > transformers, 15-minute readings). ETDataset has no failure labels, so failure precursors are injected by a
@@ -231,6 +235,10 @@ optional: `make train` (~2.5 h), then `make final`.
 **Docker:** a `Dockerfile` and `docker-compose.yml` are provided (`docker compose up --build`; the build runs
 `make data`, including model training). They **have never been built or run**, because Docker was unavailable
 in the development environment. Treat them as an untested starting point.
+
+**Static results site** (`make site`): a `VITE_STATIC=1` frontend build plus aggregate JSON exported from the real
+API by [`backend/export_results.py`](backend/export_results.py), which refuses to write anything that looks like
+sensor rows. Deploy with `cd site && vercel deploy --prod`. Live views show a notice and a real screenshot.
 
 ## API
 FastAPI ([`backend/app.py`](backend/app.py)). The model, calibrator, ONNX session and seed ensemble are loaded

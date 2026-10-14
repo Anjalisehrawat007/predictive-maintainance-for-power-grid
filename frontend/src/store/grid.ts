@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 import { api } from '../lib/api'
 import { fromLog, liveRecord } from '../lib/format'
+import { STATIC } from '../lib/staticMode'
 import type { Alert, EngineRecord, FeedEvent, SessionSummary, SystemInfo, Timeline } from '../lib/types'
 
 const WINDOW = 192          // 48 h of 15-min steps kept per asset for charts
@@ -70,6 +71,13 @@ export const useGrid = create<GridState>((set, get) => ({
 
   init: async () => {
     if (get().system) return
+    if (STATIC) {                     // results-only site: no timeline / engine log, no live sessions
+      try {
+        const system = await api.system()
+        set({ system, assets: system.dataset.assets.map((a) => a.id), selected: system.dataset.assets[0]?.id ?? '', loading: false })
+      } catch (e) { set({ error: (e as Error).message, loading: false }) }
+      return
+    }
     try {
       const [system, timeline, incidents] = await Promise.all([api.system(), api.timeline(), api.incidents()])
       const assets = system.dataset.assets.map((a) => a.id)

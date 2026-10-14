@@ -1,6 +1,12 @@
+import { STATIC, staticUrl } from './staticMode'
 import type { Alert, Incident, SessionSummary, StepResult, SystemInfo, Timeline } from './types'
 
 async function req<T>(path: string, init?: RequestInit): Promise<T> {
+  if (STATIC) {
+    const url = staticUrl(path)
+    if (!url || (init?.method && init.method !== 'GET')) throw new Error('needs the live engine — run the project locally')
+    path = url
+  }
   // no-store: never show cached (possibly stale) model output when the backend is unavailable
   const r = await fetch(path, { headers: { 'Content-Type': 'application/json' }, cache: 'no-store', ...init })
   if (!r.ok) {
