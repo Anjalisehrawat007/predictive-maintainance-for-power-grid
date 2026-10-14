@@ -1,5 +1,7 @@
 # SmartGrid AI
 
+[![CI](https://github.com/Anjalisehrawat007/predictive-maintainance-for-power-grid/actions/workflows/ci.yml/badge.svg)](https://github.com/Anjalisehrawat007/predictive-maintainance-for-power-grid/actions/workflows/ci.yml)
+
 **Real-time predictive-maintenance and early-warning platform for power-transformer sensor streams.**
 
 A GRU + temporal-attention model reads a 12-hour window of causal features and estimates the risk of a failure
